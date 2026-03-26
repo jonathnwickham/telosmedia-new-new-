@@ -5,6 +5,7 @@ const stats = [
   { value: "$33M+", label: "Revenue Generated" },
   { value: "40+", label: "Clients Served" },
   { value: "41%", label: "Avg Open Rate" },
+  { value: "1M+", label: "Monthly Emails Sent" },
 ];
 
 const Hero = () => {
@@ -13,9 +14,9 @@ const Hero = () => {
       {/* Glow */}
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[700px] accent-glow opacity-60 pointer-events-none" />
 
-      <div className="max-w-[1140px] w-full mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
-        {/* Left — Copy */}
-        <div className="flex-1 text-center lg:text-left">
+      <div className="max-w-[1140px] w-full mx-auto flex flex-col items-center lg:items-start gap-12">
+        {/* Copy — left-aligned on desktop */}
+        <div className="text-center lg:text-left max-w-[680px]">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -29,7 +30,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[clamp(36px,5.2vw,62px)] font-bold leading-[1.08] tracking-[-2px] max-w-[840px] mb-6 text-foreground"
+            className="text-[clamp(32px,4.8vw,56px)] font-bold leading-[1.08] tracking-[-2px] mb-6 text-foreground"
           >
             For brand owners ready for<br />
             <span className="gradient-text">next-level growth</span><br />
@@ -40,7 +41,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[clamp(16px,1.8vw,19px)] text-muted-foreground max-w-[580px] mb-10 leading-relaxed lg:mx-0 mx-auto"
+            className="text-[clamp(16px,1.8vw,19px)] text-muted-foreground max-w-[540px] mb-10 leading-relaxed lg:mx-0 mx-auto"
           >
             Crafting emails that don't just "look nice" — they rake in revenue. With $33M+ generated for our clients!
           </motion.p>
@@ -49,7 +50,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex gap-3 mb-16 flex-col sm:flex-row lg:justify-start justify-center"
+            className="flex gap-3 mb-0 flex-col sm:flex-row lg:justify-start justify-center"
           >
             <a
               href="https://calendly.com/jonathan-telosmedia/discovery-call"
@@ -66,25 +67,27 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Right — Floating Stats Cards */}
+        {/* Floating Stats Pane — right-aligned */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="flex flex-row lg:flex-col gap-4 lg:pt-12"
+          className="w-full flex justify-end"
         >
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 + i * 0.12 }}
-              className="bg-card/80 backdrop-blur-xl border border-border rounded-2xl px-6 py-5 text-center min-w-[140px] hover:-translate-y-1 transition-transform duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
-            >
-              <div className="text-2xl font-bold text-primary mb-1">{stat.value}</div>
-              <div className="text-xs text-muted-foreground font-medium">{stat.label}</div>
-            </motion.div>
-          ))}
+          <div className="bg-card/70 backdrop-blur-xl border border-border rounded-2xl p-2 shadow-[0_8px_32px_rgba(0,0,0,0.06)] inline-flex gap-1">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.45 + i * 0.1 }}
+                className="px-6 py-4 text-center min-w-[130px] rounded-xl hover:bg-background/60 transition-colors duration-200"
+              >
+                <div className="text-xl font-bold text-primary mb-1">{stat.value}</div>
+                <div className="text-[11px] text-muted-foreground font-medium leading-tight">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
 
