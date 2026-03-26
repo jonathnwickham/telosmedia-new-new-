@@ -95,9 +95,9 @@ const Hero = () => {
               <div
                 className="relative flex items-center gap-1.5 px-5 py-3 border-b border-[hsl(var(--glass-highlight)/0.16)] bg-[linear-gradient(180deg,hsl(var(--glass-highlight)/0.18),transparent)]"
               >
-                <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
+                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "hsl(2 88% 74% / 0.9)" }} />
+                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "hsl(42 96% 68% / 0.9)" }} />
+                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "hsl(140 62% 66% / 0.9)" }} />
                 <span className="ml-3 text-[11px] text-muted-foreground font-medium tracking-wide">Telos Media</span>
               </div>
               {/* 2×2 Stats Grid */}
