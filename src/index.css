@@ -41,6 +41,11 @@
     --surface: 220 18% 92%;
     --text-muted: 220 12% 55%;
     --gradient-end: 210 70% 45%;
+    --glass-panel: 220 22% 94%;
+    --glass-panel-strong: 220 24% 97%;
+    --glass-border: 220 24% 100%;
+    --glass-shadow: 220 18% 68%;
+    --glass-highlight: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -99,4 +104,42 @@
 
 .accent-glow-bottom {
   background: radial-gradient(ellipse at bottom, hsl(var(--primary) / 0.08) 0%, transparent 70%);
+}
+
+.hero-glass-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(145deg, hsl(var(--glass-panel-strong) / 0.62) 0%, hsl(var(--glass-panel) / 0.32) 44%, hsl(var(--glass-panel) / 0.18) 100%),
+    linear-gradient(180deg, hsl(var(--glass-highlight) / 0.34) 0%, hsl(var(--glass-highlight) / 0.08) 18%, transparent 55%);
+  border: 1px solid hsl(var(--glass-border) / 0.55);
+  box-shadow:
+    0 38px 80px -34px hsl(var(--glass-shadow) / 0.5),
+    0 18px 36px -22px hsl(var(--foreground) / 0.14),
+    inset 0 1px 0 hsl(var(--glass-highlight) / 0.72),
+    inset 0 -1px 0 hsl(var(--glass-highlight) / 0.18),
+    inset 0 0 0 1px hsl(var(--glass-highlight) / 0.16);
+  backdrop-filter: blur(30px) saturate(1.15);
+  -webkit-backdrop-filter: blur(30px) saturate(1.15);
+}
+
+.hero-glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 14% 12%, hsl(var(--glass-highlight) / 0.55) 0%, transparent 30%),
+    linear-gradient(135deg, hsl(var(--glass-highlight) / 0.4) 0%, transparent 32%, transparent 64%, hsl(var(--glass-highlight) / 0.18) 100%);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.hero-glass-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, hsl(var(--glass-highlight) / 0.18) 0%, transparent 28%, transparent 72%, hsl(var(--glass-highlight) / 0.08) 100%);
+  pointer-events: none;
 }
