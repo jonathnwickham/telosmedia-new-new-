@@ -90,16 +90,6 @@ const Hero = () => {
             style={{ transformStyle: "preserve-3d" }}
           >
             <div className="hero-glass-card rounded-[2rem] w-[340px] sm:w-[380px]">
-              <div className="pointer-events-none absolute inset-x-[14%] top-0 h-px bg-[hsl(0_0%_100%/0.25)] blur-sm" />
-              {/* Browser-style top bar */}
-              <div
-                className="relative z-10 flex items-center gap-1.5 px-5 py-3 border-b border-[hsl(0_0%_100%/0.08)]"
-              >
-                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "hsl(2 88% 74% / 0.9)" }} />
-                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "hsl(42 96% 68% / 0.9)" }} />
-                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "hsl(140 62% 66% / 0.9)" }} />
-                <span className="ml-3 text-[11px] text-muted-foreground font-medium tracking-wide">Telos Media</span>
-              </div>
               {/* 2×2 Stats Grid */}
               <div className="relative z-10 grid grid-cols-2">
                 {stats.map((stat, i) => (
