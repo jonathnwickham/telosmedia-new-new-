@@ -14,9 +14,9 @@ const Hero = () => {
       {/* Glow */}
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[700px] accent-glow opacity-60 pointer-events-none" />
 
-      <div className="max-w-[1140px] w-full mx-auto flex flex-col items-center lg:items-start gap-12">
+      <div className="max-w-[1140px] w-full mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
         {/* Copy — left-aligned on desktop */}
-        <div className="text-center lg:text-left max-w-[680px]">
+        <div className="text-center lg:text-left max-w-[680px] lg:flex-1">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,14 +67,14 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Floating Stats Pane — right-aligned, 2×2 grid */}
+        {/* Floating Stats Pane — right side, 2×2 grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="w-full flex justify-end"
+          className="lg:flex-shrink-0 flex justify-center lg:justify-end"
         >
-          <div className="bg-card/40 backdrop-blur-2xl border border-border/60 rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] overflow-hidden max-w-[380px] w-full">
+          <div className="bg-card/40 backdrop-blur-2xl border border-border/60 rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] overflow-hidden w-[340px]">
             {/* Browser-style top bar */}
             <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-border/40">
               <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
@@ -90,9 +90,9 @@ const Hero = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: 0.45 + i * 0.1 }}
-                  className="px-5 py-5 text-center bg-card/30 backdrop-blur-xl hover:bg-card/60 transition-colors duration-200"
+                  className="px-5 py-6 text-center bg-card/30 backdrop-blur-xl hover:bg-card/60 transition-colors duration-200"
                 >
-                  <div className="text-[10px] uppercase tracking-[1.5px] text-muted-foreground font-semibold mb-1.5">{stat.label}</div>
+                  <div className="text-[10px] uppercase tracking-[1.5px] text-muted-foreground font-semibold mb-2">{stat.label}</div>
                   <div className="text-2xl font-bold text-primary">{stat.value}</div>
                 </motion.div>
               ))}
