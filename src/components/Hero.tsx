@@ -98,10 +98,10 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: 0.5 + i * 0.12 }}
-                    className="px-5 sm:px-7 py-9 sm:py-10 text-center transition-all duration-300 hover:bg-[hsl(0_0%_100%/0.06)]"
+                    className="px-5 sm:px-7 py-8 sm:py-9 text-center transition-all duration-300 hover:bg-card-hover/40"
                     style={{
-                      borderRight: i % 2 === 0 ? "1px solid hsl(0 0% 100% / 0.08)" : "none",
-                      borderBottom: i < 2 ? "1px solid hsl(0 0% 100% / 0.07)" : "none",
+                      borderRight: i % 2 === 0 ? "1px solid hsl(var(--border))" : "none",
+                      borderBottom: i < 2 ? "1px solid hsl(var(--border))" : "none",
                     }}
                   >
                     <div className="text-[10px] sm:text-[11px] uppercase tracking-[2.8px] text-muted-foreground font-semibold mb-3">{stat.label}</div>
