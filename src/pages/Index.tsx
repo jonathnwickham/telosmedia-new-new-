@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import PhoneMarquee from "@/components/PhoneMarquee";
-import StatBar from "@/components/StatBar";
+
 import Services from "@/components/Services";
 import Results from "@/components/Results";
 import Process from "@/components/Process";
@@ -17,7 +17,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <PhoneMarquee />
-      <StatBar />
+      
       <Services />
       <Results />
       <Process />
