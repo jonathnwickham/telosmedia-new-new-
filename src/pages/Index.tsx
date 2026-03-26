@@ -17,6 +17,7 @@ const Index = () => {
       <PhoneMarquee />
       <StatBar />
       <Services />
+      <Results />
       <Process />
       <Meaning />
       <CTA />
