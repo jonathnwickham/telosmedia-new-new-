@@ -60,8 +60,8 @@ const StatBar = () => {
         <div className="text-sm text-muted-foreground mt-1">Revenue Generated</div>
       </div>
       <div className="text-center">
-        <Counter target={10} suffix="+" duration={2200} />
-        <div className="text-sm text-muted-foreground mt-1">Active Clients</div>
+        <Counter target={40} suffix="+" duration={2200} />
+        <div className="text-sm text-muted-foreground mt-1">Clients Served</div>
       </div>
       <div className="text-center">
         <Counter target={1000000} suffix="+" duration={3200} />
