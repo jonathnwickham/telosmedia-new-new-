@@ -41,7 +41,7 @@ const Services = () => {
           <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border bg-card text-xs text-primary uppercase tracking-[1.5px] font-semibold mb-5">
             ✦ Services
           </span>
-          <div className="text-[clamp(28px,3.6vw,44px)] font-bold tracking-[-1.5px] leading-[1.12] mb-4 max-w-[680px]">
+          <div className="text-[clamp(28px,3.6vw,44px)] font-bold tracking-[-1.5px] leading-[1.12] mb-4 max-w-[680px] text-foreground">
             Everything your email channel needs to print money
           </div>
         </motion.div>
@@ -54,15 +54,15 @@ const Services = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-40px" }}
-              className={`bg-card border border-border rounded-[14px] grid grid-cols-1 md:grid-cols-2 overflow-hidden hover:border-primary/20 hover:-translate-y-0.5 transition-all duration-300 ${
+              className={`bg-card border border-border rounded-[14px] grid grid-cols-1 md:grid-cols-2 overflow-hidden hover:border-primary/30 hover:-translate-y-0.5 transition-all duration-300 ${
                 i % 2 === 1 ? "md:[direction:rtl]" : ""
               }`}
             >
               <div className={`p-8 md:p-11 flex flex-col justify-center ${i % 2 === 1 ? "md:[direction:ltr]" : ""}`}>
-                <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border bg-card text-xs text-primary uppercase tracking-[1.5px] font-semibold mb-4 w-fit">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border bg-background text-xs text-primary uppercase tracking-[1.5px] font-semibold mb-4 w-fit">
                   {service.label}
                 </span>
-                <h3 className="text-[28px] font-bold tracking-[-0.8px] leading-[1.2] mb-3.5">
+                <h3 className="text-[28px] font-bold tracking-[-0.8px] leading-[1.2] mb-3.5 text-foreground">
                   {service.title}
                 </h3>
                 <p className="text-[15px] text-muted-foreground leading-relaxed max-w-[440px] mb-7">
@@ -75,13 +75,13 @@ const Services = () => {
                   BOOK NOW →
                 </a>
               </div>
-              <div className={`flex gap-4 p-6 md:p-8 items-center justify-center bg-[rgba(0,0,0,0.15)] min-h-[280px] md:min-h-[380px] ${i % 2 === 1 ? "md:[direction:ltr]" : ""}`}>
+              <div className={`flex gap-4 p-6 md:p-8 items-center justify-center bg-surface min-h-[280px] md:min-h-[380px] ${i % 2 === 1 ? "md:[direction:ltr]" : ""}`}>
                 {service.images.map((src, j) => (
                   <img
                     key={j}
                     src={src}
                     alt={`${service.label} ${j + 1}`}
-                    className="max-h-[150px] sm:max-h-[180px] md:max-h-[220px] max-w-[45%] rounded-xl border border-[rgba(255,255,255,0.06)] shadow-[0_6px_30px_rgba(0,0,0,0.3)] object-contain hover:scale-[1.03] transition-transform"
+                    className="max-h-[150px] sm:max-h-[180px] md:max-h-[220px] max-w-[45%] rounded-xl border border-border shadow-[0_6px_30px_rgba(0,0,0,0.08)] object-contain hover:scale-[1.03] transition-transform"
                   />
                 ))}
               </div>

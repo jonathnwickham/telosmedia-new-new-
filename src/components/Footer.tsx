@@ -9,7 +9,7 @@ const Footer = () => {
             </div>
             Telos Media
           </a>
-          <div className="text-[13px] text-text-muted">Copyright © 2023. Telos Media. All rights reserved.</div>
+          <div className="text-[13px] text-muted-foreground">Copyright © 2023. Telos Media. All rights reserved.</div>
         </div>
         <div className="flex gap-6 flex-wrap justify-center">
           <a href="mailto:jonathan@telosmedia.co" className="text-sm text-muted-foreground hover:text-primary transition-colors">
