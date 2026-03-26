@@ -72,7 +72,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.35 }}
-          className="lg:flex-shrink-0 flex justify-center lg:justify-end lg:pt-2 [perspective:1800px]"
+          className="lg:flex-shrink-0 flex justify-center lg:justify-start lg:pt-16 [perspective:1800px]"
         >
           <motion.div
             animate={{
