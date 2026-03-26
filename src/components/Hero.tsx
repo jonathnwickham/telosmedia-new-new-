@@ -1,12 +1,49 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import LogoScroll from "./LogoScroll";
 
 const stats = [
-  { value: "$33M+", label: "Revenue Generated" },
-  { value: "40+", label: "Clients Served" },
-  { value: "41%", label: "Avg Open Rate" },
-  { value: "1M+", label: "Monthly Emails Sent" },
+  { target: 33, prefix: "$", suffix: "M+", label: "Revenue Generated", duration: 2800 },
+  { target: 40, prefix: "", suffix: "+", label: "Clients Served", duration: 2200 },
+  { target: 41, prefix: "", suffix: "%", label: "Avg Open Rate", duration: 2400 },
+  { target: 1, prefix: "", suffix: "M+", label: "Monthly Emails Sent", duration: 2000 },
 ];
+
+const AnimatedCounter = ({ target, prefix, suffix, duration }: { target: number; prefix: string; suffix: string; duration: number }) => {
+  const [value, setValue] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !started.current) {
+          started.current = true;
+          const start = performance.now();
+          const ease = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+          const tick = (now: number) => {
+            const progress = Math.min((now - start) / duration, 1);
+            setValue(Math.round(ease(progress) * target));
+            if (progress < 1) requestAnimationFrame(tick);
+            else setValue(target);
+          };
+          requestAnimationFrame(tick);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [target, duration]);
+
+  return (
+    <div ref={ref}>
+      {prefix}{value}{suffix}
+    </div>
+  );
+};
 
 const floatingStars = [
   { x: "6%", y: "14%", size: 30, delay: 0, duration: 6.2 },
@@ -166,11 +203,11 @@ const Hero = () => {
                 {stat.label}
               </div>
               <motion.div
-                className="text-[1.75rem] sm:text-[2.1rem] leading-none font-bold text-primary drop-shadow-[0_4px_14px_hsl(var(--primary)/0.14)]"
+                className="text-[1.75rem] sm:text-[2.1rem] leading-none font-bold text-primary drop-shadow-[0_4px_14px_hsl(var(--primary)/0.14)] tabular-nums"
                 whileHover={{ scale: 1.08 }}
                 transition={{ type: "spring", stiffness: 400, damping: 15 }}
               >
-                {stat.value}
+                <AnimatedCounter target={stat.target} prefix={stat.prefix} suffix={stat.suffix} duration={stat.duration} />
               </motion.div>
             </motion.div>
           ))}
