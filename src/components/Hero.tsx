@@ -10,7 +10,7 @@ const stats = [
 ];
 
 const AnimatedCounter = ({ target, prefix, suffix, duration }: { target: number; prefix: string; suffix: string; duration: number }) => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState("0");
   const ref = useRef<HTMLDivElement>(null);
   const started = useRef(false);
 
@@ -25,9 +25,11 @@ const AnimatedCounter = ({ target, prefix, suffix, duration }: { target: number;
           const ease = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
           const tick = (now: number) => {
             const progress = Math.min((now - start) / duration, 1);
-            setValue(Math.round(ease(progress) * target));
+            const current = ease(progress) * target;
+            const hasDecimal = target % 1 !== 0;
+            setValue(hasDecimal ? current.toFixed(1) : Math.round(current).toString());
             if (progress < 1) requestAnimationFrame(tick);
-            else setValue(target);
+            else setValue(hasDecimal ? target.toFixed(1) : target.toString());
           };
           requestAnimationFrame(tick);
         }
