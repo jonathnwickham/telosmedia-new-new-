@@ -2,7 +2,7 @@ import telosLogo from "@/assets/telos-logo.png";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-3.5 flex items-center justify-between bg-[hsl(210_40%_25%/0.65)] backdrop-blur-2xl border-b border-[rgba(255,255,255,0.08)] shadow-[0_4px_30px_rgba(0,0,0,0.2)]">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-3.5 flex items-center justify-between bg-[hsl(220_20%_95%/0.92)] backdrop-blur-xl border-b border-[hsl(220_20%_88%)] shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
       <a href="#" className="flex items-center">
         <img src={telosLogo} alt="Telos Media" className="h-8" />
       </a>
