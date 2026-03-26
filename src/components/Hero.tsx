@@ -67,26 +67,36 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Floating Stats Pane — right-aligned */}
+        {/* Floating Stats Pane — right-aligned, 2×2 grid */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
           className="w-full flex justify-end"
         >
-          <div className="bg-card/70 backdrop-blur-xl border border-border rounded-2xl p-2 shadow-[0_8px_32px_rgba(0,0,0,0.06)] inline-flex gap-1">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.45 + i * 0.1 }}
-                className="px-6 py-4 text-center min-w-[130px] rounded-xl hover:bg-background/60 transition-colors duration-200"
-              >
-                <div className="text-xl font-bold text-primary mb-1">{stat.value}</div>
-                <div className="text-[11px] text-muted-foreground font-medium leading-tight">{stat.label}</div>
-              </motion.div>
-            ))}
+          <div className="bg-card/40 backdrop-blur-2xl border border-border/60 rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] overflow-hidden max-w-[380px] w-full">
+            {/* Browser-style top bar */}
+            <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-border/40">
+              <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+              <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
+              <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
+              <span className="ml-3 text-[11px] text-muted-foreground font-medium tracking-wide">telos-analytics.app / Overview</span>
+            </div>
+            {/* 2×2 Stats Grid */}
+            <div className="grid grid-cols-2 gap-px bg-border/30">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.45 + i * 0.1 }}
+                  className="px-5 py-5 text-center bg-card/30 backdrop-blur-xl hover:bg-card/60 transition-colors duration-200"
+                >
+                  <div className="text-[10px] uppercase tracking-[1.5px] text-muted-foreground font-semibold mb-1.5">{stat.label}</div>
+                  <div className="text-2xl font-bold text-primary">{stat.value}</div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
