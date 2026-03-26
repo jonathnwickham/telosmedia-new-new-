@@ -1,32 +1,30 @@
 import { motion } from "framer-motion";
+import flowCheckout from "@/assets/flow-checkout.png";
+import flowPostpurchase from "@/assets/flow-postpurchase.png";
+import campaignStats from "@/assets/campaign-stats.png";
+import campaignDesign from "@/assets/campaign-design.png";
+import dashboardSummary from "@/assets/dashboard-summary.png";
+import dashboardDetailed from "@/assets/dashboard-detailed.png";
+import emailDesignTrading from "@/assets/email-design-trading.png";
 
 const services = [
   {
     label: "Automation Flows",
     title: "Convert your visitors into customers. Create an automated retargeting.",
     desc: "We design personalized email flows for each client based on their behavior. Send the right message at the right time.",
-    images: [
-      "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/68093bc2eb2216edbddb095a_Alert%20iPhone%20(2).png",
-      "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/68093b590c875b6901cd21d1_Alert%20iPhone%20(1).png",
-    ],
+    images: [flowCheckout, flowPostpurchase],
   },
   {
     label: "Campaigns",
     title: "Generate engagement and increase your sales. Unmissable Campaigns.",
     desc: "We create campaigns with an incredible design and copy. Build a list of returning customers with offers, educational content and more.",
-    images: [
-      "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/680937cd192ffc58f74da67f_Alert%20-%20iPhone.png",
-      "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/68093911965dc23bbc70605a_Alert%20iPhone.png",
-    ],
+    images: [campaignStats, campaignDesign],
   },
   {
     label: "Signup Forms",
     title: "Grow your email list. Grow your community. Grow your sales.",
     desc: "We design signup forms that work. Capture emails from your visitors and convert them into customers.",
-    images: [
-      "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/65302099616c8bf92b06520d_%27Untitled%20Image%20(1)..png",
-      "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/68ca6ddbf76b18b20c6f8a72_Telos%20Media%20X%20Puro%20(4).png",
-    ],
+    images: [emailDesignTrading, dashboardSummary],
   },
 ];
 
@@ -83,7 +81,7 @@ const Services = () => {
                     key={j}
                     src={src}
                     alt={`${service.label} ${j + 1}`}
-                    className="h-[180px] sm:h-[220px] md:h-[280px] rounded-2xl border border-[rgba(255,255,255,0.06)] shadow-[0_6px_30px_rgba(0,0,0,0.3)] object-cover hover:scale-[1.03] transition-transform"
+                    className="h-[160px] sm:h-[200px] md:h-[240px] rounded-xl border border-[rgba(255,255,255,0.06)] shadow-[0_6px_30px_rgba(0,0,0,0.3)] object-contain hover:scale-[1.03] transition-transform"
                   />
                 ))}
               </div>
