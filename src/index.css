@@ -6,41 +6,41 @@
 
 @layer base {
   :root {
-    --background: 230 33% 6%;
-    --foreground: 240 20% 95%;
+    --background: 220 20% 95%;
+    --foreground: 220 20% 12%;
 
-    --card: 233 35% 10%;
-    --card-foreground: 240 20% 95%;
-    --card-hover: 233 35% 15%;
+    --card: 220 20% 98%;
+    --card-foreground: 220 20% 12%;
+    --card-hover: 220 18% 93%;
 
-    --popover: 233 35% 10%;
-    --popover-foreground: 240 20% 95%;
+    --popover: 220 20% 98%;
+    --popover-foreground: 220 20% 12%;
 
-    --primary: 205 55% 65%;
+    --primary: 205 55% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 235 30% 8%;
-    --secondary-foreground: 240 20% 95%;
+    --secondary: 220 18% 92%;
+    --secondary-foreground: 220 20% 12%;
 
-    --muted: 236 20% 15%;
-    --muted-foreground: 235 15% 62%;
+    --muted: 220 16% 90%;
+    --muted-foreground: 220 12% 45%;
 
-    --accent: 205 55% 65%;
+    --accent: 205 55% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 100% / 0.06;
-    --border-hover: 0 0% 100% / 0.12;
-    --input: 0 0% 100% / 0.06;
-    --ring: 205 55% 65%;
+    --border: 220 18% 85%;
+    --border-hover: 220 18% 75%;
+    --input: 220 18% 85%;
+    --ring: 205 55% 50%;
 
     --radius: 0.5rem;
 
-    --surface: 233 35% 8%;
-    --text-muted: 237 20% 38%;
-    --gradient-end: 210 70% 50%;
+    --surface: 220 18% 92%;
+    --text-muted: 220 12% 55%;
+    --gradient-end: 210 70% 45%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -67,7 +67,7 @@
 
 /* Gradient text utility */
 .gradient-text {
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--gradient-end)), #a8d4f0);
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--gradient-end)), hsl(205 60% 40%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -94,9 +94,9 @@
 
 /* Accent glow */
 .accent-glow {
-  background: radial-gradient(ellipse at center, hsl(var(--primary) / 0.12) 0%, transparent 65%);
+  background: radial-gradient(ellipse at center, hsl(var(--primary) / 0.08) 0%, transparent 65%);
 }
 
 .accent-glow-bottom {
-  background: radial-gradient(ellipse at bottom, hsl(var(--primary) / 0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse at bottom, hsl(var(--primary) / 0.08) 0%, transparent 70%);
 }
