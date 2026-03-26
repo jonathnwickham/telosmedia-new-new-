@@ -10,6 +10,7 @@ const Navbar = () => {
         <a href="#services" className="text-muted-foreground text-sm hover:text-foreground transition-colors">Services</a>
         <a href="#results" className="text-muted-foreground text-sm hover:text-foreground transition-colors">Results</a>
         <a href="#process" className="text-muted-foreground text-sm hover:text-foreground transition-colors">Process</a>
+        <a href="#testimonials" className="text-muted-foreground text-sm hover:text-foreground transition-colors">Testimonials</a>
         <a href="#meaning" className="text-muted-foreground text-sm hover:text-foreground transition-colors">About</a>
         <a
           href="https://calendly.com/jonathan-telosmedia/discovery-call"
