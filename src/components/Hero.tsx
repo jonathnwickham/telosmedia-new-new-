@@ -14,9 +14,9 @@ const Hero = () => {
       {/* Glow */}
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[700px] accent-glow opacity-60 pointer-events-none" />
 
-      <div className="max-w-[1140px] w-full mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+      <div className="max-w-[1140px] w-full mx-auto flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-8">
         {/* Copy — left-aligned on desktop */}
-        <div className="text-center lg:text-left max-w-[680px] lg:flex-1">
+        <div className="text-center lg:text-left max-w-[640px] lg:flex-1 lg:pt-10">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-[clamp(32px,4.8vw,56px)] font-bold leading-[1.08] tracking-[-2px] mb-6 text-foreground"
+            className="text-[clamp(32px,4.8vw,56px)] font-bold leading-[1.05] tracking-[-2px] mb-6 text-foreground"
           >
             For brand owners ready for<br />
             <span className="gradient-text">next-level growth</span><br />
@@ -72,46 +72,28 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.35 }}
-          className="lg:flex-shrink-0 flex justify-center lg:justify-end [perspective:1400px]"
+          className="lg:flex-shrink-0 flex justify-center lg:justify-end lg:pt-2 [perspective:1800px]"
         >
           <motion.div
             animate={{
-              y: [0, -10, 0],
-              rotateY: -14,
-              rotateX: 8,
+              y: [0, -12, 0],
+              rotateY: -18,
+              rotateX: 10,
+              rotateZ: -2,
             }}
             transition={{
-              y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+              y: { duration: 5.8, repeat: Infinity, ease: "easeInOut" },
               rotateY: { duration: 0 },
               rotateX: { duration: 0 },
+              rotateZ: { duration: 0 },
             }}
             style={{ transformStyle: "preserve-3d" }}
           >
-            <div
-              className="rounded-2xl overflow-hidden w-[340px]"
-              style={{
-                background: "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)",
-                backdropFilter: "blur(60px) saturate(1.8)",
-                WebkitBackdropFilter: "blur(60px) saturate(1.8)",
-                border: "1px solid rgba(255,255,255,0.25)",
-                boxShadow:
-                  "0 40px 100px -20px rgba(0,0,0,0.25), 0 20px 60px -15px rgba(0,0,0,0.15), 0 0 0 0.5px rgba(255,255,255,0.3) inset, 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(255,255,255,0.1) inset",
-              }}
-            >
-              {/* Gloss highlight */}
-              <div
-                className="absolute inset-0 rounded-2xl pointer-events-none"
-                style={{
-                  background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.03) 100%)",
-                }}
-              />
+            <div className="hero-glass-card rounded-[2rem] w-[340px] sm:w-[380px]">
+              <div className="pointer-events-none absolute inset-x-[14%] top-0 h-px bg-[hsl(var(--glass-highlight)/0.8)] blur-sm" />
               {/* Browser-style top bar */}
               <div
-                className="relative flex items-center gap-1.5 px-4 py-2.5"
-                style={{
-                  borderBottom: "1px solid rgba(255,255,255,0.12)",
-                  background: "rgba(255,255,255,0.05)",
-                }}
+                className="relative flex items-center gap-1.5 px-5 py-3 border-b border-[hsl(var(--glass-highlight)/0.16)] bg-[linear-gradient(180deg,hsl(var(--glass-highlight)/0.18),transparent)]"
               >
                 <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
                 <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
@@ -126,11 +108,14 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: 0.5 + i * 0.12 }}
-                    className="px-5 py-7 text-center transition-all duration-300 hover:bg-white/[0.06]"
-                    style={{ borderRight: i % 2 === 0 ? "1px solid rgba(255,255,255,0.08)" : "none", borderBottom: i < 2 ? "1px solid rgba(255,255,255,0.08)" : "none" }}
+                    className="px-5 sm:px-7 py-9 sm:py-10 text-center transition-all duration-300 hover:bg-[hsl(var(--glass-highlight)/0.12)]"
+                    style={{
+                      borderRight: i % 2 === 0 ? "1px solid hsl(var(--glass-highlight) / 0.16)" : "none",
+                      borderBottom: i < 2 ? "1px solid hsl(var(--glass-highlight) / 0.14)" : "none",
+                    }}
                   >
-                    <div className="text-[10px] uppercase tracking-[1.5px] text-muted-foreground font-semibold mb-2">{stat.label}</div>
-                    <div className="text-2xl font-bold text-primary">{stat.value}</div>
+                    <div className="text-[10px] sm:text-[11px] uppercase tracking-[2.8px] text-muted-foreground font-semibold mb-3">{stat.label}</div>
+                    <div className="text-[2rem] sm:text-[2.25rem] leading-none font-bold text-primary drop-shadow-[0_6px_18px_hsl(var(--primary)/0.16)]">{stat.value}</div>
                   </motion.div>
                 ))}
               </div>
