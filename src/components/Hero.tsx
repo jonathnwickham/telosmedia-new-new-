@@ -14,7 +14,7 @@ const Hero = () => {
       {/* Glow */}
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[700px] accent-glow opacity-60 pointer-events-none" />
 
-      <div className="max-w-[1140px] w-full mx-auto flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-8">
+      <div className="max-w-[1140px] w-full mx-auto flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-12 px-2">
         {/* Copy — left-aligned on desktop */}
         <div className="text-center lg:text-left max-w-[640px] lg:flex-1 lg:pt-10">
           <motion.div
@@ -90,10 +90,10 @@ const Hero = () => {
             style={{ transformStyle: "preserve-3d" }}
           >
             <div className="hero-glass-card rounded-[2rem] w-[340px] sm:w-[380px]">
-              <div className="pointer-events-none absolute inset-x-[14%] top-0 h-px bg-[hsl(var(--glass-highlight)/0.8)] blur-sm" />
+              <div className="pointer-events-none absolute inset-x-[14%] top-0 h-px bg-[hsl(0_0%_100%/0.25)] blur-sm" />
               {/* Browser-style top bar */}
               <div
-                className="relative flex items-center gap-1.5 px-5 py-3 border-b border-[hsl(var(--glass-highlight)/0.16)] bg-[linear-gradient(180deg,hsl(var(--glass-highlight)/0.18),transparent)]"
+                className="relative z-10 flex items-center gap-1.5 px-5 py-3 border-b border-[hsl(0_0%_100%/0.08)]"
               >
                 <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "hsl(2 88% 74% / 0.9)" }} />
                 <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "hsl(42 96% 68% / 0.9)" }} />
@@ -101,17 +101,17 @@ const Hero = () => {
                 <span className="ml-3 text-[11px] text-muted-foreground font-medium tracking-wide">Telos Media</span>
               </div>
               {/* 2×2 Stats Grid */}
-              <div className="relative grid grid-cols-2">
+              <div className="relative z-10 grid grid-cols-2">
                 {stats.map((stat, i) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: 0.5 + i * 0.12 }}
-                    className="px-5 sm:px-7 py-9 sm:py-10 text-center transition-all duration-300 hover:bg-[hsl(var(--glass-highlight)/0.12)]"
+                    className="px-5 sm:px-7 py-9 sm:py-10 text-center transition-all duration-300 hover:bg-[hsl(0_0%_100%/0.06)]"
                     style={{
-                      borderRight: i % 2 === 0 ? "1px solid hsl(var(--glass-highlight) / 0.16)" : "none",
-                      borderBottom: i < 2 ? "1px solid hsl(var(--glass-highlight) / 0.14)" : "none",
+                      borderRight: i % 2 === 0 ? "1px solid hsl(0 0% 100% / 0.08)" : "none",
+                      borderBottom: i < 2 ? "1px solid hsl(0 0% 100% / 0.07)" : "none",
                     }}
                   >
                     <div className="text-[10px] sm:text-[11px] uppercase tracking-[2.8px] text-muted-foreground font-semibold mb-3">{stat.label}</div>
