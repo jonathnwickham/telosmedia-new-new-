@@ -80,7 +80,7 @@ const Hero = () => {
               <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
               <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
               <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-              <span className="ml-3 text-[11px] text-muted-foreground font-medium tracking-wide">telos-analytics.app / Overview</span>
+              <span className="ml-3 text-[11px] text-muted-foreground font-medium tracking-wide">Telos Media</span>
             </div>
             {/* 2×2 Stats Grid */}
             <div className="grid grid-cols-2 gap-px bg-border/30">
