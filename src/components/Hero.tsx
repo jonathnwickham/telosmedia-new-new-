@@ -179,36 +179,51 @@ const Hero = () => {
         transition={{ duration: 0.9, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
         className="w-full max-w-[960px] mx-auto mt-16 relative z-10"
       >
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 hero-glass-card rounded-2xl">
+        <div className="hidden sm:grid grid-cols-4 gap-0 hero-glass-card rounded-2xl">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="px-4 sm:px-6 py-7 sm:py-8 text-center transition-all duration-300 hover:bg-card-hover/40 relative"
+              className="px-6 py-8 text-center transition-all duration-300 hover:bg-card-hover/40 relative"
             >
-              {/* Divider lines */}
               {i < 3 && (
-                <div className="hidden sm:block absolute right-0 top-[20%] bottom-[20%] w-px bg-border" />
+                <div className="absolute right-0 top-[20%] bottom-[20%] w-px bg-border" />
               )}
-              {i % 2 === 0 && i < 2 && (
-                <div className="sm:hidden absolute right-0 top-[20%] bottom-[20%] w-px bg-border" />
-              )}
-              {i < 2 && (
-                <div className="sm:hidden absolute bottom-0 left-[15%] right-[15%] h-px bg-border" />
-              )}
-
-              <div className="text-[10px] sm:text-[11px] uppercase tracking-[2.4px] text-muted-foreground font-semibold mb-2">
+              <div className="text-[11px] uppercase tracking-[2.4px] text-muted-foreground font-semibold mb-2">
                 {stat.label}
               </div>
               <motion.div
-                className="text-[1.75rem] sm:text-[2.1rem] leading-none font-bold text-primary drop-shadow-[0_4px_14px_hsl(var(--primary)/0.14)] tabular-nums"
+                className="text-[2.1rem] leading-none font-bold text-primary drop-shadow-[0_4px_14px_hsl(var(--primary)/0.14)] tabular-nums"
                 whileHover={{ scale: 1.08 }}
                 transition={{ type: "spring", stiffness: 400, damping: 15 }}
               >
                 <AnimatedCounter target={stat.target} prefix={stat.prefix} suffix={stat.suffix} duration={stat.duration} />
               </motion.div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Mobile: stacked rows */}
+        <div className="sm:hidden flex flex-col gap-0 hero-glass-card rounded-2xl">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.7 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="flex items-center justify-between px-5 py-4 relative"
+            >
+              {i < 3 && (
+                <div className="absolute bottom-0 left-[8%] right-[8%] h-px bg-border" />
+              )}
+              <div className="text-[10px] uppercase tracking-[2px] text-muted-foreground font-semibold">
+                {stat.label}
+              </div>
+              <div className="text-[1.25rem] leading-none font-bold text-primary tabular-nums">
+                <AnimatedCounter target={stat.target} prefix={stat.prefix} suffix={stat.suffix} duration={stat.duration} />
+              </div>
             </motion.div>
           ))}
         </div>
