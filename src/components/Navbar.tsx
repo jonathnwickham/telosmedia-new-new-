@@ -7,12 +7,12 @@ const Navbar = () => {
         <img src={telosLogo} alt="Telos Media" className="h-8" />
       </a>
       <div className="hidden md:flex items-center gap-8">
-        <a href="#services" className="text-muted-foreground text-sm hover:text-foreground transition-colors">Services</a>
-        <a href="#process" className="text-muted-foreground text-sm hover:text-foreground transition-colors">Process</a>
-        <a href="#meaning" className="text-muted-foreground text-sm hover:text-foreground transition-colors">About</a>
+        <a href="#services" className="text-[hsl(220_15%_40%)] text-sm hover:text-[hsl(220_20%_20%)] transition-colors">Services</a>
+        <a href="#process" className="text-[hsl(220_15%_40%)] text-sm hover:text-[hsl(220_20%_20%)] transition-colors">Process</a>
+        <a href="#meaning" className="text-[hsl(220_15%_40%)] text-sm hover:text-[hsl(220_20%_20%)] transition-colors">About</a>
         <a
           href="https://calendly.com/jonathan-telosmedia/discovery-call"
-          className="bg-primary text-primary-foreground font-semibold px-5 py-2 rounded-md text-[13px] hover:brightness-110 hover:-translate-y-px transition-all shadow-[0_4px_20px_hsl(var(--primary)/0.12)]"
+          className="bg-primary text-primary-foreground font-semibold px-5 py-2 rounded-md text-[13px] hover:brightness-110 hover:-translate-y-px transition-all shadow-[0_2px_12px_hsl(205_55%_65%/0.3)]"
         >
           BOOK NOW
         </a>
