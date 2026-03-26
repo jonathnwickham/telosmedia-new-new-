@@ -90,16 +90,6 @@ const Hero = () => {
             style={{ transformStyle: "preserve-3d" }}
           >
             <div className="hero-glass-card rounded-[2rem] w-[340px] sm:w-[380px]">
-              <div className="pointer-events-none absolute inset-x-[14%] top-0 h-px bg-[hsl(0_0%_100%/0.25)] blur-sm" />
-              {/* Browser-style top bar */}
-              <div
-                className="relative z-10 flex items-center gap-1.5 px-5 py-3 border-b border-[hsl(0_0%_100%/0.08)]"
-              >
-                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "hsl(2 88% 74% / 0.9)" }} />
-                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "hsl(42 96% 68% / 0.9)" }} />
-                <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "hsl(140 62% 66% / 0.9)" }} />
-                <span className="ml-3 text-[11px] text-muted-foreground font-medium tracking-wide">Telos Media</span>
-              </div>
               {/* 2×2 Stats Grid */}
               <div className="relative z-10 grid grid-cols-2">
                 {stats.map((stat, i) => (
@@ -108,10 +98,10 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: 0.5 + i * 0.12 }}
-                    className="px-5 sm:px-7 py-9 sm:py-10 text-center transition-all duration-300 hover:bg-[hsl(0_0%_100%/0.06)]"
+                    className="px-5 sm:px-7 py-8 sm:py-9 text-center transition-all duration-300 hover:bg-card-hover/40"
                     style={{
-                      borderRight: i % 2 === 0 ? "1px solid hsl(0 0% 100% / 0.08)" : "none",
-                      borderBottom: i < 2 ? "1px solid hsl(0 0% 100% / 0.07)" : "none",
+                      borderRight: i % 2 === 0 ? "1px solid hsl(var(--border))" : "none",
+                      borderBottom: i < 2 ? "1px solid hsl(var(--border))" : "none",
                     }}
                   >
                     <div className="text-[10px] sm:text-[11px] uppercase tracking-[2.8px] text-muted-foreground font-semibold mb-3">{stat.label}</div>
