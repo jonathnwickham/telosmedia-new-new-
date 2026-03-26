@@ -24,7 +24,7 @@ const PhoneMarquee = () => {
             key={i}
             src={src}
             alt={`Email Mockup ${i + 1}`}
-            className="h-[300px] sm:h-[360px] md:h-[480px] rounded-3xl border-2 border-[rgba(255,255,255,0.08)] shadow-[0_8px_40px_rgba(0,0,0,0.4)] flex-shrink-0 hover:scale-[1.04] hover:-translate-y-1.5 transition-transform duration-400"
+            className="h-[300px] sm:h-[360px] md:h-[480px] rounded-3xl border-2 border-border shadow-[0_8px_40px_rgba(0,0,0,0.08)] flex-shrink-0 hover:scale-[1.04] hover:-translate-y-1.5 transition-transform duration-400"
           />
         ))}
       </div>

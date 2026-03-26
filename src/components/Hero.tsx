@@ -20,7 +20,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 28 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-[clamp(36px,5.2vw,62px)] font-bold leading-[1.08] tracking-[-2px] max-w-[840px] mb-6"
+        className="text-[clamp(36px,5.2vw,62px)] font-bold leading-[1.08] tracking-[-2px] max-w-[840px] mb-6 text-foreground"
       >
         For brand owners ready for<br />
         <span className="gradient-text">next-level growth</span><br />
@@ -50,7 +50,7 @@ const Hero = () => {
         </a>
         <a
           href="mailto:jonathan@telosmedia.co"
-          className="inline-flex items-center gap-2 px-7 py-3 bg-transparent text-foreground border border-[hsl(var(--border-hover))] rounded-md text-[15px] font-medium hover:border-text-muted hover:bg-[rgba(255,255,255,0.03)] transition-all"
+          className="inline-flex items-center gap-2 px-7 py-3 bg-transparent text-foreground border border-border rounded-md text-[15px] font-medium hover:border-muted-foreground hover:bg-card transition-all"
         >
           Contact Us
         </a>
