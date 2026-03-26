@@ -83,7 +83,7 @@ const Services = () => {
                     key={j}
                     src={src}
                     alt={`${service.label} ${j + 1}`}
-                    className="h-[260px] sm:h-[320px] md:h-[420px] rounded-2xl border border-[rgba(255,255,255,0.06)] shadow-[0_6px_30px_rgba(0,0,0,0.3)] object-cover hover:scale-[1.03] transition-transform"
+                    className="h-[180px] sm:h-[220px] md:h-[280px] rounded-2xl border border-[rgba(255,255,255,0.06)] shadow-[0_6px_30px_rgba(0,0,0,0.3)] object-cover hover:scale-[1.03] transition-transform"
                   />
                 ))}
               </div>
