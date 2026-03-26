@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
 import flowCheckout from "@/assets/flow-checkout.png";
 import flowPostpurchase from "@/assets/flow-postpurchase.png";
-import campaignStats from "@/assets/campaign-stats.png";
 import campaignDesign from "@/assets/campaign-design.png";
-import dashboardSummary from "@/assets/dashboard-summary.png";
-import dashboardDetailed from "@/assets/dashboard-detailed.png";
 import emailDesignTrading from "@/assets/email-design-trading.png";
 
 const services = [
@@ -18,13 +15,16 @@ const services = [
     label: "Campaigns",
     title: "Generate engagement and increase your sales. Unmissable Campaigns.",
     desc: "We create campaigns with an incredible design and copy. Build a list of returning customers with offers, educational content and more.",
-    images: [campaignStats, campaignDesign],
+    images: [campaignDesign, emailDesignTrading],
   },
   {
     label: "Signup Forms",
     title: "Grow your email list. Grow your community. Grow your sales.",
     desc: "We design signup forms that work. Capture emails from your visitors and convert them into customers.",
-    images: [emailDesignTrading, dashboardSummary],
+    images: [
+      "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/65302099616c8bf92b06520d_%27Untitled%20Image%20(1)..png",
+      "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/68ca6ddbf76b18b20c6f8a72_Telos%20Media%20X%20Puro%20(4).png",
+    ],
   },
 ];
 
@@ -75,13 +75,13 @@ const Services = () => {
                   BOOK NOW →
                 </a>
               </div>
-              <div className={`flex gap-3 p-5 md:p-7 items-center justify-center bg-[rgba(0,0,0,0.2)] min-h-[280px] md:min-h-[380px] ${i % 2 === 1 ? "md:[direction:ltr]" : ""}`}>
+              <div className={`flex gap-4 p-6 md:p-8 items-center justify-center bg-[rgba(0,0,0,0.15)] min-h-[280px] md:min-h-[380px] ${i % 2 === 1 ? "md:[direction:ltr]" : ""}`}>
                 {service.images.map((src, j) => (
                   <img
                     key={j}
                     src={src}
                     alt={`${service.label} ${j + 1}`}
-                    className="h-[160px] sm:h-[200px] md:h-[240px] rounded-xl border border-[rgba(255,255,255,0.06)] shadow-[0_6px_30px_rgba(0,0,0,0.3)] object-contain hover:scale-[1.03] transition-transform"
+                    className="max-h-[150px] sm:max-h-[180px] md:max-h-[220px] max-w-[45%] rounded-xl border border-[rgba(255,255,255,0.06)] shadow-[0_6px_30px_rgba(0,0,0,0.3)] object-contain hover:scale-[1.03] transition-transform"
                   />
                 ))}
               </div>

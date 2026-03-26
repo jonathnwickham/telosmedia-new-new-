@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import PhoneMarquee from "@/components/PhoneMarquee";
 import StatBar from "@/components/StatBar";
 import Services from "@/components/Services";
+import Results from "@/components/Results";
 import Process from "@/components/Process";
 import Meaning from "@/components/Meaning";
 import CTA from "@/components/CTA";
