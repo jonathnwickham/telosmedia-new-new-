@@ -3,14 +3,14 @@ import { useEffect, useRef, useState } from "react";
 import LogoScroll from "./LogoScroll";
 
 const stats = [
-  { target: 33, prefix: "$", suffix: "M+", label: "Revenue Generated", duration: 2800 },
+  { target: 37, prefix: "$", suffix: "M+", label: "Revenue Generated", duration: 2800 },
   { target: 40, prefix: "", suffix: "+", label: "Clients Served", duration: 2200 },
   { target: 41, prefix: "", suffix: "%", label: "Avg Open Rate", duration: 2400 },
-  { target: 1, prefix: "", suffix: "M+", label: "Monthly Emails Sent", duration: 2000 },
+  { target: 6.7, prefix: "$", suffix: "M+", label: "Monthly Email Revenue", duration: 2000 },
 ];
 
 const AnimatedCounter = ({ target, prefix, suffix, duration }: { target: number; prefix: string; suffix: string; duration: number }) => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState("0");
   const ref = useRef<HTMLDivElement>(null);
   const started = useRef(false);
 
@@ -25,9 +25,11 @@ const AnimatedCounter = ({ target, prefix, suffix, duration }: { target: number;
           const ease = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
           const tick = (now: number) => {
             const progress = Math.min((now - start) / duration, 1);
-            setValue(Math.round(ease(progress) * target));
+            const current = ease(progress) * target;
+            const hasDecimal = target % 1 !== 0;
+            setValue(hasDecimal ? current.toFixed(1) : Math.round(current).toString());
             if (progress < 1) requestAnimationFrame(tick);
-            else setValue(target);
+            else setValue(hasDecimal ? target.toFixed(1) : target.toString());
           };
           requestAnimationFrame(tick);
         }
@@ -115,7 +117,7 @@ const Hero = () => {
           >
             ✦
           </motion.span>{" "}
-          $33M+ generated for our clients
+$37M+ generated for our clients
         </motion.div>
 
         <motion.h1
@@ -144,7 +146,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="text-[clamp(16px,1.8vw,19px)] text-muted-foreground max-w-[580px] mb-10 leading-relaxed mx-auto"
         >
-          Crafting emails that don't just "look nice" — they rake in revenue. With $33M+ generated for our clients!
+          Crafting emails that don't just "look nice" — they rake in revenue. With $37M+ generated for our clients!
         </motion.p>
 
         <motion.div
