@@ -67,37 +67,47 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Floating Stats Pane — right side, 2×2 grid */}
+        {/* Floating Stats Pane — 3D glass card with hover float */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
+          initial={{ opacity: 0, y: 40, rotateX: 10 }}
+          animate={{ opacity: 1, y: 0, rotateX: 0 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
           className="lg:flex-shrink-0 flex justify-center lg:justify-end"
+          style={{ perspective: "1200px" }}
         >
-          <div className="bg-card/40 backdrop-blur-2xl border border-border/60 rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.08)] overflow-hidden w-[340px]">
-            {/* Browser-style top bar */}
-            <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-border/40">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-              <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
-              <span className="ml-3 text-[11px] text-muted-foreground font-medium tracking-wide">Telos Media</span>
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            style={{
+              transform: "rotateY(-12deg) rotateX(6deg)",
+              transformStyle: "preserve-3d",
+            }}
+          >
+            <div className="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12),0_0_0_1px_rgba(255,255,255,0.1)_inset] overflow-hidden w-[340px]">
+              {/* Browser-style top bar */}
+              <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/10 bg-white/5">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
+                <span className="ml-3 text-[11px] text-muted-foreground font-medium tracking-wide">Telos Media</span>
+              </div>
+              {/* 2×2 Stats Grid */}
+              <div className="grid grid-cols-2">
+                {stats.map((stat, i) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: 0.45 + i * 0.1 }}
+                    className="px-5 py-6 text-center border border-white/5 hover:bg-white/10 transition-colors duration-200"
+                  >
+                    <div className="text-[10px] uppercase tracking-[1.5px] text-muted-foreground font-semibold mb-2">{stat.label}</div>
+                    <div className="text-2xl font-bold text-primary">{stat.value}</div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-            {/* 2×2 Stats Grid */}
-            <div className="grid grid-cols-2 gap-px bg-border/30">
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 0.45 + i * 0.1 }}
-                  className="px-5 py-6 text-center bg-card/30 backdrop-blur-xl hover:bg-card/60 transition-colors duration-200"
-                >
-                  <div className="text-[10px] uppercase tracking-[1.5px] text-muted-foreground font-semibold mb-2">{stat.label}</div>
-                  <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 
