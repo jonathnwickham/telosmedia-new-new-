@@ -14,7 +14,7 @@ const Hero = () => {
       {/* Glow */}
       <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] h-[700px] accent-glow opacity-60 pointer-events-none" />
 
-      <div className="max-w-[1140px] w-full mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
+      <div className="max-w-[1140px] w-full mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
         {/* Copy — left-aligned on desktop */}
         <div className="text-center lg:text-left max-w-[680px] lg:flex-1">
           <motion.div
@@ -88,30 +88,46 @@ const Hero = () => {
             style={{ transformStyle: "preserve-3d" }}
           >
             <div
-              className="rounded-2xl overflow-hidden w-[340px] border border-white/30"
+              className="rounded-2xl overflow-hidden w-[340px]"
               style={{
-                background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)",
-                backdropFilter: "blur(40px) saturate(1.4)",
-                WebkitBackdropFilter: "blur(40px) saturate(1.4)",
-                boxShadow: "0 30px 80px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.15) inset, 0 1px 0 rgba(255,255,255,0.2) inset",
+                background: "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)",
+                backdropFilter: "blur(60px) saturate(1.8)",
+                WebkitBackdropFilter: "blur(60px) saturate(1.8)",
+                border: "1px solid rgba(255,255,255,0.25)",
+                boxShadow:
+                  "0 40px 100px -20px rgba(0,0,0,0.25), 0 20px 60px -15px rgba(0,0,0,0.15), 0 0 0 0.5px rgba(255,255,255,0.3) inset, 0 1px 0 rgba(255,255,255,0.4) inset, 0 -1px 0 rgba(255,255,255,0.1) inset",
               }}
             >
+              {/* Gloss highlight */}
+              <div
+                className="absolute inset-0 rounded-2xl pointer-events-none"
+                style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(255,255,255,0.03) 100%)",
+                }}
+              />
               {/* Browser-style top bar */}
-              <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-white/10" style={{ background: "rgba(255,255,255,0.06)" }}>
-                <span className="w-2.5 h-2.5 rounded-full bg-red-400/90" />
-                <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/90" />
-                <span className="w-2.5 h-2.5 rounded-full bg-green-400/90" />
+              <div
+                className="relative flex items-center gap-1.5 px-4 py-2.5"
+                style={{
+                  borderBottom: "1px solid rgba(255,255,255,0.12)",
+                  background: "rgba(255,255,255,0.05)",
+                }}
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
                 <span className="ml-3 text-[11px] text-muted-foreground font-medium tracking-wide">Telos Media</span>
               </div>
               {/* 2×2 Stats Grid */}
-              <div className="grid grid-cols-2">
+              <div className="relative grid grid-cols-2">
                 {stats.map((stat, i) => (
                   <motion.div
                     key={stat.label}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: 0.5 + i * 0.12 }}
-                    className="px-5 py-7 text-center border border-white/[0.06] hover:bg-white/[0.08] transition-all duration-300"
+                    className="px-5 py-7 text-center transition-all duration-300 hover:bg-white/[0.06]"
+                    style={{ borderRight: i % 2 === 0 ? "1px solid rgba(255,255,255,0.08)" : "none", borderBottom: i < 2 ? "1px solid rgba(255,255,255,0.08)" : "none" }}
                   >
                     <div className="text-[10px] uppercase tracking-[1.5px] text-muted-foreground font-semibold mb-2">{stat.label}</div>
                     <div className="text-2xl font-bold text-primary">{stat.value}</div>
@@ -123,7 +139,8 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <div className="w-full mt-8">
+      <div className="w-full mt-16 relative">
+        <div className="absolute -top-16 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-background/40 pointer-events-none" />
         <LogoScroll />
       </div>
     </section>
