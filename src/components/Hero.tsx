@@ -181,23 +181,28 @@ $37M+ generated for our clients
         transition={{ duration: 0.9, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
         className="w-full max-w-[960px] mx-auto mt-16 relative z-10"
       >
-        <div className="grid grid-cols-4 gap-0 hero-glass-card rounded-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-0 hero-glass-card rounded-2xl">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="px-3 sm:px-6 py-5 sm:py-8 text-center transition-all duration-300 hover:bg-card-hover/40 relative"
+              className="px-6 py-4 md:py-8 flex md:flex-col items-center md:items-center justify-between md:justify-center text-center transition-all duration-300 hover:bg-card-hover/40 relative"
             >
+              {/* Vertical divider on desktop */}
               {i < 3 && (
-                <div className="absolute right-0 top-[20%] bottom-[20%] w-px bg-border" />
+                <div className="hidden md:block absolute right-0 top-[20%] bottom-[20%] w-px bg-border" />
               )}
-              <div className="text-[8px] sm:text-[11px] uppercase tracking-[1.5px] sm:tracking-[2.4px] text-muted-foreground font-semibold mb-1 sm:mb-2">
+              {/* Horizontal divider on mobile */}
+              {i < 3 && (
+                <div className="block md:hidden absolute bottom-0 left-[10%] right-[10%] h-px bg-border" />
+              )}
+              <div className="text-[11px] uppercase tracking-[2px] text-muted-foreground font-semibold md:mb-2 order-1 md:order-none">
                 {stat.label}
               </div>
               <motion.div
-                className="text-[1.1rem] sm:text-[2.1rem] leading-none font-bold text-primary drop-shadow-[0_4px_14px_hsl(var(--primary)/0.14)] tabular-nums"
+                className="text-[1.4rem] md:text-[2.1rem] leading-none font-bold text-primary drop-shadow-[0_4px_14px_hsl(var(--primary)/0.14)] tabular-nums order-2 md:order-none"
                 whileHover={{ scale: 1.08 }}
                 transition={{ type: "spring", stiffness: 400, damping: 15 }}
               >
