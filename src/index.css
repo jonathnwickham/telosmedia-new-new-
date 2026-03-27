@@ -94,6 +94,15 @@
   animation: scroll-logos 22s linear infinite;
 }
 
+@keyframes scroll-logos-reverse {
+  0% { transform: translateX(-33.33%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-logos-reverse {
+  animation: scroll-logos-reverse 25s linear infinite;
+}
+
 .animate-scroll-phones {
   animation: scroll-phones 40s linear infinite;
 }
