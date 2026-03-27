@@ -91,7 +91,7 @@
 }
 
 .animate-scroll-logos {
-  animation: scroll-logos 22s linear infinite;
+  animation: scroll-logos 45s linear infinite;
 }
 
 @keyframes scroll-logos-reverse {
@@ -100,7 +100,7 @@
 }
 
 .animate-scroll-logos-reverse {
-  animation: scroll-logos-reverse 25s linear infinite;
+  animation: scroll-logos-reverse 50s linear infinite;
 }
 
 .animate-scroll-phones {
