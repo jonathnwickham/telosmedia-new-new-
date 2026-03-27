@@ -50,7 +50,7 @@ const LogoScroll = () => {
             key={i}
             src={logo.src}
             alt={logo.alt}
-            className="h-8 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity mix-blend-screen"
+            className="h-8 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity mix-blend-multiply"
           />
         ))}
       </div>
