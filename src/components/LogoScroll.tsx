@@ -1,8 +1,24 @@
 import { motion } from "framer-motion";
+import axcLogo from "@/assets/logos/axc.jpg";
+import fullLogoWhite from "@/assets/logos/full-logo-white.jpg";
+import group1Logo from "@/assets/logos/group1.jpg";
+import playerProfitLogo from "@/assets/logos/player-profit.jpg";
+import retropiaLogo from "@/assets/logos/retropia.jpg";
+import playvoLogo from "@/assets/logos/playvo.jpg";
+import puroLogo from "@/assets/logos/puro.jpg";
+import tradingFundsLogo from "@/assets/logos/tradingfunds.jpg";
+import qtFundedLogo from "@/assets/logos/qtfunded.jpg";
 
-const brands = [
-  "Atlas Funded", "AquaFunded", "GFT", "FTUK", "TF8",
-  "AeroFunded", "GFF", "Solana Funded", "PlayerProfit", "Aqua Futures",
+const logos = [
+  { src: axcLogo, alt: "AXC" },
+  { src: fullLogoWhite, alt: "Full Logo" },
+  { src: group1Logo, alt: "Group 1" },
+  { src: playerProfitLogo, alt: "Player Profit" },
+  { src: retropiaLogo, alt: "Retropia" },
+  { src: playvoLogo, alt: "PlayVo" },
+  { src: puroLogo, alt: "PURO" },
+  { src: tradingFundsLogo, alt: "TradingFunds" },
+  { src: qtFundedLogo, alt: "QT Funded" },
 ];
 
 const LogoScroll = () => {
@@ -16,14 +32,14 @@ const LogoScroll = () => {
       <p className="text-center text-xs text-text-muted uppercase tracking-[2.5px] mb-6">
         Trusted by growing brands worldwide
       </p>
-      <div className="flex gap-14 animate-scroll-logos w-max">
-        {[...brands, ...brands].map((brand, i) => (
-          <span
+      <div className="flex items-center gap-14 animate-scroll-logos w-max">
+        {[...logos, ...logos].map((logo, i) => (
+          <img
             key={i}
-            className="text-base font-semibold text-text-muted whitespace-nowrap opacity-50 hover:opacity-80 transition-opacity"
-          >
-            {brand}
-          </span>
+            src={logo.src}
+            alt={logo.alt}
+            className="h-8 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity"
+          />
         ))}
       </div>
     </motion.div>
