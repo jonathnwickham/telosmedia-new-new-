@@ -42,36 +42,43 @@ const row2 = logos.slice(9);
 
 const LogoScroll = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 28 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.4 }}
-      className="w-full bg-[hsl(220,20%,18%)] py-10 overflow-hidden flex flex-col gap-8"
-    >
-      <p className="text-center text-xs text-primary-foreground/50 uppercase tracking-[2.5px]">
-        Trusted by growing brands worldwide
-      </p>
-      <div className="flex items-center gap-16 animate-scroll-logos w-max">
-        {[...row1, ...row1, ...row1].map((logo, i) => (
-          <img
-            key={i}
-            src={logo.src}
-            alt={logo.alt}
-            className="h-7 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert"
-          />
-        ))}
-      </div>
-      <div className="flex items-center gap-16 animate-scroll-logos-reverse w-max">
-        {[...row2, ...row2, ...row2].map((logo, i) => (
-          <img
-            key={i}
-            src={logo.src}
-            alt={logo.alt}
-            className="h-7 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert"
-          />
-        ))}
-      </div>
-    </motion.div>
+    <div className="relative w-full">
+      {/* Top gradient fade */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none" />
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
+
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="w-full bg-primary/10 py-14 overflow-hidden flex flex-col gap-8"
+      >
+        <p className="text-center text-xs text-muted-foreground uppercase tracking-[2.5px]">
+          Trusted by growing brands worldwide
+        </p>
+        <div className="flex items-center gap-16 animate-scroll-logos w-max">
+          {[...row1, ...row1, ...row1].map((logo, i) => (
+            <img
+              key={i}
+              src={logo.src}
+              alt={logo.alt}
+              className="h-7 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity"
+            />
+          ))}
+        </div>
+        <div className="flex items-center gap-16 animate-scroll-logos-reverse w-max">
+          {[...row2, ...row2, ...row2].map((logo, i) => (
+            <img
+              key={i}
+              src={logo.src}
+              alt={logo.alt}
+              className="h-7 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity"
+            />
+          ))}
+        </div>
+      </motion.div>
+    </div>
   );
 };
 
