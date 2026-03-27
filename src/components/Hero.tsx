@@ -213,10 +213,6 @@ $37M+ generated for our clients
         </div>
       </motion.div>
 
-      <div className="w-full mt-14 relative">
-        <div className="absolute -top-14 left-0 right-0 h-14 bg-gradient-to-b from-transparent to-background/40 pointer-events-none" />
-        <LogoScroll />
-      </div>
     </section>
   );
 };
