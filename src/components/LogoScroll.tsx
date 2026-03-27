@@ -1,23 +1,23 @@
 import { motion } from "framer-motion";
-import axcLogo from "@/assets/logos/axc.jpg";
-import fullLogoWhite from "@/assets/logos/full-logo-white.jpg";
-import group1Logo from "@/assets/logos/group1.jpg";
+import axcLogo from "@/assets/logos/axc.png";
+import telosLogo from "@/assets/logos/telos.png";
+import group1Logo from "@/assets/logos/group1.png";
 import playerProfitLogo from "@/assets/logos/player-profit.jpg";
 import retropiaLogo from "@/assets/logos/retropia.jpg";
 import playvoLogo from "@/assets/logos/playvo.jpg";
-import puroLogo from "@/assets/logos/puro.jpg";
-import tradingFundsLogo from "@/assets/logos/tradingfunds.jpg";
-import qtFundedLogo from "@/assets/logos/qtfunded.jpg";
+import puroLogo from "@/assets/logos/puro.png";
+import tradingFundsLogo from "@/assets/logos/tradingfunds.png";
+import qtFundedLogo from "@/assets/logos/qtfunded.png";
 import keepsLogo from "@/assets/logos/keeps.jpg";
 import atlasFundedLogo from "@/assets/logos/atlas-funded.jpg";
-import logo2 from "@/assets/logos/logo2.jpg";
-import logo3 from "@/assets/logos/logo3.jpg";
-import logo4 from "@/assets/logos/logo4.jpg";
+import logo2 from "@/assets/logos/logo2.png";
+import logo3 from "@/assets/logos/logo3.png";
+import image6Logo from "@/assets/logos/image-6.png";
 import aquafundedLogo from "@/assets/logos/aquafunded.jpg";
 
 const logos = [
   { src: axcLogo, alt: "AXC" },
-  { src: fullLogoWhite, alt: "Client Logo" },
+  { src: telosLogo, alt: "Telos Media" },
   { src: group1Logo, alt: "Client Logo" },
   { src: playerProfitLogo, alt: "Player Profit" },
   { src: retropiaLogo, alt: "Retropia" },
@@ -29,7 +29,7 @@ const logos = [
   { src: atlasFundedLogo, alt: "Atlas Funded" },
   { src: logo2, alt: "Client Logo" },
   { src: logo3, alt: "Client Logo" },
-  { src: logo4, alt: "Client Logo" },
+  { src: image6Logo, alt: "Client Logo" },
   { src: aquafundedLogo, alt: "AquaFunded" },
 ];
 
@@ -50,7 +50,7 @@ const LogoScroll = () => {
             key={i}
             src={logo.src}
             alt={logo.alt}
-            className="h-8 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity mix-blend-multiply"
+            className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
           />
         ))}
       </div>
