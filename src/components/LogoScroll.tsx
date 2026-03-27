@@ -63,7 +63,7 @@ const LogoScroll = () => {
               key={i}
               src={logo.src}
               alt={logo.alt}
-              className="h-7 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity"
+              className="h-7 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
             />
           ))}
         </div>
@@ -73,7 +73,7 @@ const LogoScroll = () => {
               key={i}
               src={logo.src}
               alt={logo.alt}
-              className="h-7 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity"
+              className="h-7 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
             />
           ))}
         </div>
