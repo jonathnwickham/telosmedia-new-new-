@@ -9,7 +9,7 @@ const phoneImages = [
 
 const PhoneMarquee = () => {
   return (
-    <div className="py-[72px] overflow-hidden bg-surface border-y border-border relative">
+    <div className="py-12 overflow-hidden bg-surface border-y border-border relative">
       {/* Edge fades */}
       <div className="absolute top-0 bottom-0 left-0 w-[120px] z-10 bg-gradient-to-r from-surface to-transparent pointer-events-none" />
       <div className="absolute top-0 bottom-0 right-0 w-[120px] z-10 bg-gradient-to-l from-surface to-transparent pointer-events-none" />

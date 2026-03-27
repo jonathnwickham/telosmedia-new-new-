@@ -60,7 +60,7 @@ const floatingStars = [
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-36 pb-20 relative overflow-hidden">
+    <section className="min-h-[85vh] flex flex-col items-center justify-center px-6 pt-28 pb-12 relative overflow-hidden">
       {/* Vibrant multi-layer glow */}
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1200px] h-[900px] pointer-events-none"
         style={{
