@@ -37,24 +37,37 @@ const logos = [
   { src: image6Logo, alt: "Client Logo" },
 ];
 
+const row1 = logos.slice(0, 9);
+const row2 = logos.slice(9);
+
 const LogoScroll = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 28 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
-      className="w-full bg-foreground py-10 overflow-hidden"
+      className="w-full bg-foreground py-10 overflow-hidden flex flex-col gap-8"
     >
-      <p className="text-center text-xs text-primary-foreground/50 uppercase tracking-[2.5px] mb-6">
+      <p className="text-center text-xs text-primary-foreground/50 uppercase tracking-[2.5px]">
         Trusted by growing brands worldwide
       </p>
-      <div className="flex items-center gap-14 animate-scroll-logos w-max">
-        {[...logos, ...logos].map((logo, i) => (
+      <div className="flex items-center gap-16 animate-scroll-logos w-max">
+        {[...row1, ...row1, ...row1].map((logo, i) => (
           <img
             key={i}
             src={logo.src}
             alt={logo.alt}
-            className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert"
+            className="h-7 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert"
+          />
+        ))}
+      </div>
+      <div className="flex items-center gap-16 animate-scroll-logos-reverse w-max">
+        {[...row2, ...row2, ...row2].map((logo, i) => (
+          <img
+            key={i}
+            src={logo.src}
+            alt={logo.alt}
+            className="h-7 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert"
           />
         ))}
       </div>
