@@ -8,17 +8,29 @@ import playvoLogo from "@/assets/logos/playvo.jpg";
 import puroLogo from "@/assets/logos/puro.jpg";
 import tradingFundsLogo from "@/assets/logos/tradingfunds.jpg";
 import qtFundedLogo from "@/assets/logos/qtfunded.jpg";
+import keepsLogo from "@/assets/logos/keeps.jpg";
+import atlasFundedLogo from "@/assets/logos/atlas-funded.jpg";
+import logo2 from "@/assets/logos/logo2.jpg";
+import logo3 from "@/assets/logos/logo3.jpg";
+import logo4 from "@/assets/logos/logo4.jpg";
+import aquafundedLogo from "@/assets/logos/aquafunded.jpg";
 
 const logos = [
   { src: axcLogo, alt: "AXC" },
-  { src: fullLogoWhite, alt: "Full Logo" },
-  { src: group1Logo, alt: "Group 1" },
+  { src: fullLogoWhite, alt: "Client Logo" },
+  { src: group1Logo, alt: "Client Logo" },
   { src: playerProfitLogo, alt: "Player Profit" },
   { src: retropiaLogo, alt: "Retropia" },
   { src: playvoLogo, alt: "PlayVo" },
   { src: puroLogo, alt: "PURO" },
   { src: tradingFundsLogo, alt: "TradingFunds" },
   { src: qtFundedLogo, alt: "QT Funded" },
+  { src: keepsLogo, alt: "Keeps" },
+  { src: atlasFundedLogo, alt: "Atlas Funded" },
+  { src: logo2, alt: "Client Logo" },
+  { src: logo3, alt: "Client Logo" },
+  { src: logo4, alt: "Client Logo" },
+  { src: aquafundedLogo, alt: "AquaFunded" },
 ];
 
 const LogoScroll = () => {
