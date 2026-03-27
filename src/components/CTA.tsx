@@ -1,6 +1,6 @@
 const CTA = () => {
   return (
-    <section id="cta" className="text-center py-28 px-6 relative">
+    <section id="cta" className="text-center py-16 px-6 relative">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] accent-glow-bottom opacity-40 pointer-events-none" />
       <h2 className="text-[clamp(34px,5vw,56px)] font-bold tracking-[-2px] leading-[1.1] mb-4 relative text-foreground">
         Schedule a call.<br />Time to get excited.
