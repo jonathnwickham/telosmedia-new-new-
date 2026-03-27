@@ -6,7 +6,7 @@ const stats = [
   { target: 37, prefix: "$", suffix: "M+", label: "Revenue Generated", duration: 2800 },
   { target: 40, prefix: "", suffix: "+", label: "Clients Served", duration: 2200 },
   { target: 41, prefix: "", suffix: "%", label: "Avg Open Rate", duration: 2400 },
-  { target: 6.7, prefix: "", suffix: "M+", label: "Emails Sent Monthly", duration: 2000 },
+  { target: 6.5, prefix: "", suffix: "M+", label: "Emails Sent Monthly", duration: 2000 },
 ];
 
 const AnimatedCounter = ({ target, prefix, suffix, duration }: { target: number; prefix: string; suffix: string; duration: number }) => {
