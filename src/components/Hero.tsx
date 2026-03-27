@@ -146,7 +146,7 @@ $37M+ generated for our clients
           transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="text-[clamp(16px,1.8vw,19px)] text-muted-foreground max-w-[580px] mb-10 leading-relaxed mx-auto"
         >
-          Crafting emails that don't just "look nice" — they rake in revenue. With $37M+ generated for our clients!
+          Crafting emails that don't just "look nice" they rake in revenue.
         </motion.p>
 
         <motion.div
