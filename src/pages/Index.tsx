@@ -17,11 +17,11 @@ const Index = () => {
     <>
       <Navbar />
       <Hero />
-      <LogoScroll />
       <PhoneMarquee />
       
       <Services />
       <Results />
+      <LogoScroll />
       <Process />
       <Explainer />
       <Testimonials />
