@@ -43,10 +43,6 @@ const row2 = logos.slice(9);
 const LogoScroll = () => {
   return (
     <div className="relative w-full">
-      {/* Top gradient fade */}
-      <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none" />
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 28 }}
