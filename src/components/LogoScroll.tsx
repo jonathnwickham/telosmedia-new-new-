@@ -2,18 +2,20 @@ import { motion } from "framer-motion";
 import axcLogo from "@/assets/logos/axc.png";
 import telosLogo from "@/assets/logos/telos.png";
 import group1Logo from "@/assets/logos/group1.png";
-import playerProfitLogo from "@/assets/logos/player-profit.jpg";
-import retropiaLogo from "@/assets/logos/retropia.jpg";
-import playvoLogo from "@/assets/logos/playvo.jpg";
+import playerProfitLogo from "@/assets/logos/player-profit.png";
+import retropiaLogo from "@/assets/logos/retropia.png";
+import playvoLogo from "@/assets/logos/playvo.png";
 import puroLogo from "@/assets/logos/puro.png";
 import tradingFundsLogo from "@/assets/logos/tradingfunds.png";
 import qtFundedLogo from "@/assets/logos/qtfunded.png";
-import keepsLogo from "@/assets/logos/keeps.jpg";
-import atlasFundedLogo from "@/assets/logos/atlas-funded.jpg";
+import keepsLogo from "@/assets/logos/keeps.png";
+import atlasFundedLogo from "@/assets/logos/atlas-funded.png";
 import logo2 from "@/assets/logos/logo2.png";
 import logo3 from "@/assets/logos/logo3.png";
+import logo4 from "@/assets/logos/logo4.png";
+import aquafundedLogo from "@/assets/logos/aquafunded.png";
+import fullLogoWhite from "@/assets/logos/full-logo-white.png";
 import image6Logo from "@/assets/logos/image-6.png";
-import aquafundedLogo from "@/assets/logos/aquafunded.jpg";
 
 const logos = [
   { src: axcLogo, alt: "AXC" },
@@ -29,8 +31,10 @@ const logos = [
   { src: atlasFundedLogo, alt: "Atlas Funded" },
   { src: logo2, alt: "Client Logo" },
   { src: logo3, alt: "Client Logo" },
-  { src: image6Logo, alt: "Client Logo" },
+  { src: logo4, alt: "Client Logo" },
   { src: aquafundedLogo, alt: "AquaFunded" },
+  { src: fullLogoWhite, alt: "Client Logo" },
+  { src: image6Logo, alt: "Client Logo" },
 ];
 
 const LogoScroll = () => {
