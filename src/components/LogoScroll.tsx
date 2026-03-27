@@ -43,9 +43,9 @@ const LogoScroll = () => {
       initial={{ opacity: 0, y: 28 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
-      className="w-full overflow-hidden"
+      className="w-full bg-foreground py-10 overflow-hidden"
     >
-      <p className="text-center text-xs text-text-muted uppercase tracking-[2.5px] mb-6">
+      <p className="text-center text-xs text-primary-foreground/50 uppercase tracking-[2.5px] mb-6">
         Trusted by growing brands worldwide
       </p>
       <div className="flex items-center gap-14 animate-scroll-logos w-max">
@@ -54,7 +54,7 @@ const LogoScroll = () => {
             key={i}
             src={logo.src}
             alt={logo.alt}
-            className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+            className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity brightness-0 invert"
           />
         ))}
       </div>
