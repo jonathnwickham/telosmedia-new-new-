@@ -8,7 +8,7 @@ const fadeIn = {
 
 const Explainer = () => {
   return (
-    <section className="py-28 px-6">
+    <section className="py-16 px-6">
       <div className="max-w-[900px] mx-auto text-center">
         <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-40px" }}>
           <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border bg-card text-xs text-primary uppercase tracking-[1.5px] font-semibold mb-5">
