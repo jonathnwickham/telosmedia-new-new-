@@ -31,8 +31,10 @@ const logos: Logo[] = [
 ];
 
 const half = Math.ceil(logos.length / 2);
-const row1 = [...logos, ...logos];
-const row2 = [...logos.slice(half), ...logos.slice(0, half), ...logos.slice(half), ...logos.slice(0, half)];
+const rowA = logos.slice(0, half);
+const rowB = logos.slice(half);
+const row1 = [...rowA, ...rowA];
+const row2 = [...rowB, ...rowB];
 
 const LogoScroll = () => {
   return (
