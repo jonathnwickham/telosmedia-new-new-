@@ -10,7 +10,7 @@ const steps = [
     num: "01",
     title: "Audit",
     time: "1–4 days",
-    desc: "We carry out a full Klaviyo (or Omnisend / Brevo) audit. We learn your customer base, segment by behavior, and identify the leaks.",
+    desc: "We carry out a full ESP audit, going through your account, learning your customers, and giving you back something you can honestly build anything from.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <circle cx="11" cy="11" r="7" />
@@ -22,7 +22,7 @@ const steps = [
     num: "02",
     title: "Planning",
     time: "5–9 days",
-    desc: "Knowing your customers, we build a monthly campaign plan, develop the necessary automation flows, and design sign-up forms that grow your list.",
+    desc: "Knowing your customers, we plan who's going to be opening your emails, engaging with your site, and receiving the right flow at the right moment. Monthly campaign plan, automation flows, and sign-up forms, all built around your list.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <rect x="3" y="4" width="18" height="18" rx="2" />
@@ -36,7 +36,7 @@ const steps = [
     num: "03",
     title: "Launch",
     time: "Ongoing",
-    desc: "Designs ship, flows go live, A/B tests start running. We maintain the system and report against revenue, every week.",
+    desc: "With the plan in place, we create the designs and the copy, and make sure you're happy before anything ships. Once emails start sending, we keep everything running its best, including A/B tests on pop-ups and forms.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
@@ -50,7 +50,7 @@ const steps = [
     num: "04",
     title: "Monthly Overviews",
     time: "1–2 days / mo",
-    desc: "Monthly reports tied to revenue. We surface what's working, what isn't, and what we're shipping next.",
+    desc: "You receive a monthly report going over results, plans for next month, and a full sweep of every part of the account. Nothing slips through.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <line x1="18" y1="20" x2="18" y2="10" />
