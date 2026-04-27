@@ -169,15 +169,6 @@ const Hero = () => {
           </a>
         </motion.div>
 
-        {/* Trust line */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.4, ease }}
-          className="mt-8 text-[12px] uppercase tracking-[0.18em] text-muted-foreground/80"
-        >
-          Trusted by 40+ brands · $37M+ generated
-        </motion.div>
       </div>
 
       {/* Showcase image */}
