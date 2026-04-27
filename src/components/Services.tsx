@@ -174,7 +174,7 @@ const Services = () => {
                 "0 10px 28px -8px hsl(215 90% 50% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
             }}
           >
-            See if we're a fit
+            Get your free audit
             <span className="transition-transform group-hover:translate-x-0.5">→</span>
           </a>
         </motion.div>
