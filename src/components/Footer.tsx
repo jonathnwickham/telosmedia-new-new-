@@ -1,22 +1,37 @@
+import rocket from "@/assets/rocket.png";
+
 const Footer = () => {
   return (
-    <footer className="border-t border-border py-12 px-6 bg-surface">
-      <div className="max-w-[1140px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-6 text-center sm:text-left">
-        <div className="flex flex-col gap-2">
-          <a href="#" className="flex items-center gap-2.5 text-foreground no-underline font-bold text-lg">
-            <div className="w-[30px] h-[30px] bg-gradient-to-br from-primary to-[hsl(var(--gradient-end))] rounded-[7px] flex items-center justify-center text-sm font-bold text-primary-foreground">
-              T
-            </div>
-            Telos Media
+    <footer className="border-t border-border/60 bg-white px-6 py-14">
+      <div className="mx-auto flex max-w-[1140px] flex-col items-center justify-between gap-8 sm:flex-row sm:items-start">
+        <div className="flex flex-col items-center gap-3 sm:items-start">
+          <a href="#" className="flex items-center gap-3 text-foreground no-underline">
+            <img src={rocket} alt="" className="h-8 w-8 object-contain" />
+            <span className="text-[18px] font-semibold tracking-[-0.02em]">Telos Media</span>
           </a>
-          <div className="text-[13px] text-muted-foreground">Copyright © 2023. Telos Media. All rights reserved.</div>
+          <div className="text-[13px] text-muted-foreground">
+            © {new Date().getFullYear()} Telos Media. All rights reserved.
+          </div>
         </div>
-        <div className="flex gap-6 flex-wrap justify-center">
-          <a href="mailto:jonathan@telosmedia.co" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-            Contact us via Email
+
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-[14px] sm:justify-end">
+          <a href="#services" className="text-muted-foreground transition-colors hover:text-foreground">
+            Services
           </a>
-          <a href="https://calendly.com/jonathan-telosmedia/discovery-call" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-            Book a Call
+          <a href="#results" className="text-muted-foreground transition-colors hover:text-foreground">
+            Results
+          </a>
+          <a href="#process" className="text-muted-foreground transition-colors hover:text-foreground">
+            Process
+          </a>
+          <a href="#faq" className="text-muted-foreground transition-colors hover:text-foreground">
+            FAQ
+          </a>
+          <a
+            href="mailto:jonathan@telosmedia.co"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            jonathan@telosmedia.co
           </a>
         </div>
       </div>
