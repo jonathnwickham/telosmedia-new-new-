@@ -181,8 +181,8 @@
 }
 
 .logo-mark {
-  filter: brightness(0) saturate(100%);
-  opacity: 0.55;
+  filter: grayscale(100%) contrast(0.85);
+  opacity: 0.85;
 }
 
 .logo-color {
