@@ -5,8 +5,7 @@ const links = [
   { href: "#services", label: "Services" },
   { href: "#results", label: "Results" },
   { href: "#process", label: "Process" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#meaning", label: "About" },
+  { href: "#faq", label: "FAQs" },
 ];
 
 const ctaGradient =
