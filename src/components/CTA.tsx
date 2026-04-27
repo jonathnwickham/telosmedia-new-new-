@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 const fits = [
-  "Brands doing $1M+ that feel email is leaking revenue",
-  "Founders who want a partner, not another vendor",
-  "Teams sick of agencies that promise the world and ship templates",
-  "Operators who want to maximize LTV, not just blast more sends",
-  "Brands ready for a real Klaviyo, Omnisend, or Brevo partner",
+  "You're doing $1M+ and you know your email channel can do more",
+  "You've worked with agencies that ship recycled templates and call it strategy",
+  "Your deliverability or sender reputation has slipped and nobody internally can fix it",
+  "You want a partner who treats email like a revenue channel, not a checkbox",
+  "You're on Klaviyo or Omnisend and want an operator who lives in it daily",
 ];
 
 const CTA = () => {
@@ -97,13 +97,6 @@ const CTA = () => {
                 ))}
               </ul>
 
-              <div className="mt-8 rounded-2xl border border-white/60 bg-white/40 p-4 text-[13px] leading-[1.5] text-muted-foreground">
-                <span className="font-semibold text-foreground">
-                  Not the right fit if:
-                </span>{" "}
-                you're pre-revenue, you want a one-time email design, or you're
-                shopping the cheapest agency. We'll save us both the call.
-              </div>
             </div>
           </motion.div>
 

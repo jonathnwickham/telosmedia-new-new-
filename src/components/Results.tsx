@@ -55,7 +55,7 @@ const caseStudies = [
 
 const Results = () => {
   return (
-    <section id="results" className="relative px-6 py-24 md:py-32">
+    <section id="results" className="relative px-6 pt-16 pb-24 md:pt-20 md:pb-32">
       {/* Soft blue ambient */}
       <div
         aria-hidden

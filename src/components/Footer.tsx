@@ -1,13 +1,12 @@
-import rocket from "@/assets/rocket.png";
+import telosLogo from "@/assets/telos-logo.png";
 
 const Footer = () => {
   return (
     <footer className="border-t border-border/60 bg-white px-6 py-14">
       <div className="mx-auto flex max-w-[1140px] flex-col items-center justify-between gap-8 sm:flex-row sm:items-start">
         <div className="flex flex-col items-center gap-3 sm:items-start">
-          <a href="#" className="flex items-center gap-3 text-foreground no-underline">
-            <img src={rocket} alt="" className="h-8 w-8 object-contain" />
-            <span className="text-[18px] font-semibold tracking-[-0.02em]">Telos Media</span>
+          <a href="#" className="flex items-center text-foreground no-underline">
+            <img src={telosLogo} alt="Telos Media" className="h-8 w-auto object-contain" />
           </a>
           <div className="text-[13px] text-muted-foreground">
             © {new Date().getFullYear()} Telos Media. All rights reserved.

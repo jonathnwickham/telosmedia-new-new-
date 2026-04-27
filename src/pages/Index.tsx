@@ -8,10 +8,9 @@ import Services from "@/components/Services";
 import Results from "@/components/Results";
 import Process from "@/components/Process";
 import Explainer from "@/components/Explainer";
-import Testimonials from "@/components/Testimonials";
-import Meaning from "@/components/Meaning";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
+import TelosMeaning from "@/components/TelosMeaning";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -20,17 +19,16 @@ const Index = () => {
       <Navbar />
       <Hero />
       <LogoScroll />
-      <Partners />
       <PhoneMarquee />
 
       <Services />
+      <Partners />
       <Results />
       <Process />
-      <Explainer />
-      <Testimonials />
-      <Meaning />
       <FAQ />
       <CTA />
+      <Explainer />
+      <TelosMeaning />
       <Footer />
     </>
   );

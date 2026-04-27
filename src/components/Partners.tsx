@@ -13,52 +13,30 @@ const partners = [
 
 const Partners = () => {
   return (
-    <section className="relative px-6 py-20">
-      <div className="mx-auto max-w-[1080px]">
+    <section className="relative border-y border-border/60 bg-muted/30 px-6 py-8">
+      <div className="mx-auto max-w-[920px]">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center"
+          className="flex flex-col items-center gap-6"
         >
-          <div className="text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
-            Built on the platforms you already trust
+          <div className="text-center text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
+            Certified on the platforms you already use
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="glass-card grain mt-8 grid grid-cols-2 divide-x divide-y divide-white/50 overflow-hidden rounded-3xl md:grid-cols-4 md:divide-y-0"
-        >
-          {partners.map((p) => (
-            <div
-              key={p.name}
-              className="relative z-10 flex h-[120px] items-center justify-center px-6 transition-colors hover:bg-white/40"
-            >
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+            {partners.map((p) => (
               <img
+                key={p.name}
                 src={p.src}
                 alt={p.name}
                 style={{ height: `${p.height}px` }}
-                className="w-auto max-w-[140px] object-contain opacity-80 transition-opacity hover:opacity-100"
+                className="w-auto max-w-[120px] object-contain opacity-70 transition-opacity hover:opacity-100"
               />
-            </div>
-          ))}
+            ))}
+          </div>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="mt-8 text-center text-[14px] leading-relaxed text-muted-foreground"
-        >
-          Certified partners. Deep stack expertise. We integrate cleanly with what
-          you already run. No migrations, no rebuilds.
-        </motion.p>
       </div>
     </section>
   );

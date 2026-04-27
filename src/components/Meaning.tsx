@@ -40,7 +40,6 @@ const Meaning = () => {
                   alt="Jonathan Wickham"
                   className="aspect-[4/5] w-full object-cover"
                 />
-                {/* Subtle bottom gradient for premium edge */}
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
               <div>
@@ -94,28 +93,6 @@ const Meaning = () => {
           </div>
         </motion.div>
 
-        {/* Telos meaning — kept but downgraded */}
-        <motion.div
-          variants={fadeIn}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-40px" }}
-          className="mt-14 text-center"
-        >
-          <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Why Telos
-          </div>
-          <div className="mx-auto mt-4 max-w-[680px]">
-            <span className="gradient-text text-[clamp(40px,6vw,68px)] font-semibold tracking-[-0.04em]">
-              τέλος
-            </span>
-            <p className="mt-4 text-[15px] leading-[1.7] text-muted-foreground">
-              In Aristotle's philosophy, <em>telos</em> is the state in which a thing's
-              nature is fulfilled, when it's fully in act. That's how we think about
-              your email channel.
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

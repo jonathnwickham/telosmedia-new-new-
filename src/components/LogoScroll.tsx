@@ -16,20 +16,30 @@ import logo4 from "@/assets/logos/logo4.png";
 import aquafundedLogo from "@/assets/logos/aquafunded.png";
 import fullLogoWhite from "@/assets/logos/full-logo-white.png";
 import image6Logo from "@/assets/logos/image-6.png";
+import ftukLogo from "@/assets/logos/ftuk.svg";
+import aerofundedLogo from "@/assets/logos/aerofunded.svg";
+import solanaFundedLogo from "@/assets/logos/solana-funded-new.png";
+import gffLogo from "@/assets/logos/gff.png";
 
-const logos = [
+type Logo = { src: string; alt: string; keepColor?: boolean };
+
+const logos: Logo[] = [
   { src: axcLogo, alt: "AXC" },
   { src: telosLogo, alt: "Telos Media" },
   { src: group1Logo, alt: "Client Logo" },
   { src: playerProfitLogo, alt: "Player Profit" },
   { src: retropiaLogo, alt: "Retropia" },
-  { src: playvoLogo, alt: "PlayVo" },
   { src: puroLogo, alt: "PURO" },
   { src: tradingFundsLogo, alt: "TradingFunds" },
+  { src: playvoLogo, alt: "PlayVo" },
   { src: qtFundedLogo, alt: "QT Funded" },
+  { src: ftukLogo, alt: "FTUK" },
   { src: keepsLogo, alt: "Keeps" },
+  { src: aerofundedLogo, alt: "AeroFunded" },
   { src: atlasFundedLogo, alt: "Atlas Funded" },
+  { src: solanaFundedLogo, alt: "Solana Funded" },
   { src: logo2, alt: "Client Logo" },
+  { src: gffLogo, alt: "Goat Funded Futures", keepColor: true },
   { src: logo3, alt: "Client Logo" },
   { src: logo4, alt: "Client Logo" },
   { src: aquafundedLogo, alt: "AquaFunded" },
@@ -37,8 +47,9 @@ const logos = [
   { src: image6Logo, alt: "Client Logo" },
 ];
 
-const row1 = logos.slice(0, 9);
-const row2 = logos.slice(9);
+const half = Math.ceil(logos.length / 2);
+const row1 = logos.slice(0, half);
+const row2 = logos.slice(half);
 
 const LogoScroll = () => {
   return (
@@ -57,31 +68,61 @@ const LogoScroll = () => {
         <p className="text-center text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
           Trusted by growing brands worldwide
         </p>
-        <div className="flex items-center gap-20 animate-scroll-logos w-max">
-          {[...row1, ...row1, ...row1].map((logo, i) => (
-            <img
-              key={i}
-              src={logo.src}
-              alt={logo.alt}
-              className="h-8 w-auto object-contain opacity-50 transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-              style={{ filter: "brightness(0) saturate(100%)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.filter = "none")}
-              onMouseLeave={(e) => (e.currentTarget.style.filter = "brightness(0) saturate(100%)")}
-            />
-          ))}
+        <div className="flex w-max animate-scroll-logos">
+          <ul className="flex shrink-0 items-center gap-20 pr-20">
+            {row1.map((logo, i) => (
+              <li key={`a-${i}`} className="shrink-0">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  draggable={false}
+                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} h-8 max-h-8 w-auto object-contain`}
+                />
+              </li>
+            ))}
+          </ul>
+          <ul className="flex shrink-0 items-center gap-20 pr-20" aria-hidden="true">
+            {row1.map((logo, i) => (
+              <li key={`b-${i}`} className="shrink-0">
+                <img
+                  src={logo.src}
+                  alt=""
+                  loading="lazy"
+                  draggable={false}
+                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} h-8 max-h-8 w-auto object-contain`}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="flex items-center gap-20 animate-scroll-logos-reverse w-max">
-          {[...row2, ...row2, ...row2].map((logo, i) => (
-            <img
-              key={i}
-              src={logo.src}
-              alt={logo.alt}
-              className="h-8 w-auto object-contain opacity-60 transition-all duration-300 hover:opacity-100"
-              style={{ filter: "brightness(0) saturate(100%)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.filter = "none")}
-              onMouseLeave={(e) => (e.currentTarget.style.filter = "brightness(0) saturate(100%)")}
-            />
-          ))}
+        <div className="flex w-max animate-scroll-logos-reverse">
+          <ul className="flex shrink-0 items-center gap-20 pr-20">
+            {row2.map((logo, i) => (
+              <li key={`a-${i}`} className="shrink-0">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  draggable={false}
+                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} h-8 max-h-8 w-auto object-contain`}
+                />
+              </li>
+            ))}
+          </ul>
+          <ul className="flex shrink-0 items-center gap-20 pr-20" aria-hidden="true">
+            {row2.map((logo, i) => (
+              <li key={`b-${i}`} className="shrink-0">
+                <img
+                  src={logo.src}
+                  alt=""
+                  loading="lazy"
+                  draggable={false}
+                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} h-8 max-h-8 w-auto object-contain`}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
       </motion.div>
     </div>

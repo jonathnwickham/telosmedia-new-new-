@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import dashboardDetailed from "@/assets/dashboard-detailed.png";
+import heroRocket from "@/assets/hero-rocket.png";
 
 const stats = [
   { target: 37, prefix: "$", suffix: "M+", label: "Revenue generated", duration: 2200 },
@@ -51,7 +51,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden px-6 pt-32 pb-24 md:pt-40 md:pb-32">
+    <section className="relative overflow-hidden px-6 pt-32 pb-12 md:pt-40 md:pb-16">
       {/* Blue aurora backdrop */}
       <div
         aria-hidden
@@ -71,6 +71,23 @@ const Hero = () => {
         style={{ background: "radial-gradient(circle, hsl(200 95% 65% / 0.32), transparent 60%)" }}
         animate={{ x: [0, -30, 0], y: [0, 40, 0] }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {/* Background rocket illustration */}
+      <motion.img
+        src={heroRocket}
+        alt=""
+        aria-hidden
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.65, y: [0, -10, 0] }}
+        transition={{
+          opacity: { duration: 1.4, delay: 0.3, ease },
+          y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
+        }}
+        style={{
+          filter:
+            "drop-shadow(0 0 18px hsl(200 95% 65% / 0.35)) drop-shadow(0 0 40px hsl(215 95% 60% / 0.25))",
+        }}
+        className="pointer-events-none absolute right-[6%] top-24 -z-10 hidden w-[180px] select-none md:block lg:right-[10%] lg:top-28 lg:w-[230px]"
       />
       {/* Faint grid */}
       <div
@@ -162,61 +179,12 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Hero product visual */}
-      <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.45, ease }}
-        className="relative mx-auto mt-20 w-full max-w-[1080px]"
-      >
-        {/* Glow under */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-10 -bottom-10 h-40 rounded-[60%] blur-3xl"
-          style={{ background: "radial-gradient(ellipse, hsl(215 95% 60% / 0.45), transparent 70%)" }}
-        />
-
-        <div className="relative">
-          {/* Front tile — dashboard */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6, ease }}
-            className="glass-card relative overflow-hidden rounded-3xl"
-          >
-            {/* Top fake browser chrome */}
-            <div className="flex items-center gap-2 border-b border-white/60 bg-white/40 px-5 py-3 backdrop-blur">
-              <div className="flex gap-1.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-400/60" />
-                <span className="h-2.5 w-2.5 rounded-full bg-amber-400/60" />
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/60" />
-              </div>
-              <div className="ml-3 flex-1 truncate rounded-full bg-white/70 px-3 py-1 text-[11px] text-muted-foreground">
-                klaviyo · campaign performance / last 30 days
-              </div>
-              <div className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                live
-              </div>
-            </div>
-            <div className="relative h-[440px] overflow-hidden bg-white md:h-[520px]">
-              <img
-                src={dashboardDetailed}
-                alt="Dashboard preview"
-                className="absolute inset-x-0 top-0 w-full"
-              />
-              {/* Bottom fade so the crop feels intentional */}
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/70 to-transparent" />
-            </div>
-          </motion.div>
-        </div>
-      </motion.div>
-
       {/* Stats row */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6, ease }}
-        className="mx-auto mt-24 max-w-[960px]"
+        className="mx-auto mt-16 max-w-[960px]"
       >
         <div className="glass-card grid grid-cols-2 divide-x divide-y divide-white/40 overflow-hidden rounded-3xl md:grid-cols-4 md:divide-y-0">
           {stats.map((stat) => (

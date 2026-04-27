@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 28 },
@@ -12,13 +11,14 @@ const Explainer = () => {
       <div className="max-w-[900px] mx-auto text-center">
         <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-40px" }}>
           <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border bg-card text-xs text-primary uppercase tracking-[1.5px] font-semibold mb-5">
-            ✦ How It Works
+            ✦ Meet the founder
           </span>
           <div className="text-[clamp(28px,3.6vw,44px)] font-bold tracking-[-1.5px] leading-[1.12] mb-4 text-foreground">
-            See it in action
+            Get to know Jonathan
           </div>
-          <p className="text-[15px] text-muted-foreground leading-relaxed max-w-[520px] mx-auto mb-10">
-            Watch how we turn underperforming email lists into consistent revenue machines.
+          <p className="text-[15px] text-muted-foreground leading-relaxed max-w-[560px] mx-auto mb-10">
+            A recent podcast interview, on how Telos got started, what we believe about
+            email, and the brands we've helped along the way.
           </p>
         </motion.div>
 
@@ -27,14 +27,22 @@ const Explainer = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
-          className="relative rounded-2xl border border-border bg-card/80 backdrop-blur-xl overflow-hidden aspect-video flex items-center justify-center cursor-pointer group hover:-translate-y-1 transition-all duration-300"
+          className="relative overflow-hidden rounded-2xl border border-border bg-black"
+          style={{
+            boxShadow:
+              "0 24px 60px -20px hsl(215 60% 30% / 0.35), 0 12px 30px -12px hsl(215 60% 40% / 0.2)",
+          }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-transparent to-primary/5 pointer-events-none" />
-          <div className="relative z-10 flex flex-col items-center gap-4">
-            <div className="w-16 h-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Play className="w-7 h-7 text-primary ml-0.5" />
-            </div>
-            <span className="text-sm text-muted-foreground font-medium">Video coming soon</span>
+          <div className="relative aspect-video w-full">
+            <iframe
+              src="https://www.youtube.com/embed/6aB4L9m3rVU"
+              title="See Telos Media in action"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="absolute inset-0 h-full w-full"
+            />
           </div>
         </motion.div>
       </div>

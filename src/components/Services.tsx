@@ -79,7 +79,7 @@ const pillars = [
 
 const Services = () => {
   return (
-    <section id="services" className="relative px-6 py-24 md:py-32">
+    <section id="services" className="relative px-6 pt-24 pb-12 md:pt-32 md:pb-16">
       {/* Ambient blue glow */}
       <div
         aria-hidden
@@ -109,7 +109,7 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <div className="mx-auto grid max-w-[920px] grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mx-auto grid max-w-[1140px] grid-cols-1 gap-6 md:grid-cols-2">
           {pillars.map((p, i) => (
             <motion.div
               key={p.label}

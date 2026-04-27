@@ -94,23 +94,15 @@
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
-/* Premium glass card */
+/* Premium card — crisp white with subtle depth */
 .glass-card {
   position: relative;
-  background: linear-gradient(
-    135deg,
-    hsl(0 0% 100% / 0.7) 0%,
-    hsl(215 90% 98% / 0.55) 50%,
-    hsl(0 0% 100% / 0.7) 100%
-  );
-  border: 1px solid hsl(0 0% 100% / 0.8);
+  background: hsl(0 0% 100%);
+  border: 1px solid hsl(220 20% 90% / 0.8);
   box-shadow:
-    0 1px 0 hsl(0 0% 100% / 0.9) inset,
-    0 0 0 1px hsl(215 90% 70% / 0.12),
-    0 30px 60px -20px hsl(215 80% 30% / 0.18),
-    0 14px 30px -12px hsl(215 60% 40% / 0.12);
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    0 1px 2px -1px hsl(215 30% 30% / 0.06),
+    0 8px 24px -8px hsl(215 30% 30% / 0.08),
+    0 24px 48px -20px hsl(215 60% 40% / 0.08);
 }
 
 .glass-card::before {
@@ -132,30 +124,43 @@
 
 /* Scrolling animations */
 @keyframes scroll-logos {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes scroll-phones {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-scroll-logos {
-  animation: scroll-logos 45s linear infinite;
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 @keyframes scroll-logos-reverse {
-  0% { transform: translateX(-33.33%); }
-  100% { transform: translateX(0); }
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes scroll-phones {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-scroll-logos {
+  animation: scroll-logos 60s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .animate-scroll-logos-reverse {
-  animation: scroll-logos-reverse 50s linear infinite;
+  animation: scroll-logos-reverse 65s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .animate-scroll-phones {
   animation: scroll-phones 40s linear infinite;
+}
+
+.logo-mark {
+  filter: brightness(0) saturate(100%);
+  opacity: 0.55;
+}
+
+.logo-color {
+  opacity: 0.75;
 }
 
 /* Accent glow */
