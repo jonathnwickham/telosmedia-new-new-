@@ -10,10 +10,10 @@ const links = [
 ];
 
 const ctaGradient =
-  "linear-gradient(135deg, hsl(215 95% 58%) 0%, hsl(220 90% 52%) 60%, hsl(230 85% 58%) 100%)";
+  "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 0%) 100%)";
 const ctaShadowFlat = "inset 0 1px 0 hsl(0 0% 100% / 0.35)";
 const ctaShadowGlow =
-  "0 8px 24px -6px hsl(215 90% 50% / 0.6), 0 0 0 1px hsl(215 95% 58% / 0.25), inset 0 1px 0 hsl(0 0% 100% / 0.35)";
+  "0 8px 24px -6px hsl(0 0% 0% / 0.5), 0 0 0 1px hsl(0 0% 0% / 0.25), inset 0 1px 0 hsl(0 0% 100% / 0.35)";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);

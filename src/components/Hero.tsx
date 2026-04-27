@@ -124,7 +124,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.08, ease }}
-          className="mt-8 text-[clamp(40px,6vw,76px)] font-semibold leading-[1.02] tracking-[-0.035em] text-foreground"
+          className="mt-8 text-[clamp(34px,9vw,76px)] font-semibold leading-[1.05] tracking-[-0.035em] text-foreground break-words"
         >
           Make the right call
           <br />
@@ -153,8 +153,8 @@ const Hero = () => {
             href="https://calendly.com/jonathan-telosmedia/discovery-call"
             className="group inline-flex h-12 items-center justify-center gap-1.5 rounded-full px-7 text-[14px] font-semibold text-white transition-all hover:shadow-[0_12px_32px_-8px_hsl(215_90%_50%/0.55)]"
             style={{
-              background: "linear-gradient(135deg, hsl(215 95% 58%) 0%, hsl(220 90% 52%) 60%, hsl(230 85% 58%) 100%)",
-              boxShadow: "0 8px 24px -8px hsl(215 90% 50% / 0.45), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
+              background: "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 0%) 100%)",
+              boxShadow: "0 8px 24px -8px hsl(0 0% 0% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
             }}
           >
             Book a discovery call

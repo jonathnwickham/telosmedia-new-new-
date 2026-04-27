@@ -79,7 +79,7 @@ const pillars = [
 
 const Services = () => {
   return (
-    <section id="services" className="relative px-6 pt-24 pb-6 md:pt-32 md:pb-8">
+    <section id="services" className="relative overflow-hidden px-6 pt-24 pb-6 md:pt-32 md:pb-8">
       {/* Ambient blue glow */}
       <div
         aria-hidden
@@ -125,8 +125,8 @@ const Services = () => {
                 className="relative z-10 mb-6 flex h-12 w-12 items-center justify-center rounded-2xl text-white shadow-lg"
                 style={{
                   background:
-                    "linear-gradient(135deg, hsl(215 95% 58%) 0%, hsl(220 90% 52%) 60%, hsl(230 85% 58%) 100%)",
-                  boxShadow: "0 8px 20px -8px hsl(215 90% 50% / 0.45), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
+                    "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 0%) 100%)",
+                  boxShadow: "0 8px 20px -8px hsl(0 0% 0% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
                 }}
               >
                 {p.icon}
@@ -169,7 +169,7 @@ const Services = () => {
             className="group inline-flex h-12 items-center justify-center gap-1.5 rounded-full px-7 text-[14px] font-semibold text-white transition-all hover:-translate-y-0.5"
             style={{
               background:
-                "linear-gradient(135deg, hsl(215 95% 58%) 0%, hsl(220 90% 52%) 60%, hsl(230 85% 58%) 100%)",
+                "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 0%) 100%)",
               boxShadow:
                 "0 10px 28px -8px hsl(215 90% 50% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
             }}

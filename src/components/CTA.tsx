@@ -35,7 +35,7 @@ const CTA = () => {
   }, []);
 
   return (
-    <section id="cta" className="relative px-6 py-24 md:py-32">
+    <section id="cta" className="relative overflow-hidden px-6 py-24 md:py-32">
       {/* Ambient blue */}
       <div
         aria-hidden
@@ -92,7 +92,7 @@ const CTA = () => {
                       className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white"
                       style={{
                         background:
-                          "linear-gradient(135deg, hsl(215 95% 58%), hsl(230 85% 58%))",
+                          "linear-gradient(135deg, hsl(0 0% 12%), hsl(0 0% 0%))",
                       }}
                     >
                       <svg

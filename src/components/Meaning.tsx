@@ -8,7 +8,7 @@ const fadeIn = {
 
 const Meaning = () => {
   return (
-    <section id="meaning" className="relative px-6 py-24 md:py-32">
+    <section id="meaning" className="relative overflow-hidden px-6 py-24 md:py-32">
       {/* Soft halo */}
       <div
         aria-hidden

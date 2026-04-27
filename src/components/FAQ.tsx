@@ -92,7 +92,7 @@ const FAQ = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative px-6 py-24 md:py-32">
+    <section id="faq" className="relative overflow-hidden px-6 py-24 md:py-32">
       <div
         aria-hidden
         className="pointer-events-none absolute right-0 top-20 -z-10 h-[500px] w-[700px] rounded-full opacity-40 blur-3xl"

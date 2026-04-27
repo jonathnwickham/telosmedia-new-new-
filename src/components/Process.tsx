@@ -63,7 +63,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="relative px-6 py-24 md:py-32">
+    <section id="process" className="relative overflow-hidden px-6 py-24 md:py-32">
       {/* Ambient blue */}
       <div
         aria-hidden
@@ -115,9 +115,9 @@ const Process = () => {
                   className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl text-white md:h-[72px] md:w-[72px]"
                   style={{
                     background:
-                      "linear-gradient(135deg, hsl(215 95% 58%) 0%, hsl(220 90% 52%) 60%, hsl(230 85% 58%) 100%)",
+                      "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 0%) 100%)",
                     boxShadow:
-                      "0 8px 20px -8px hsl(215 90% 50% / 0.45), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
+                      "0 8px 20px -8px hsl(0 0% 0% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
                   }}
                 >
                   {step.icon}

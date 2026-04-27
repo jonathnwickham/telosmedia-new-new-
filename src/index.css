@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 30% 10%;
 
-    --primary: 215 90% 54%;
+    --primary: 201 53% 60%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96%;
@@ -25,7 +25,7 @@
     --muted: 210 40% 96%;
     --muted-foreground: 220 14% 46%;
 
-    --accent: 200 95% 60%;
+    --accent: 201 53% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -34,19 +34,19 @@
     --border: 220 20% 90%;
     --border-hover: 220 18% 78%;
     --input: 220 20% 90%;
-    --ring: 215 90% 54%;
+    --ring: 201 53% 60%;
 
     --radius: 0.875rem;
 
     --surface: 210 40% 98%;
     --text-muted: 220 14% 46%;
-    --gradient-start: 215 95% 60%;
-    --gradient-mid: 200 95% 60%;
-    --gradient-end: 230 85% 65%;
+    --gradient-start: 201 53% 60%;
+    --gradient-mid: 201 53% 65%;
+    --gradient-end: 201 53% 55%;
     --glass-panel: 0 0% 100%;
     --glass-panel-strong: 0 0% 100%;
-    --glass-border: 215 90% 70%;
-    --glass-shadow: 215 50% 40%;
+    --glass-border: 201 50% 70%;
+    --glass-shadow: 201 40% 40%;
     --glass-highlight: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
@@ -64,12 +64,16 @@
   * {
     @apply border-border;
   }
+  html, body {
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+  }
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter Tight', 'Inter', -apple-system, sans-serif;
     font-feature-settings: 'cv11', 'ss01', 'ss03';
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    touch-action: pan-y;
   }
 }
 
