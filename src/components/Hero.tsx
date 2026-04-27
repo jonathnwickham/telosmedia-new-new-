@@ -125,7 +125,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.08, ease }}
-          className="mt-8 text-[clamp(34px,9vw,76px)] font-semibold leading-[1.05] tracking-[-0.035em] text-foreground break-words"
+          className="mt-8 text-[clamp(24px,5.5vw,50px)] font-semibold leading-[1.1] tracking-[-0.025em] text-foreground break-words"
         >
           For brand owners ready for{" "}
           <span className="gradient-text">next-level growth</span>{" "}
