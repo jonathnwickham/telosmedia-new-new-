@@ -169,7 +169,7 @@
 }
 
 .animate-scroll-phones {
-  animation: scroll-phones 120s linear infinite;
+  animation: scroll-phones 60s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

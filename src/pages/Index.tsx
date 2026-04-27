@@ -10,7 +10,6 @@ import Process from "@/components/Process";
 import Explainer from "@/components/Explainer";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
-import AuditPromise from "@/components/AuditPromise";
 import TelosMeaning from "@/components/TelosMeaning";
 import Footer from "@/components/Footer";
 
@@ -27,7 +26,6 @@ const Index = () => {
       <Process />
       <FAQ />
       <Explainer />
-      <AuditPromise />
       <CTA />
       <TelosMeaning />
       <Footer />

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import AuditPromise from "@/components/AuditPromise";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 28 },
@@ -156,13 +157,18 @@ const Services = () => {
           ))}
         </div>
 
+        {/* Audit promise — sits directly under the 4 pillars */}
+        <div className="mt-10">
+          <AuditPromise />
+        </div>
+
         {/* Mid-page CTA */}
         <motion.div
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
-          className="mt-12 text-center"
+          className="mt-4 text-center"
         >
           <a
             href="#cta"
