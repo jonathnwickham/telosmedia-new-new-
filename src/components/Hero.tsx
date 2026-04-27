@@ -127,9 +127,9 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.08, ease }}
           className="mt-8 text-[clamp(34px,9vw,76px)] font-semibold leading-[1.05] tracking-[-0.035em] text-foreground break-words"
         >
-          For brand owners ready for{" "}
-          <span className="gradient-text">next-level growth</span>{" "}
-          without spending an extra penny on advertising.
+          Make the right call
+          <br />
+          on <span className="gradient-text">email</span>.
         </motion.h1>
 
         {/* Subhead */}
@@ -139,7 +139,8 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.18, ease }}
           className="mx-auto mt-6 max-w-[620px] text-[clamp(16px,1.6vw,19px)] leading-[1.55] text-muted-foreground"
         >
-          Crafting emails that don't just "look nice", they rake in revenue. With $37M+ generated for our clients.
+          We listen first. Then we build a complete system, strategy, flows, and
+          campaigns, that turns your list into your highest-margin revenue channel.
         </motion.p>
 
         {/* CTAs */}
