@@ -1,4 +1,15 @@
+import emailMf1 from "@/assets/emails/email-mf-1.jpg";
+import emailMf2 from "@/assets/emails/email-mf-2.jpg";
+import emailMf3 from "@/assets/emails/email-mf-3.jpg";
+import emailMf4 from "@/assets/emails/email-mf-4.jpg";
+import emailMf5 from "@/assets/emails/email-mf-5.png";
+
 const phoneImages = [
+  emailMf1,
+  emailMf2,
+  emailMf3,
+  emailMf4,
+  emailMf5,
   "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/68093cdb34189f31c0eb0907_Alert%20iPhone%20(3).png",
   "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/66cc31c8e3a2b09fdf054ec7_Alert%20-%20iPhone-2.png",
   "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/68093bc2eb2216edbddb095a_Alert%20iPhone%20(2).png",
