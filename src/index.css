@@ -139,19 +139,19 @@
 }
 
 .animate-scroll-logos {
-  animation: scroll-logos 60s linear infinite;
+  animation: scroll-logos 130s linear infinite;
   will-change: transform;
   backface-visibility: hidden;
 }
 
 .animate-scroll-logos-reverse {
-  animation: scroll-logos-reverse 65s linear infinite;
+  animation: scroll-logos-reverse 140s linear infinite;
   will-change: transform;
   backface-visibility: hidden;
 }
 
 .animate-scroll-phones {
-  animation: scroll-phones 40s linear infinite;
+  animation: scroll-phones 120s linear infinite;
 }
 
 .logo-mark {
