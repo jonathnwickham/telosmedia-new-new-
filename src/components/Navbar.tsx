@@ -11,7 +11,8 @@ const links = [
 
 const ctaGradient =
   "linear-gradient(135deg, hsl(215 95% 58%) 0%, hsl(220 90% 52%) 60%, hsl(230 85% 58%) 100%)";
-const ctaShadow =
+const ctaShadowFlat = "inset 0 1px 0 hsl(0 0% 100% / 0.35)";
+const ctaShadowGlow =
   "0 8px 24px -6px hsl(215 90% 50% / 0.6), 0 0 0 1px hsl(215 95% 58% / 0.25), inset 0 1px 0 hsl(0 0% 100% / 0.35)";
 
 const Navbar = () => {
@@ -84,8 +85,8 @@ const Navbar = () => {
           {/* Desktop CTA */}
           <a
             href="https://calendly.com/jonathan-telosmedia/discovery-call"
-            className="relative z-10 hidden h-9 items-center justify-center rounded-full px-5 text-[13px] font-semibold text-white transition-transform hover:-translate-y-px md:inline-flex"
-            style={{ background: ctaGradient, boxShadow: ctaShadow }}
+            className="relative z-10 hidden h-9 items-center justify-center rounded-full px-5 text-[13px] font-semibold text-white transition-all hover:-translate-y-px md:inline-flex"
+            style={{ background: ctaGradient, boxShadow: scrolled ? ctaShadowGlow : ctaShadowFlat }}
           >
             Book a call
           </a>
@@ -151,7 +152,7 @@ const Navbar = () => {
               href="https://calendly.com/jonathan-telosmedia/discovery-call"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex h-11 items-center justify-center rounded-2xl text-[14px] font-semibold text-white transition-transform hover:-translate-y-px"
-              style={{ background: ctaGradient, boxShadow: ctaShadow }}
+              style={{ background: ctaGradient, boxShadow: ctaShadowGlow }}
             >
               Book a call
             </a>
