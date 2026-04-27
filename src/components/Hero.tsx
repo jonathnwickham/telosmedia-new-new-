@@ -151,7 +151,7 @@ const Hero = () => {
           className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
           <a
-            href="https://calendly.com/jonathan-telosmedia/discovery-call"
+            href="#cta"
             className="group inline-flex h-12 items-center justify-center gap-1.5 rounded-full px-7 text-[14px] font-semibold text-white transition-all hover:shadow-[0_12px_32px_-8px_hsl(215_90%_50%/0.55)]"
             style={{
               background: "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 0%) 100%)",

@@ -53,14 +53,15 @@ const CTA = () => {
         >
           <div className="glass-card mx-auto inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70">
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Free email audit
+            30-minute discovery call
           </div>
           <h2 className="mx-auto mt-6 max-w-[760px] text-[clamp(34px,5vw,58px)] font-semibold leading-[1.04] tracking-[-0.03em] text-foreground">
-            Get your{" "}
-            <span className="gradient-text">free audit.</span>
+            Let's see if we're{" "}
+            <span className="gradient-text">a fit.</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-[600px] text-[16px] leading-relaxed text-muted-foreground">
-            No pitch. After our first conversation we go deep into your brand, look at where your email channel is today, see what you actually need, and only move forward from there.
+          <p className="mx-auto mt-5 max-w-[620px] text-[16px] leading-relaxed text-muted-foreground">
+            No pitch. We'll look at where your email channel is today, where it
+            could be in 90 days, and whether we're the team to get you there. If it makes sense, we'll go and do a full audit after.
           </p>
         </motion.div>
 

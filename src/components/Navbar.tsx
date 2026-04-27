@@ -84,7 +84,7 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <a
-            href="https://calendly.com/jonathan-telosmedia/discovery-call"
+            href="#cta"
             className="relative z-10 hidden h-9 items-center justify-center rounded-full px-5 text-[13px] font-semibold text-white transition-all hover:-translate-y-px md:inline-flex"
             style={{ background: ctaGradient, boxShadow: scrolled ? ctaShadowGlow : ctaShadowFlat }}
           >
@@ -149,7 +149,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="https://calendly.com/jonathan-telosmedia/discovery-call"
+              href="#cta"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex h-11 items-center justify-center rounded-2xl text-[14px] font-semibold text-white transition-transform hover:-translate-y-px"
               style={{ background: ctaGradient, boxShadow: ctaShadowGlow }}

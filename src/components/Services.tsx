@@ -165,7 +165,7 @@ const Services = () => {
           className="mt-12 text-center"
         >
           <a
-            href="https://calendly.com/jonathan-telosmedia/discovery-call"
+            href="#cta"
             className="group inline-flex h-12 items-center justify-center gap-1.5 rounded-full px-7 text-[14px] font-semibold text-white transition-all hover:-translate-y-0.5"
             style={{
               background:
