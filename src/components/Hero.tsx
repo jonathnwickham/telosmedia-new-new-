@@ -158,7 +158,7 @@ const Hero = () => {
               boxShadow: "0 8px 24px -8px hsl(0 0% 0% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
             }}
           >
-            Get your free audit
+            See if we're a fit
             <span className="transition-transform group-hover:translate-x-0.5">→</span>
           </a>
           <a

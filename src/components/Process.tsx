@@ -10,7 +10,7 @@ const steps = [
     num: "01",
     title: "Audit",
     time: "1–4 days",
-    desc: "Full audit before we touch anything. We go through your ESP, your flows, your segments, and your customer base. You get back a copy direction doc, list health report, and segmentation map. That's what everything else is built from.",
+    desc: "We carry out a full ESP audit. We go through your account, get to know your customers, and give you back something you can honestly build anything from. Everything we do after this is built off it.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <circle cx="11" cy="11" r="7" />
@@ -22,7 +22,7 @@ const steps = [
     num: "02",
     title: "Planning",
     time: "5–9 days",
-    desc: "Knowing your customers, we plan who's going to be opening your emails, engaging with your site, and receiving the right flow at the right moment. Monthly campaign plan, automation flows, and sign-up forms, all built around your list.",
+    desc: "Then we plan. Knowing your customer, we map out who's opening your emails, engaging with your site, and receiving the right information flow at the right moment. Campaign calendar, automation flows, and sign-up forms, all built around your list.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <rect x="3" y="4" width="18" height="18" rx="2" />
@@ -36,7 +36,7 @@ const steps = [
     num: "03",
     title: "Launch",
     time: "Ongoing",
-    desc: "With the plan in place, we create the designs and the copy, and make sure you're happy before anything ships. Once emails start sending, we keep everything running its best, including A/B tests on pop-ups and forms.",
+    desc: "With an actual plan in place, we create the designs, write the copy, and make sure you're happy with it before anything ships. Once emails start sending, we keep everything running its best, including A/B tests on the pop-ups.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
@@ -50,7 +50,7 @@ const steps = [
     num: "04",
     title: "Monthly Overviews",
     time: "1–2 days / mo",
-    desc: "You receive a monthly report going over results, plans for next month, and a full sweep of every part of the account. Nothing slips through.",
+    desc: "Every month you receive a report going over results, plans for the month ahead, and a full sweep of every possible part of the account. Nothing slips through. That's the process.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <line x1="18" y1="20" x2="18" y2="10" />
