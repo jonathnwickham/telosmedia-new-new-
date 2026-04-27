@@ -11,7 +11,7 @@ import atlasFundedLogo from "@/assets/logos/atlas-funded.png";
 import aquafundedLogo from "@/assets/logos/aquafunded.png";
 import ftukLogo from "@/assets/logos/ftuk.svg";
 import aerofundedLogo from "@/assets/logos/aerofunded.svg";
-import gffLogo from "@/assets/logos/gff.png";
+import gffLogo from "@/assets/logos/gff-full.png";
 
 type Logo = { src: string; alt: string; keepColor?: boolean; sizeClass?: string };
 

@@ -22,26 +22,31 @@ const Navbar = () => {
   return (
     <div className="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
       <nav
-        className={`grain relative flex items-center justify-between gap-6 overflow-hidden rounded-full border border-white/60 px-3 py-2 transition-all duration-300 ${
-          scrolled ? "shadow-[0_20px_50px_-20px_hsl(215_60%_30%/0.25)]" : "shadow-[0_10px_40px_-20px_hsl(215_60%_30%/0.18)]"
+        className={`relative flex items-center justify-between gap-6 overflow-hidden rounded-full px-3 py-2 transition-all duration-300 ${
+          scrolled
+            ? "grain border border-white/60 shadow-[0_20px_50px_-20px_hsl(215_60%_30%/0.25)]"
+            : "border border-transparent shadow-none"
         }`}
         style={{
-          background:
-            "linear-gradient(135deg, hsl(0 0% 100% / 0.65) 0%, hsl(215 100% 98% / 0.5) 50%, hsl(0 0% 100% / 0.65) 100%)",
-          backdropFilter: "blur(28px) saturate(1.6)",
-          WebkitBackdropFilter: "blur(28px) saturate(1.6)",
+          background: scrolled
+            ? "linear-gradient(135deg, hsl(0 0% 100% / 0.65) 0%, hsl(215 100% 98% / 0.5) 50%, hsl(0 0% 100% / 0.65) 100%)"
+            : "transparent",
+          backdropFilter: scrolled ? "blur(28px) saturate(1.6)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(28px) saturate(1.6)" : "none",
           maxWidth: "min(820px, calc(100vw - 32px))",
         }}
       >
-        {/* Inner highlight */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 rounded-full"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 80% at 50% 0%, hsl(0 0% 100% / 0.7) 0%, transparent 60%)",
-          }}
-        />
+        {/* Inner highlight — only when scrolled */}
+        {scrolled && (
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 rounded-full"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 80% at 50% 0%, hsl(0 0% 100% / 0.7) 0%, transparent 60%)",
+            }}
+          />
+        )}
 
         <a href="#" className="relative z-10 flex items-center pl-3">
           <img src={telosLogo} alt="Telos Media" className="h-7" />
