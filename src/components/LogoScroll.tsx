@@ -43,7 +43,7 @@ const row2Set: Logo[] = [
   { src: aquafutures, alt: "AquaFutures", sizeClass: "h-5 max-h-5" },
   { src: flooreight, alt: "Floor Eight" },
   { src: gff, alt: "Goat Funded Futures", sizeClass: "h-9 max-h-9" },
-  { src: ftuk, alt: "FTUK" },
+  { src: ftuk, alt: "FTUK", sizeClass: "h-5 max-h-5" },
   { src: solanafunded, alt: "Solana Funded" },
   { src: mystery2, alt: "Client" },
   { src: qtfunded, alt: "QT Funded", sizeClass: "h-5 max-h-5" },
