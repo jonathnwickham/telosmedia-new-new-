@@ -125,14 +125,14 @@ const Services = () => {
                 className="relative z-10 mb-6 flex h-12 w-12 items-center justify-center rounded-2xl text-white shadow-lg"
                 style={{
                   background:
-                    "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 0%) 100%)",
-                  boxShadow: "0 8px 20px -8px hsl(0 0% 0% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
+                    "linear-gradient(135deg, hsl(204 53% 65%) 0%, hsl(204 53% 50%) 100%)",
+                  boxShadow: "0 8px 20px -8px hsl(204 53% 40% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
                 }}
               >
                 {p.icon}
               </div>
 
-              <div className="relative z-10 mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+              <div className="relative z-10 mb-2 text-[11px] font-bold uppercase tracking-[0.16em] text-foreground">
                 {p.label}
               </div>
               <h3 className="relative z-10 text-[22px] font-semibold leading-[1.15] tracking-[-0.02em] text-foreground">

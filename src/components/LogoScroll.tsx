@@ -1,48 +1,61 @@
-import axcLogo from "@/assets/logos/axc.png";
-import playerProfitLogo from "@/assets/logos/player-profit.png";
-import retropiaLogo from "@/assets/logos/retropia.png";
-import playvoLogo from "@/assets/logos/playvo.png";
-import puroLogo from "@/assets/logos/puro.png";
-import tradingFundsLogo from "@/assets/logos/tradingfunds.png";
-import qtFundedLogo from "@/assets/logos/qtfunded.png";
-import keepsLogo from "@/assets/logos/keeps.png";
-import atlasFundedLogo from "@/assets/logos/atlas-funded.png";
-import aquafundedLogo from "@/assets/logos/aquafunded.png";
-import ftukLogo from "@/assets/logos/ftuk.svg";
-import aerofundedLogo from "@/assets/logos/aerofunded.svg";
-import gffLogo from "@/assets/logos/gff-new.png";
+import aerofunded from "@/assets/logos/v2/aerofunded.png";
+import alphatrader from "@/assets/logos/v2/alphatrader.png";
+import aquafunded from "@/assets/logos/v2/aquafunded.png";
+import aquafutures from "@/assets/logos/v2/aquafutures.png";
+import atlasfunded from "@/assets/logos/v2/atlasfunded.png";
+import axcera from "@/assets/logos/v2/axcera.png";
+import blueguardian from "@/assets/logos/v2/blueguardian.png";
+import ftuk from "@/assets/logos/v2/ftuk.png";
+import flooreight from "@/assets/logos/v2/flooreight.png";
+import gff from "@/assets/logos/v2/gff.png";
+import gft from "@/assets/logos/v2/gft.png";
+import keeps from "@/assets/logos/v2/keeps.png";
+import playerprofit from "@/assets/logos/v2/playerprofit.png";
+import playvo from "@/assets/logos/v2/playvo.png";
+import puro from "@/assets/logos/v2/puro.png";
+import qtfunded from "@/assets/logos/v2/qtfunded.png";
+import retropia from "@/assets/logos/v2/retropia.png";
+import solanafunded from "@/assets/logos/v2/solanafunded.png";
+import mystery1 from "@/assets/logos/v2/mystery1.png";
+import mystery2 from "@/assets/logos/v2/mystery2.png";
 
-type Logo = { src: string; alt: string; keepColor?: boolean; sizeClass?: string };
+type Logo = { src: string; alt: string; sizeClass?: string };
 
-const logos: Logo[] = [
-  { src: axcLogo, alt: "AXC" },
-  { src: playerProfitLogo, alt: "Player Profit" },
-  { src: retropiaLogo, alt: "Retropia" },
-  { src: puroLogo, alt: "PURO" },
-  { src: tradingFundsLogo, alt: "TradingFunds" },
-  { src: playvoLogo, alt: "PlayVo" },
-  { src: qtFundedLogo, alt: "QT Funded" },
-  { src: ftukLogo, alt: "FTUK" },
-  { src: keepsLogo, alt: "Keeps" },
-  { src: aerofundedLogo, alt: "AeroFunded" },
-  { src: atlasFundedLogo, alt: "Atlas Funded" },
-  { src: gffLogo, alt: "Goat Funded Futures", sizeClass: "h-9 max-h-9" },
-  { src: aquafundedLogo, alt: "AquaFunded" },
+// Row 1 — 10 logos
+const row1Set: Logo[] = [
+  { src: axcera, alt: "Axcera" },
+  { src: aerofunded, alt: "AeroFunded" },
+  { src: playerprofit, alt: "Player Profit" },
+  { src: aquafunded, alt: "AquaFunded" },
+  { src: blueguardian, alt: "Blue Guardian" },
+  { src: gft, alt: "GFT" },
+  { src: atlasfunded, alt: "Atlas Funded" },
+  { src: mystery1, alt: "Client" },
+  { src: keeps, alt: "Keeps" },
+  { src: puro, alt: "PURO" },
 ];
 
-const half = Math.ceil(logos.length / 2);
-const rowA = logos.slice(0, half);
-const rowB = logos.slice(half);
-const row1 = [...rowA, ...rowA];
-const row2 = [...rowB, ...rowB];
+// Row 2 — 10 logos. Aqua/Play/GF pairs split across rows; "Funded" brands spread within row.
+const row2Set: Logo[] = [
+  { src: retropia, alt: "Retropia" },
+  { src: alphatrader, alt: "Alpha Trader" },
+  { src: playvo, alt: "PlayVo" },
+  { src: aquafutures, alt: "AquaFutures" },
+  { src: flooreight, alt: "Floor Eight" },
+  { src: gff, alt: "Goat Funded Futures", sizeClass: "h-9 max-h-9" },
+  { src: ftuk, alt: "FTUK" },
+  { src: solanafunded, alt: "Solana Funded" },
+  { src: mystery2, alt: "Client" },
+  { src: qtfunded, alt: "QT Funded" },
+];
+
+const row1 = [...row1Set, ...row1Set];
+const row2 = [...row2Set, ...row2Set];
 
 const LogoScroll = () => {
   return (
     <div className="relative w-full">
-
-      <div
-        className="relative w-full overflow-hidden border-y border-border/60 bg-white py-14 flex flex-col gap-10"
-      >
+      <div className="relative w-full overflow-hidden border-y border-border/60 bg-white py-14 flex flex-col gap-10">
         {/* Edge fades — subtle */}
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
@@ -60,7 +73,7 @@ const LogoScroll = () => {
                 decoding="async"
                 fetchPriority="high"
                 draggable={false}
-                className={`${logo.keepColor ? "logo-color" : "logo-mark"} ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
+                className={`logo-mark ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
               />
             </li>
           ))}
@@ -75,7 +88,7 @@ const LogoScroll = () => {
                 decoding="async"
                 fetchPriority="high"
                 draggable={false}
-                className={`${logo.keepColor ? "logo-color" : "logo-mark"} ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
+                className={`logo-mark ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
               />
             </li>
           ))}
