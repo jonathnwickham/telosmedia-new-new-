@@ -10,7 +10,7 @@ const steps = [
     num: "01",
     title: "Audit",
     time: "1–4 days",
-    desc: "We carry out a full ESP audit, going through your account, learning your customers, and giving you back something you can honestly build anything from.",
+    desc: "Full audit before we touch anything. We go through your ESP, your flows, your segments, and your customer base. You get back a copy direction doc, list health report, and segmentation map. That's what everything else is built from.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <circle cx="11" cy="11" r="7" />
