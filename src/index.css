@@ -138,20 +138,34 @@
   100% { transform: translate3d(-50%, 0, 0); }
 }
 
+.animate-scroll-logos,
+.animate-scroll-logos-reverse,
+.animate-scroll-phones {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 .animate-scroll-logos {
   animation: scroll-logos 130s linear infinite;
-  will-change: transform;
-  backface-visibility: hidden;
 }
 
 .animate-scroll-logos-reverse {
   animation: scroll-logos-reverse 140s linear infinite;
-  will-change: transform;
-  backface-visibility: hidden;
 }
 
 .animate-scroll-phones {
   animation: scroll-phones 120s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-logos,
+  .animate-scroll-logos-reverse,
+  .animate-scroll-phones {
+    animation: none;
+  }
 }
 
 .logo-mark {

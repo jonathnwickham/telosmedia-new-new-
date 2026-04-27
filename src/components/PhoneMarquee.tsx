@@ -17,13 +17,16 @@ const PhoneMarquee = () => {
         ✦ Our Work
       </span>
 
-      <div className="flex gap-7 items-center animate-scroll-phones w-max">
+      <div className="flex gap-5 sm:gap-7 items-center animate-scroll-phones w-max">
         {[...phoneImages, ...phoneImages, ...phoneImages, ...phoneImages].map((src, i) => (
           <img
             key={i}
             src={src}
             alt={`Email Mockup ${i + 1}`}
-            className="h-[300px] sm:h-[360px] md:h-[480px] rounded-3xl border-2 border-border shadow-[0_8px_40px_rgba(0,0,0,0.08)] flex-shrink-0 hover:scale-[1.04] hover:-translate-y-1.5 transition-transform duration-400"
+            loading="lazy"
+            decoding="async"
+            draggable={false}
+            className="h-[240px] sm:h-[360px] md:h-[480px] rounded-3xl border-2 border-border shadow-[0_8px_40px_rgba(0,0,0,0.08)] flex-shrink-0 md:hover:scale-[1.04] md:hover:-translate-y-1.5 md:transition-transform md:duration-400"
           />
         ))}
       </div>
