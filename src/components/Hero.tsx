@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import heroRocket from "@/assets/hero-rocket.png";
-import heroShowcase from "@/assets/hero-showcase.jpg";
+import heroShowcase from "@/assets/hero-showcase.png";
 
 const stats = [
   { target: 37, prefix: "$", suffix: "M+", label: "Rev. generated", duration: 2200 },
