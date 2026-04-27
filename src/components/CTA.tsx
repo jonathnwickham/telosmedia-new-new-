@@ -16,10 +16,23 @@ const CTA = () => {
   useEffect(() => {
     const node = widgetRef.current;
     if (!node) return;
-    if (node.querySelector("iframe")) {
-      setCalendarLoaded(true);
-      return;
-    }
+
+    const url =
+      "https://calendly.com/jonathan-telosmedia/discovery-call?hide_landing_page_details=1&hide_gdpr_banner=1";
+
+    const init = () => {
+      if (node.querySelector("iframe")) {
+        setCalendarLoaded(true);
+        return;
+      }
+      const Calendly = (window as unknown as { Calendly?: { initInlineWidget: (opts: { url: string; parentElement: HTMLElement }) => void } }).Calendly;
+      if (Calendly?.initInlineWidget) {
+        Calendly.initInlineWidget({ url, parentElement: node });
+      }
+    };
+
+    init();
+
     const observer = new MutationObserver(() => {
       if (node.querySelector("iframe")) {
         setCalendarLoaded(true);
@@ -27,10 +40,23 @@ const CTA = () => {
       }
     });
     observer.observe(node, { childList: true, subtree: true });
-    const fallback = setTimeout(() => setCalendarLoaded(true), 8000);
+
+    let retries = 0;
+    const interval = window.setInterval(() => {
+      retries += 1;
+      if (node.querySelector("iframe")) {
+        window.clearInterval(interval);
+        return;
+      }
+      init();
+      if (retries > 20) window.clearInterval(interval);
+    }, 300);
+
+    const fallback = window.setTimeout(() => setCalendarLoaded(true), 8000);
     return () => {
       observer.disconnect();
-      clearTimeout(fallback);
+      window.clearInterval(interval);
+      window.clearTimeout(fallback);
     };
   }, []);
 
