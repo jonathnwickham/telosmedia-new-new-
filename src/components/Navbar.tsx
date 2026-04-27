@@ -25,7 +25,7 @@ const Navbar = () => {
         className={`relative flex items-center justify-between gap-6 overflow-hidden rounded-full px-3 py-2 transition-all duration-300 ${
           scrolled
             ? "grain border border-white/60 shadow-[0_20px_50px_-20px_hsl(215_60%_30%/0.25)]"
-            : "border border-transparent shadow-none"
+            : "border border-black/20 shadow-none"
         }`}
         style={{
           background: scrolled
