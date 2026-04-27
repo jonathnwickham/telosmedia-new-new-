@@ -158,7 +158,7 @@ const Services = () => {
         </div>
 
         {/* Audit promise — sits directly under the 4 pillars */}
-        <div className="mt-10">
+        <div className="mt-6">
           <AuditPromise />
         </div>
 
@@ -168,7 +168,7 @@ const Services = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
-          className="mt-4 text-center"
+          className="mt-14 text-center"
         >
           <a
             href="#cta"
