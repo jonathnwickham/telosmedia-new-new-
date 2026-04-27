@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import heroRocket from "@/assets/hero-rocket.png";
+import heroShowcase from "@/assets/hero-showcase.svg";
 
 const stats = [
   { target: 37, prefix: "$", suffix: "M+", label: "Rev. generated", duration: 2200 },
@@ -178,6 +179,21 @@ const Hero = () => {
           Trusted by 40+ brands · $37M+ generated
         </motion.div>
       </div>
+
+      {/* Showcase image */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5, ease }}
+        className="mx-auto mt-12 max-w-[1100px]"
+      >
+        <img
+          src={heroShowcase}
+          alt="Client results showcase"
+          className="w-full select-none"
+          draggable={false}
+        />
+      </motion.div>
 
       {/* Stats row */}
       <motion.div
