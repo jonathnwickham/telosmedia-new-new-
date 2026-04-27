@@ -26,10 +26,10 @@ const row1Set: Logo[] = [
   { src: axcera, alt: "Axcera" },
   { src: aerofunded, alt: "AeroFunded" },
   { src: playerprofit, alt: "Player Profit" },
-  { src: aquafunded, alt: "AquaFunded" },
+  { src: aquafunded, alt: "AquaFunded", sizeClass: "h-5 max-h-5" },
   { src: blueguardian, alt: "Blue Guardian" },
   { src: gft, alt: "GFT" },
-  { src: atlasfunded, alt: "Atlas Funded" },
+  { src: atlasfunded, alt: "Atlas Funded", sizeClass: "h-5 max-h-5" },
   { src: mystery1, alt: "Client" },
   { src: keeps, alt: "Keeps" },
   { src: puro, alt: "PURO" },
@@ -40,13 +40,13 @@ const row2Set: Logo[] = [
   { src: retropia, alt: "Retropia" },
   { src: alphatrader, alt: "Alpha Trader" },
   { src: playvo, alt: "PlayVo" },
-  { src: aquafutures, alt: "AquaFutures" },
+  { src: aquafutures, alt: "AquaFutures", sizeClass: "h-5 max-h-5" },
   { src: flooreight, alt: "Floor Eight" },
   { src: gff, alt: "Goat Funded Futures", sizeClass: "h-9 max-h-9" },
   { src: ftuk, alt: "FTUK" },
   { src: solanafunded, alt: "Solana Funded" },
   { src: mystery2, alt: "Client" },
-  { src: qtfunded, alt: "QT Funded" },
+  { src: qtfunded, alt: "QT Funded", sizeClass: "h-5 max-h-5" },
 ];
 
 const row1 = [...row1Set, ...row1Set];
