@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const fits = [
   "You're doing $1M+ and you know your email channel can do more",
@@ -10,13 +10,28 @@ const fits = [
 ];
 
 const CTA = () => {
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const [calendarLoaded, setCalendarLoaded] = useState(false);
+
   useEffect(() => {
-    if (document.getElementById("calendly-widget-script")) return;
-    const script = document.createElement("script");
-    script.id = "calendly-widget-script";
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
+    const node = widgetRef.current;
+    if (!node) return;
+    if (node.querySelector("iframe")) {
+      setCalendarLoaded(true);
+      return;
+    }
+    const observer = new MutationObserver(() => {
+      if (node.querySelector("iframe")) {
+        setCalendarLoaded(true);
+        observer.disconnect();
+      }
+    });
+    observer.observe(node, { childList: true, subtree: true });
+    const fallback = setTimeout(() => setCalendarLoaded(true), 8000);
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallback);
+    };
   }, []);
 
   return (
@@ -109,10 +124,24 @@ const CTA = () => {
             className="glass-card overflow-hidden rounded-3xl p-2"
           >
             <div
-              className="calendly-inline-widget rounded-2xl"
+              ref={widgetRef}
+              className="calendly-inline-widget relative overflow-hidden rounded-2xl bg-white"
               data-url="https://calendly.com/jonathan-telosmedia/discovery-call?hide_landing_page_details=1&hide_gdpr_banner=1"
               style={{ minWidth: "320px", height: "720px" }}
-            />
+            >
+              {/* Skeleton — removed once Calendly injects its iframe */}
+              <div
+                className={`absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-white via-white to-blue-50/40 transition-opacity duration-300 ${calendarLoaded ? "pointer-events-none opacity-0" : "opacity-100"}`}
+              >
+                <div
+                  className="h-10 w-10 animate-spin rounded-full border-2 border-primary/20 border-t-primary"
+                  aria-hidden
+                />
+                <div className="text-[13px] font-medium text-muted-foreground">
+                  Loading calendar…
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

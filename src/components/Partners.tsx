@@ -13,7 +13,7 @@ const partners = [
 
 const Partners = () => {
   return (
-    <section className="relative border-y border-border/60 bg-muted/30 px-6 py-8">
+    <section className="relative border-y border-border/60 bg-muted/30 px-6 py-7">
       <div className="mx-auto max-w-[920px]">
         <motion.div
           initial={{ opacity: 0, y: 12 }}

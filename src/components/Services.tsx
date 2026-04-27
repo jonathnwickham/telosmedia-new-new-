@@ -79,7 +79,7 @@ const pillars = [
 
 const Services = () => {
   return (
-    <section id="services" className="relative px-6 pt-24 pb-12 md:pt-32 md:pb-16">
+    <section id="services" className="relative px-6 pt-24 pb-6 md:pt-32 md:pb-8">
       {/* Ambient blue glow */}
       <div
         aria-hidden
@@ -162,7 +162,7 @@ const Services = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
-          className="mt-14 text-center"
+          className="mt-12 text-center"
         >
           <a
             href="https://calendly.com/jonathan-telosmedia/discovery-call"

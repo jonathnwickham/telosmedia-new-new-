@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import axcLogo from "@/assets/logos/axc.png";
-import telosLogo from "@/assets/logos/telos.png";
-import group1Logo from "@/assets/logos/group1.png";
 import playerProfitLogo from "@/assets/logos/player-profit.png";
 import retropiaLogo from "@/assets/logos/retropia.png";
 import playvoLogo from "@/assets/logos/playvo.png";
@@ -10,23 +8,15 @@ import tradingFundsLogo from "@/assets/logos/tradingfunds.png";
 import qtFundedLogo from "@/assets/logos/qtfunded.png";
 import keepsLogo from "@/assets/logos/keeps.png";
 import atlasFundedLogo from "@/assets/logos/atlas-funded.png";
-import logo2 from "@/assets/logos/logo2.png";
-import logo3 from "@/assets/logos/logo3.png";
-import logo4 from "@/assets/logos/logo4.png";
 import aquafundedLogo from "@/assets/logos/aquafunded.png";
-import fullLogoWhite from "@/assets/logos/full-logo-white.png";
-import image6Logo from "@/assets/logos/image-6.png";
 import ftukLogo from "@/assets/logos/ftuk.svg";
 import aerofundedLogo from "@/assets/logos/aerofunded.svg";
-import solanaFundedLogo from "@/assets/logos/solana-funded-new.png";
 import gffLogo from "@/assets/logos/gff.png";
 
-type Logo = { src: string; alt: string; keepColor?: boolean };
+type Logo = { src: string; alt: string; keepColor?: boolean; sizeClass?: string };
 
 const logos: Logo[] = [
   { src: axcLogo, alt: "AXC" },
-  { src: telosLogo, alt: "Telos Media" },
-  { src: group1Logo, alt: "Client Logo" },
   { src: playerProfitLogo, alt: "Player Profit" },
   { src: retropiaLogo, alt: "Retropia" },
   { src: puroLogo, alt: "PURO" },
@@ -37,19 +27,13 @@ const logos: Logo[] = [
   { src: keepsLogo, alt: "Keeps" },
   { src: aerofundedLogo, alt: "AeroFunded" },
   { src: atlasFundedLogo, alt: "Atlas Funded" },
-  { src: solanaFundedLogo, alt: "Solana Funded" },
-  { src: logo2, alt: "Client Logo" },
-  { src: gffLogo, alt: "Goat Funded Futures", keepColor: true },
-  { src: logo3, alt: "Client Logo" },
-  { src: logo4, alt: "Client Logo" },
+  { src: gffLogo, alt: "Goat Funded Futures", keepColor: true, sizeClass: "h-10 max-h-10" },
   { src: aquafundedLogo, alt: "AquaFunded" },
-  { src: fullLogoWhite, alt: "Client Logo" },
-  { src: image6Logo, alt: "Client Logo" },
 ];
 
 const half = Math.ceil(logos.length / 2);
-const row1 = logos.slice(0, half);
-const row2 = logos.slice(half);
+const row1 = [...logos.slice(0, half), ...logos.slice(0, half)];
+const row2 = [...logos.slice(half), ...logos.slice(half)];
 
 const LogoScroll = () => {
   return (
@@ -77,7 +61,7 @@ const LogoScroll = () => {
                   alt={logo.alt}
                   loading="lazy"
                   draggable={false}
-                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} h-8 max-h-8 w-auto object-contain`}
+                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
                 />
               </li>
             ))}
@@ -90,7 +74,7 @@ const LogoScroll = () => {
                   alt=""
                   loading="lazy"
                   draggable={false}
-                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} h-8 max-h-8 w-auto object-contain`}
+                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
                 />
               </li>
             ))}
@@ -105,7 +89,7 @@ const LogoScroll = () => {
                   alt={logo.alt}
                   loading="lazy"
                   draggable={false}
-                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} h-8 max-h-8 w-auto object-contain`}
+                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
                 />
               </li>
             ))}
@@ -118,7 +102,7 @@ const LogoScroll = () => {
                   alt=""
                   loading="lazy"
                   draggable={false}
-                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} h-8 max-h-8 w-auto object-contain`}
+                  className={`${logo.keepColor ? "logo-color" : "logo-mark"} ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
                 />
               </li>
             ))}
