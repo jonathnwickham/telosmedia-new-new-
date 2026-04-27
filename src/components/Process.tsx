@@ -9,7 +9,7 @@ const steps = [
   {
     num: "01",
     title: "Audit",
-    time: "1–4 days",
+    time: "1 to 4 days",
     desc: "We carry out a full ESP audit. We go through your account, get to know your customers, and give you back something you can honestly build anything from. Everything we do after this is built off it.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
@@ -21,7 +21,7 @@ const steps = [
   {
     num: "02",
     title: "Planning",
-    time: "5–9 days",
+    time: "5 to 9 days",
     desc: "Then we plan. Knowing your customer, we map out who's opening your emails, engaging with your site, and receiving the right information flow at the right moment. Campaign calendar, automation flows, and sign-up forms, all built around your list.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
@@ -49,7 +49,7 @@ const steps = [
   {
     num: "04",
     title: "Monthly Overviews",
-    time: "1–2 days / mo",
+    time: "1 to 2 days / mo",
     desc: "Every month you receive a report going over results, plans for the month ahead, and a full sweep of every possible part of the account. Nothing slips through. That's the process.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">

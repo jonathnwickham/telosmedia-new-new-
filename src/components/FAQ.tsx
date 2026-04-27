@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "How long until we see results?",
-    a: "Foundational revenue lifts (better flows, better deliverability) usually show in 30–60 days. Compounding lifts (segmentation, lifecycle depth, campaign cadence) compound over the first 90.",
+    a: "Foundational revenue lifts (better flows, better deliverability) usually show in 30 to 60 days. Compounding lifts (segmentation, lifecycle depth, campaign cadence) compound over the first 90.",
   },
 ];
 

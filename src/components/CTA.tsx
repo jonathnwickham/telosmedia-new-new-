@@ -10,9 +10,9 @@ const fits = [
 ];
 
 const afterCall = [
-  "We audit your full account — flows, campaigns, deliverability, segmentation",
+  "We audit your full account. Flows, campaigns, deliverability, segmentation",
   "We show you what's working, what isn't, and what we'd change first",
-  "No copy-paste pricing or generic strategy — every plan is built for your brand",
+  "No copy-paste pricing or generic strategy. Every plan is built for your brand",
   "If something you've built is performing, we keep it. The rest gets rebuilt from the ground up.",
 ];
 
