@@ -1,25 +1,78 @@
+import { useEffect, useState } from "react";
 import telosLogo from "@/assets/telos-logo.png";
 
+const links = [
+  { href: "#services", label: "Services" },
+  { href: "#results", label: "Results" },
+  { href: "#process", label: "Process" },
+  { href: "#testimonials", label: "Testimonials" },
+  { href: "#meaning", label: "About" },
+];
+
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-10 py-3.5 flex items-center justify-between bg-card/90 backdrop-blur-xl border-b border-border shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-      <a href="#" className="flex items-center">
-        <img src={telosLogo} alt="Telos Media" className="h-8" />
-      </a>
-      <div className="hidden md:flex items-center gap-8">
-        <a href="#services" className="text-muted-foreground text-sm hover:text-foreground transition-colors">Services</a>
-        <a href="#results" className="text-muted-foreground text-sm hover:text-foreground transition-colors">Results</a>
-        <a href="#process" className="text-muted-foreground text-sm hover:text-foreground transition-colors">Process</a>
-        <a href="#testimonials" className="text-muted-foreground text-sm hover:text-foreground transition-colors">Testimonials</a>
-        <a href="#meaning" className="text-muted-foreground text-sm hover:text-foreground transition-colors">About</a>
+    <div className="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
+      <nav
+        className={`grain relative flex items-center justify-between gap-6 overflow-hidden rounded-full border border-white/60 px-3 py-2 transition-all duration-300 ${
+          scrolled ? "shadow-[0_20px_50px_-20px_hsl(215_60%_30%/0.25)]" : "shadow-[0_10px_40px_-20px_hsl(215_60%_30%/0.18)]"
+        }`}
+        style={{
+          background:
+            "linear-gradient(135deg, hsl(0 0% 100% / 0.65) 0%, hsl(215 100% 98% / 0.5) 50%, hsl(0 0% 100% / 0.65) 100%)",
+          backdropFilter: "blur(28px) saturate(1.6)",
+          WebkitBackdropFilter: "blur(28px) saturate(1.6)",
+          maxWidth: "min(820px, calc(100vw - 32px))",
+        }}
+      >
+        {/* Inner highlight */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-full"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 80% at 50% 0%, hsl(0 0% 100% / 0.7) 0%, transparent 60%)",
+          }}
+        />
+
+        <a href="#" className="relative z-10 flex items-center pl-3">
+          <img src={telosLogo} alt="Telos Media" className="h-7" />
+        </a>
+
+        <div className="relative z-10 hidden items-center gap-1 md:flex">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="rounded-full px-3.5 py-1.5 text-[13.5px] font-medium text-foreground/70 transition-colors hover:bg-white/60 hover:text-foreground"
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
+
         <a
           href="https://calendly.com/jonathan-telosmedia/discovery-call"
-          className="bg-primary text-primary-foreground font-semibold px-5 py-2 rounded-md text-[13px] hover:brightness-110 hover:-translate-y-px transition-all shadow-[0_2px_12px_hsl(205_55%_50%/0.3)]"
+          className="relative z-10 inline-flex h-9 items-center justify-center rounded-full px-5 text-[13px] font-semibold text-white transition-all hover:-translate-y-px"
+          style={{
+            background:
+              "linear-gradient(135deg, hsl(215 95% 58%) 0%, hsl(220 90% 52%) 60%, hsl(230 85% 58%) 100%)",
+            boxShadow:
+              "0 6px 20px -6px hsl(215 90% 50% / 0.55), inset 0 1px 0 hsl(0 0% 100% / 0.35)",
+          }}
         >
-          BOOK NOW
+          Book a call
         </a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 

@@ -1,93 +1,183 @@
 import { motion } from "framer-motion";
-import flowCheckout from "@/assets/flow-checkout.png";
-import flowPostpurchase from "@/assets/flow-postpurchase.png";
-import campaignDesign from "@/assets/campaign-design.png";
-import emailDesignTrading from "@/assets/email-design-trading.png";
-
-const services = [
-  {
-    label: "Automation Flows",
-    title: "Convert your visitors into customers. Create an automated retargeting.",
-    desc: "We design personalized email flows for each client based on their behavior. Send the right message at the right time.",
-    images: [flowCheckout, flowPostpurchase],
-  },
-  {
-    label: "Campaigns",
-    title: "Generate engagement and increase your sales. Unmissable Campaigns.",
-    desc: "We create campaigns with an incredible design and copy. Build a list of returning customers with offers, educational content and more.",
-    images: [campaignDesign, emailDesignTrading],
-  },
-  {
-    label: "Signup Forms",
-    title: "Grow your email list. Grow your community. Grow your sales.",
-    desc: "We design signup forms that work. Capture emails from your visitors and convert them into customers.",
-    images: [
-      "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/65302099616c8bf92b06520d_%27Untitled%20Image%20(1)..png",
-      "https://cdn.prod.website-files.com/653000aca81aeb25f0b46571/68ca6ddbf76b18b20c6f8a72_Telos%20Media%20X%20Puro%20(4).png",
-    ],
-  },
-];
 
 const fadeIn = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
+const pillars = [
+  {
+    label: "Lifecycle Flows",
+    title: "Automated revenue, on autopilot.",
+    description:
+      "Welcome, abandoned cart, post-purchase, win-back, browse — built once, optimized forever.",
+    bullets: [
+      "Personalized by segment + behavior",
+      "A/B tested for revenue, not opens",
+      "Quarterly creative refreshes included",
+    ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+        <path d="M3 12C5 6 9 4 12 4s7 2 9 8c-2 6-6 8-9 8s-7-2-9-8z" />
+        <circle cx="12" cy="12" r="2.5" />
+      </svg>
+    ),
+  },
+  {
+    label: "Campaigns",
+    title: "Sends that drive the week.",
+    description:
+      "Strategy-led calendar, designed creative, copy that converts. Weekly cadence, monthly reviews.",
+    bullets: [
+      "Strategy + creative + copy + send",
+      "Promo plans, launches, content sends",
+      "Reported against revenue, not vanity",
+    ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+        <path d="M22 2L11 13" />
+        <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Strategy & Infra",
+    title: "The system underneath.",
+    description:
+      "Deliverability, segmentation, attribution, ESP architecture — the work nobody sees but everybody benefits from.",
+    bullets: [
+      "Inbox placement audits + fixes",
+      "Segmentation + tagging architecture",
+      "Reporting that ties to real revenue",
+    ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+        <rect x="3" y="3" width="7" height="7" rx="1.5" />
+        <rect x="14" y="3" width="7" height="7" rx="1.5" />
+        <rect x="3" y="14" width="7" height="7" rx="1.5" />
+        <rect x="14" y="14" width="7" height="7" rx="1.5" />
+      </svg>
+    ),
+  },
+  {
+    label: "SMS & WhatsApp",
+    title: "When the channel fits.",
+    description:
+      "Some brands win with SMS. Others lean WhatsApp. Some shouldn't run either. We figure out the right mix and only ship what makes you money.",
+    bullets: [
+      "Channel fit assessment first, not last",
+      "Compliant flows + campaign sends",
+      "Built into the same lifecycle plan",
+    ],
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </svg>
+    ),
+  },
+];
+
 const Services = () => {
   return (
-    <section id="services" className="py-16 px-6">
-      <div className="max-w-[1140px] mx-auto">
-        <motion.div variants={fadeIn} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-40px" }}>
-          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border bg-card text-xs text-primary uppercase tracking-[1.5px] font-semibold mb-5">
-            ✦ Services
-          </span>
-          <div className="text-[clamp(28px,3.6vw,44px)] font-bold tracking-[-1.5px] leading-[1.12] mb-4 max-w-[680px] text-foreground">
-            Everything your email channel needs to print money
+    <section id="services" className="relative px-6 py-24 md:py-32">
+      {/* Ambient blue glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-0 top-20 -z-10 h-[500px] w-[700px] rounded-full opacity-40 blur-3xl"
+        style={{ background: "radial-gradient(circle, hsl(200 95% 65% / 0.18), transparent 70%)" }}
+      />
+
+      <div className="mx-auto max-w-[1140px]">
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-40px" }}
+          className="mb-16 text-center"
+        >
+          <div className="glass-card mx-auto inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/70">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            What we do
           </div>
+          <h2 className="mx-auto mt-6 max-w-[760px] text-[clamp(32px,4.5vw,52px)] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground">
+            One channel.{" "}
+            <span className="gradient-text">Four moving parts.</span>
+          </h2>
+          <p className="mx-auto mt-5 max-w-[600px] text-[16px] leading-relaxed text-muted-foreground">
+            Email isn't one job — it's a system. We ship the pieces that compound,
+            and only add SMS or WhatsApp where it actually pays back.
+          </p>
         </motion.div>
 
-        <div className="flex flex-col gap-4 mt-12">
-          {services.map((service, i) => (
+        <div className="mx-auto grid max-w-[920px] grid-cols-1 gap-6 md:grid-cols-2">
+          {pillars.map((p, i) => (
             <motion.div
-              key={i}
+              key={p.label}
               variants={fadeIn}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-40px" }}
-              className={`bg-card border border-border rounded-[14px] grid grid-cols-1 md:grid-cols-2 overflow-hidden hover:border-primary/30 hover:-translate-y-0.5 transition-all duration-300 ${
-                i % 2 === 1 ? "md:[direction:rtl]" : ""
-              }`}
+              transition={{ delay: i * 0.08 }}
+              className="glass-card grain group relative flex flex-col rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className={`p-8 md:p-11 flex flex-col justify-center ${i % 2 === 1 ? "md:[direction:ltr]" : ""}`}>
-                <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-border bg-background text-xs text-primary uppercase tracking-[1.5px] font-semibold mb-4 w-fit">
-                  {service.label}
-                </span>
-                <h3 className="text-[28px] font-bold tracking-[-0.8px] leading-[1.2] mb-3.5 text-foreground">
-                  {service.title}
-                </h3>
-                <p className="text-[15px] text-muted-foreground leading-relaxed max-w-[440px] mb-7">
-                  {service.desc}
-                </p>
-                <a
-                  href="#cta"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-md text-[13px] font-semibold hover:brightness-110 hover:-translate-y-px transition-all w-fit"
-                >
-                  BOOK NOW →
-                </a>
+              {/* Icon */}
+              <div
+                className="relative z-10 mb-6 flex h-12 w-12 items-center justify-center rounded-2xl text-white shadow-lg"
+                style={{
+                  background:
+                    "linear-gradient(135deg, hsl(215 95% 58%) 0%, hsl(220 90% 52%) 60%, hsl(230 85% 58%) 100%)",
+                  boxShadow: "0 8px 20px -8px hsl(215 90% 50% / 0.45), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
+                }}
+              >
+                {p.icon}
               </div>
-              <div className={`flex gap-4 p-6 md:p-8 items-center justify-center bg-surface min-h-[280px] md:min-h-[380px] ${i % 2 === 1 ? "md:[direction:ltr]" : ""}`}>
-                {service.images.map((src, j) => (
-                  <img
-                    key={j}
-                    src={src}
-                    alt={`${service.label} ${j + 1}`}
-                    className="max-h-[150px] sm:max-h-[180px] md:max-h-[220px] max-w-[45%] rounded-xl border border-border shadow-[0_6px_30px_rgba(0,0,0,0.08)] object-contain hover:scale-[1.03] transition-transform"
-                  />
+
+              <div className="relative z-10 mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+                {p.label}
+              </div>
+              <h3 className="relative z-10 text-[22px] font-semibold leading-[1.15] tracking-[-0.02em] text-foreground">
+                {p.title}
+              </h3>
+              <p className="relative z-10 mt-3 text-[14.5px] leading-relaxed text-muted-foreground">
+                {p.description}
+              </p>
+
+              <ul className="relative z-10 mt-6 flex flex-col gap-2.5 border-t border-white/60 pt-5">
+                {p.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2.5 text-[13.5px] leading-snug text-foreground/80">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-[3px] h-3.5 w-3.5 shrink-0 text-primary">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    <span>{b}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </div>
+
+        {/* Mid-page CTA */}
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-40px" }}
+          className="mt-14 text-center"
+        >
+          <a
+            href="https://calendly.com/jonathan-telosmedia/discovery-call"
+            className="group inline-flex h-12 items-center justify-center gap-1.5 rounded-full px-7 text-[14px] font-semibold text-white transition-all hover:-translate-y-0.5"
+            style={{
+              background:
+                "linear-gradient(135deg, hsl(215 95% 58%) 0%, hsl(220 90% 52%) 60%, hsl(230 85% 58%) 100%)",
+              boxShadow:
+                "0 10px 28px -8px hsl(215 90% 50% / 0.5), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
+            }}
+          >
+            See if we're a fit
+            <span className="transition-transform group-hover:translate-x-0.5">→</span>
+          </a>
+        </motion.div>
       </div>
     </section>
   );

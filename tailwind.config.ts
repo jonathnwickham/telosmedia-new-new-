@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"DM Sans"', '-apple-system', 'sans-serif'],
+        sans: ['"Inter Tight"', '"Inter"', '-apple-system', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

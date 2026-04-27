@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import LogoScroll from "./LogoScroll";
+import dashboardDetailed from "@/assets/dashboard-detailed.png";
 
 const stats = [
-  { target: 37, prefix: "$", suffix: "M+", label: "Revenue Generated", duration: 2800 },
-  { target: 40, prefix: "", suffix: "+", label: "Clients Served", duration: 2200 },
-  { target: 41, prefix: "", suffix: "%", label: "Avg Open Rate", duration: 2400 },
-  { target: 6.5, prefix: "", suffix: "M+", label: "Emails Sent Monthly", duration: 2000 },
+  { target: 37, prefix: "$", suffix: "M+", label: "Revenue generated", duration: 2200 },
+  { target: 40, prefix: "", suffix: "+", label: "Brands served", duration: 1800 },
+  { target: 41, prefix: "", suffix: "%", label: "Avg. open rate", duration: 2000 },
+  { target: 6.5, prefix: "", suffix: "M+", label: "Emails sent / mo", duration: 1600 },
 ];
 
 const AnimatedCounter = ({ target, prefix, suffix, duration }: { target: number; prefix: string; suffix: string; duration: number }) => {
@@ -41,178 +41,204 @@ const AnimatedCounter = ({ target, prefix, suffix, duration }: { target: number;
   }, [target, duration]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="tabular-nums">
       {prefix}{value}{suffix}
     </div>
   );
 };
 
-const floatingStars = [
-  { x: "6%", y: "14%", size: 30, delay: 0, duration: 6.2 },
-  { x: "88%", y: "10%", size: 24, delay: 1.2, duration: 5.4 },
-  { x: "82%", y: "48%", size: 20, delay: 0.6, duration: 7.1 },
-  { x: "10%", y: "65%", size: 16, delay: 2.1, duration: 5.8 },
-  { x: "94%", y: "32%", size: 14, delay: 1.8, duration: 6.6 },
-  { x: "3%", y: "40%", size: 18, delay: 0.3, duration: 7.5 },
-  { x: "50%", y: "8%", size: 12, delay: 2.5, duration: 6.0 },
-  { x: "72%", y: "70%", size: 15, delay: 0.9, duration: 5.6 },
-];
+const ease = [0.22, 1, 0.36, 1] as const;
 
 const Hero = () => {
   return (
-    <section className="min-h-[85vh] flex flex-col items-center justify-center px-6 pt-28 pb-12 relative overflow-hidden">
-      {/* Vibrant multi-layer glow */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[1200px] h-[900px] pointer-events-none"
+    <section className="relative overflow-hidden px-6 pt-32 pb-24 md:pt-40 md:pb-32">
+      {/* Blue aurora backdrop */}
+      <div
+        aria-hidden
+        className="blue-aurora pointer-events-none absolute inset-0 -z-10"
+      />
+      {/* Animated gradient orbs */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 left-1/4 -z-10 h-[520px] w-[520px] rounded-full opacity-60 blur-3xl"
+        style={{ background: "radial-gradient(circle, hsl(215 95% 60% / 0.35), transparent 60%)" }}
+        animate={{ x: [0, 40, 0], y: [0, 30, 0] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute -top-20 right-1/4 -z-10 h-[480px] w-[480px] rounded-full opacity-50 blur-3xl"
+        style={{ background: "radial-gradient(circle, hsl(200 95% 65% / 0.32), transparent 60%)" }}
+        animate={{ x: [0, -30, 0], y: [0, 40, 0] }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {/* Faint grid */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.25]"
         style={{
-          background: `
-            radial-gradient(ellipse 70% 50% at 40% 30%, hsl(var(--primary) / 0.16) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 60% at 65% 50%, hsl(var(--accent) / 0.12) 0%, transparent 65%),
-            radial-gradient(ellipse 80% 40% at 50% 10%, hsl(205 70% 60% / 0.10) 0%, transparent 60%)
-          `
+          backgroundImage:
+            "linear-gradient(hsl(215 60% 50% / 0.08) 1px, transparent 1px), linear-gradient(90deg, hsl(215 60% 50% / 0.08) 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
+          maskImage:
+            "radial-gradient(ellipse 60% 60% at 50% 30%, black 30%, transparent 75%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 60% 60% at 50% 30%, black 30%, transparent 75%)",
         }}
       />
-      <div className="absolute top-[30%] -right-[10%] w-[600px] h-[600px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at center, hsl(205 60% 55% / 0.08) 0%, transparent 70%)' }}
-      />
-      <div className="absolute bottom-[10%] -left-[8%] w-[500px] h-[500px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at center, hsl(var(--primary) / 0.06) 0%, transparent 70%)' }}
-      />
 
-      {/* Floating decorative stars ✦ */}
-      {floatingStars.map((star, i) => (
+      <div className="mx-auto max-w-[920px] text-center">
+        {/* Eyebrow */}
         <motion.div
-          key={i}
-          className="absolute pointer-events-none text-primary/25"
-          style={{ left: star.x, top: star.y, fontSize: star.size }}
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{
-            opacity: [0.15, 0.5, 0.15],
-            scale: [0.8, 1.15, 0.8],
-            y: [0, -18, 0],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: star.duration,
-            delay: star.delay,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          ✦
-        </motion.div>
-      ))}
-
-      {/* Hero copy — centered */}
-      <div className="max-w-[800px] w-full mx-auto text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 28, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-card/80 backdrop-blur-sm text-[13px] text-muted-foreground mb-8 shadow-sm"
-        >
-          <motion.span
-            className="text-primary font-semibold"
-            animate={{ rotate: [0, 15, -15, 0], scale: [1, 1.2, 1] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          >
-            ✦
-          </motion.span>{" "}
-$37M+ generated for our clients
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 36 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[clamp(32px,4.8vw,56px)] font-bold leading-[1.08] tracking-[-2px] mb-6 text-foreground"
+          transition={{ duration: 0.5, ease }}
+          className="glass-card inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[12px] font-medium tracking-wide text-foreground/70"
         >
-          For brand owners ready for<br />
-          <motion.span
-            className="gradient-text"
-            initial={{ backgroundPosition: "0% 50%" }}
-            animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            style={{ backgroundSize: "200% 200%" }}
-          >
-            next-level growth
-          </motion.span>
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
+          </span>
+          Email, done right.
+        </motion.div>
+
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.08, ease }}
+          className="mt-8 text-[clamp(40px,6vw,76px)] font-semibold leading-[1.02] tracking-[-0.035em] text-foreground"
+        >
+          Make the right call
           <br />
-          without spending an extra penny on advertising
+          on <span className="gradient-text">email</span>.
         </motion.h1>
 
+        {/* Subhead */}
         <motion.p
-          initial={{ opacity: 0, y: 28 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[clamp(16px,1.8vw,19px)] text-muted-foreground max-w-[580px] mb-10 leading-relaxed mx-auto"
+          transition={{ duration: 0.7, delay: 0.18, ease }}
+          className="mx-auto mt-6 max-w-[620px] text-[clamp(16px,1.6vw,19px)] leading-[1.55] text-muted-foreground"
         >
-          Crafting emails that don't just "look nice" they rake in revenue.
+          We listen first. Then we build the system — strategy, flows, campaigns —
+          that turns your list into your highest-margin revenue channel.
         </motion.p>
 
+        {/* CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="flex gap-3 mb-0 flex-col sm:flex-row justify-center"
+          transition={{ duration: 0.7, delay: 0.26, ease }}
+          className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
-          <motion.a
+          <a
             href="https://calendly.com/jonathan-telosmedia/discovery-call"
-            className="inline-flex items-center gap-2 px-7 py-3 bg-primary text-primary-foreground rounded-md text-[15px] font-semibold transition-all shadow-[0_4px_16px_hsl(var(--primary)/0.2)]"
-            whileHover={{ y: -2, boxShadow: "0 8px 30px hsl(205 55% 50% / 0.3)" }}
-            whileTap={{ scale: 0.98 }}
+            className="group inline-flex h-12 items-center justify-center gap-1.5 rounded-full px-7 text-[14px] font-semibold text-white transition-all hover:shadow-[0_12px_32px_-8px_hsl(215_90%_50%/0.55)]"
+            style={{
+              background: "linear-gradient(135deg, hsl(215 95% 58%) 0%, hsl(220 90% 52%) 60%, hsl(230 85% 58%) 100%)",
+              boxShadow: "0 8px 24px -8px hsl(215 90% 50% / 0.45), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
+            }}
           >
-            Book a Call →
-          </motion.a>
-          <motion.a
-            href="mailto:jonathan@telosmedia.co"
-            className="inline-flex items-center gap-2 px-7 py-3 bg-transparent text-foreground border border-border rounded-md text-[15px] font-medium transition-all"
-            whileHover={{ y: -2, borderColor: "hsl(220 12% 45%)", backgroundColor: "hsl(220 20% 98%)" }}
-            whileTap={{ scale: 0.98 }}
+            Book a discovery call
+            <span className="transition-transform group-hover:translate-x-0.5">→</span>
+          </a>
+          <a
+            href="#results"
+            className="glass-card inline-flex h-12 items-center justify-center gap-1.5 rounded-full px-7 text-[14px] font-semibold text-foreground transition-all hover:-translate-y-0.5"
           >
-            Contact Us
-          </motion.a>
+            See client results
+          </a>
+        </motion.div>
+
+        {/* Trust line */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.4, ease }}
+          className="mt-8 text-[12px] uppercase tracking-[0.18em] text-muted-foreground/80"
+        >
+          Trusted by 40+ brands · $37M+ generated
         </motion.div>
       </div>
 
-      {/* Stats row — below hero copy */}
+      {/* Hero product visual */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        className="w-full max-w-[960px] mx-auto mt-16 relative z-10"
+        transition={{ duration: 1, delay: 0.45, ease }}
+        className="relative mx-auto mt-20 w-full max-w-[1080px]"
       >
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-0 hero-glass-card rounded-2xl">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.7 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="px-6 py-4 md:py-8 flex md:flex-col items-center md:items-center justify-between md:justify-center text-center transition-all duration-300 hover:bg-card-hover/40 relative"
-            >
-              {/* Vertical divider on desktop */}
-              {i < 3 && (
-                <div className="hidden md:block absolute right-0 top-[20%] bottom-[20%] w-px bg-border" />
-              )}
-              {/* Horizontal divider on mobile */}
-              {i < 3 && (
-                <div className="block md:hidden absolute bottom-0 left-[10%] right-[10%] h-px bg-border" />
-              )}
-              <div className="text-[11px] uppercase tracking-[2px] text-muted-foreground font-semibold md:mb-2 order-1 md:order-none">
-                {stat.label}
+        {/* Glow under */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-10 -bottom-10 h-40 rounded-[60%] blur-3xl"
+          style={{ background: "radial-gradient(ellipse, hsl(215 95% 60% / 0.45), transparent 70%)" }}
+        />
+
+        <div className="relative">
+          {/* Front tile — dashboard */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6, ease }}
+            className="glass-card relative overflow-hidden rounded-3xl"
+          >
+            {/* Top fake browser chrome */}
+            <div className="flex items-center gap-2 border-b border-white/60 bg-white/40 px-5 py-3 backdrop-blur">
+              <div className="flex gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-red-400/60" />
+                <span className="h-2.5 w-2.5 rounded-full bg-amber-400/60" />
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/60" />
               </div>
-              <motion.div
-                className="text-[1.4rem] md:text-[2.1rem] leading-none font-bold text-primary drop-shadow-[0_4px_14px_hsl(var(--primary)/0.14)] tabular-nums order-2 md:order-none"
-                whileHover={{ scale: 1.08 }}
-                transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              >
-                <AnimatedCounter target={stat.target} prefix={stat.prefix} suffix={stat.suffix} duration={stat.duration} />
-              </motion.div>
-            </motion.div>
-          ))}
+              <div className="ml-3 flex-1 truncate rounded-full bg-white/70 px-3 py-1 text-[11px] text-muted-foreground">
+                klaviyo · campaign performance / last 30 days
+              </div>
+              <div className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                live
+              </div>
+            </div>
+            <div className="relative h-[440px] overflow-hidden bg-white md:h-[520px]">
+              <img
+                src={dashboardDetailed}
+                alt="Dashboard preview"
+                className="absolute inset-x-0 top-0 w-full"
+              />
+              {/* Bottom fade so the crop feels intentional */}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/70 to-transparent" />
+            </div>
+          </motion.div>
         </div>
       </motion.div>
 
+      {/* Stats row */}
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6, ease }}
+        className="mx-auto mt-24 max-w-[960px]"
+      >
+        <div className="glass-card grid grid-cols-2 divide-x divide-y divide-white/40 overflow-hidden rounded-3xl md:grid-cols-4 md:divide-y-0">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="relative z-10 flex flex-col items-start gap-2 px-6 py-7 transition-colors hover:bg-white/40"
+            >
+              <div className="text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
+                {stat.label}
+              </div>
+              <div className="text-[clamp(28px,3vw,40px)] font-semibold leading-none tracking-[-0.02em] text-foreground">
+                <AnimatedCounter
+                  target={stat.target}
+                  prefix={stat.prefix}
+                  suffix={stat.suffix}
+                  duration={stat.duration}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };

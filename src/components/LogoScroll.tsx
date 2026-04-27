@@ -48,28 +48,38 @@ const LogoScroll = () => {
         initial={{ opacity: 0, y: 28 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="w-full bg-secondary py-14 overflow-hidden flex flex-col gap-8"
+        className="relative w-full overflow-hidden border-y border-border/60 bg-white py-14 flex flex-col gap-10"
       >
-        <p className="text-center text-xs text-muted-foreground uppercase tracking-[2.5px]">
+        {/* Edge fades */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-white to-transparent" />
+
+        <p className="text-center text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
           Trusted by growing brands worldwide
         </p>
-        <div className="flex items-center gap-16 animate-scroll-logos w-max">
+        <div className="flex items-center gap-20 animate-scroll-logos w-max">
           {[...row1, ...row1, ...row1].map((logo, i) => (
             <img
               key={i}
               src={logo.src}
               alt={logo.alt}
-              className="h-7 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+              className="h-8 w-auto object-contain opacity-50 transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+              style={{ filter: "brightness(0) saturate(100%)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.filter = "none")}
+              onMouseLeave={(e) => (e.currentTarget.style.filter = "brightness(0) saturate(100%)")}
             />
           ))}
         </div>
-        <div className="flex items-center gap-16 animate-scroll-logos-reverse w-max">
+        <div className="flex items-center gap-20 animate-scroll-logos-reverse w-max">
           {[...row2, ...row2, ...row2].map((logo, i) => (
             <img
               key={i}
               src={logo.src}
               alt={logo.alt}
-              className="h-7 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+              className="h-8 w-auto object-contain opacity-60 transition-all duration-300 hover:opacity-100"
+              style={{ filter: "brightness(0) saturate(100%)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.filter = "none")}
+              onMouseLeave={(e) => (e.currentTarget.style.filter = "brightness(0) saturate(100%)")}
             />
           ))}
         </div>
