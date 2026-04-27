@@ -26,13 +26,13 @@ const row1Set: Logo[] = [
   { src: axcera, alt: "Axcera", sizeClass: "h-5 max-h-5" },
   { src: aerofunded, alt: "AeroFunded" },
   { src: playerprofit, alt: "Player Profit" },
-  { src: aquafunded, alt: "AquaFunded", sizeClass: "h-5 max-h-5" },
+  { src: aquafunded, alt: "AquaFunded", sizeClass: "h-[19px] max-h-[19px]" },
   { src: blueguardian, alt: "Blue Guardian" },
   { src: gft, alt: "GFT" },
-  { src: atlasfunded, alt: "Atlas Funded", sizeClass: "h-5 max-h-5" },
+  { src: atlasfunded, alt: "Atlas Funded", sizeClass: "h-[19px] max-h-[19px]" },
   { src: mystery1, alt: "Client" },
-  { src: keeps, alt: "Keeps", sizeClass: "h-5 max-h-5" },
-  { src: puro, alt: "PURO", sizeClass: "h-5 max-h-5" },
+  { src: keeps, alt: "Keeps", sizeClass: "h-[19px] max-h-[19px]" },
+  { src: puro, alt: "PURO", sizeClass: "h-[19px] max-h-[19px]" },
 ];
 
 // Row 2 — 10 logos. Aqua/Play/GF pairs split across rows; "Funded" brands spread within row.
@@ -40,13 +40,13 @@ const row2Set: Logo[] = [
   { src: retropia, alt: "Retropia" },
   { src: alphatrader, alt: "Alpha Trader" },
   { src: playvo, alt: "PlayVo" },
-  { src: aquafutures, alt: "AquaFutures", sizeClass: "h-5 max-h-5" },
+  { src: aquafutures, alt: "AquaFutures", sizeClass: "h-[19px] max-h-[19px]" },
   { src: flooreight, alt: "Floor Eight" },
   { src: gff, alt: "Goat Funded Futures", sizeClass: "h-9 max-h-9" },
   { src: ftuk, alt: "FTUK", sizeClass: "h-5 max-h-5" },
   { src: solanafunded, alt: "Solana Funded" },
   { src: mystery2, alt: "Client" },
-  { src: qtfunded, alt: "QT Funded", sizeClass: "h-5 max-h-5" },
+  { src: qtfunded, alt: "QT Funded", sizeClass: "h-[19px] max-h-[19px]" },
 ];
 
 const row1 = [...row1Set, ...row1Set];
