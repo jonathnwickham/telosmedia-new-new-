@@ -21,13 +21,13 @@ const Index = () => {
       <Hero />
       <LogoScroll />
       <Services />
+      <AuditPromise />
       <PhoneMarquee />
       <Partners />
       <Results />
       <Process />
       <FAQ />
       <Explainer />
-      <AuditPromise />
       <CTA />
       <TelosMeaning />
       <Footer />
