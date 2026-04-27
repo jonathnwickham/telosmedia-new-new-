@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "Will Jonathan be involved in our account?",
-    a: "Yes. Jonathan is lead strategist on every account. You won't get handed off to a junior — every brand we work with gets direct, weekly contact with the founder.",
+    a: "Yes. Jonathan is lead strategist on every account. You won't get handed off to a junior. Every brand we work with gets direct, weekly contact with the founder.",
   },
   {
     q: "Do you design the emails or do we send them to you?",
@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "How do you measure success?",
-    a: "Revenue. Specifically: % of revenue attributed to email, return customer rate, and LTV. Open and click rates are diagnostic — useful, but not the scoreboard.",
+    a: "Revenue. Specifically: % of revenue attributed to email, return customer rate, and LTV. Open and click rates are diagnostic. Useful, but not the scoreboard.",
   },
   {
     q: "What platforms do you work with?",
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "Do you do SMS or WhatsApp too?",
-    a: "Yes — but only when the channel actually fits. Some brands win with SMS. Some don't. We'll do the fit assessment first and only ship what makes you money.",
+    a: "Yes, but only when the channel actually fits. Some brands win with SMS. Some don't. We'll do the fit assessment first and only ship what makes you money.",
   },
   {
     q: "How long until we see results?",

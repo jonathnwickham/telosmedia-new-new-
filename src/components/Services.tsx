@@ -10,7 +10,7 @@ const pillars = [
     label: "Lifecycle Flows",
     title: "Automated revenue, on autopilot.",
     description:
-      "Welcome, abandoned cart, post-purchase, win-back, browse — built once, optimized forever.",
+      "Welcome, abandoned cart, post-purchase, win-back, browse. Built once, optimized forever.",
     bullets: [
       "Personalized by segment + behavior",
       "A/B tested for revenue, not opens",
@@ -44,7 +44,7 @@ const pillars = [
     label: "Strategy & Infra",
     title: "The system underneath.",
     description:
-      "Deliverability, segmentation, attribution, ESP architecture — the work nobody sees but everybody benefits from.",
+      "Deliverability, segmentation, attribution, ESP architecture. The work nobody sees but everybody benefits from.",
     bullets: [
       "Inbox placement audits + fixes",
       "Segmentation + tagging architecture",
@@ -104,7 +104,7 @@ const Services = () => {
             <span className="gradient-text">Four moving parts.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[600px] text-[16px] leading-relaxed text-muted-foreground">
-            Email isn't one job — it's a system. We ship the pieces that compound,
+            Email isn't one job. It's a system. We ship the pieces that compound,
             and only add SMS or WhatsApp where it actually pays back.
           </p>
         </motion.div>
@@ -118,7 +118,7 @@ const Services = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-40px" }}
               transition={{ delay: i * 0.08 }}
-              className="glass-card grain group relative flex flex-col rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1"
+              className="group relative flex flex-col rounded-3xl border border-border/60 bg-white p-10 shadow-[0_2px_4px_-2px_hsl(215_30%_30%/0.06),0_8px_24px_-8px_hsl(215_30%_30%/0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_4px_12px_-4px_hsl(215_60%_40%/0.12),0_20px_50px_-12px_hsl(215_60%_40%/0.18)]"
             >
               {/* Icon */}
               <div
@@ -138,11 +138,11 @@ const Services = () => {
               <h3 className="relative z-10 text-[22px] font-semibold leading-[1.15] tracking-[-0.02em] text-foreground">
                 {p.title}
               </h3>
-              <p className="relative z-10 mt-3 text-[14.5px] leading-relaxed text-muted-foreground">
+              <p className="relative z-10 mb-8 mt-3 text-[14.5px] leading-relaxed text-muted-foreground">
                 {p.description}
               </p>
 
-              <ul className="relative z-10 mt-6 flex flex-col gap-2.5 border-t border-white/60 pt-5">
+              <ul className="relative z-10 mt-auto flex flex-col gap-3 border-t border-border/60 pt-6">
                 {p.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 text-[13.5px] leading-snug text-foreground/80">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="mt-[3px] h-3.5 w-3.5 shrink-0 text-primary">

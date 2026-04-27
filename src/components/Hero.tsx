@@ -121,8 +121,8 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.18, ease }}
           className="mx-auto mt-6 max-w-[620px] text-[clamp(16px,1.6vw,19px)] leading-[1.55] text-muted-foreground"
         >
-          We listen first. Then we build the system — strategy, flows, campaigns —
-          that turns your list into your highest-margin revenue channel.
+          We listen first. Then we build a complete system, strategy, flows, and
+          campaigns, that turns your list into your highest-margin revenue channel.
         </motion.p>
 
         {/* CTAs */}

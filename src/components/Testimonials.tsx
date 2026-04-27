@@ -40,7 +40,7 @@ const Testimonials = () => {
             What our clients say
           </div>
           <p className="text-[15px] text-muted-foreground leading-relaxed max-w-[520px] mb-12">
-            Don't just take our word for it — hear from the brands we've helped scale.
+            Don't just take our word for it. Hear from the brands we've helped scale.
           </p>
         </motion.div>
 

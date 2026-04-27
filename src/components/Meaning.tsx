@@ -62,7 +62,7 @@ const Meaning = () => {
               <div className="mt-6 space-y-5 text-[16px] leading-[1.7] text-foreground/80">
                 <p>
                   I started Telos because I kept watching brands treat email like an
-                  afterthought — set it up once, forget it, and wonder why it's stuck
+                  afterthought. Set it up once, forget it, and wonder why it's stuck
                   at 8% of revenue.
                 </p>
                 <p>
@@ -72,7 +72,7 @@ const Meaning = () => {
                 </p>
                 <p>
                   We work with a small number of brands at a time. We listen first,
-                  build the system, then run it like operators — not like a vendor.
+                  build the system, then run it like operators, not like a vendor.
                   If that sounds like what you've been missing, let's talk.
                 </p>
               </div>
@@ -111,7 +111,7 @@ const Meaning = () => {
             </span>
             <p className="mt-4 text-[15px] leading-[1.7] text-muted-foreground">
               In Aristotle's philosophy, <em>telos</em> is the state in which a thing's
-              nature is fulfilled — when it's fully in act. That's how we think about
+              nature is fulfilled, when it's fully in act. That's how we think about
               your email channel.
             </p>
           </div>

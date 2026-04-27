@@ -57,7 +57,7 @@ const Partners = () => {
           className="mt-8 text-center text-[14px] leading-relaxed text-muted-foreground"
         >
           Certified partners. Deep stack expertise. We integrate cleanly with what
-          you already run — no migrations, no rebuilds.
+          you already run. No migrations, no rebuilds.
         </motion.p>
       </div>
     </section>
