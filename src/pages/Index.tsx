@@ -25,11 +25,11 @@ const Index = () => {
       <Partners />
       <Results />
       <Process />
+      <Explainer />
+      <TelosMeaning />
       <FAQ />
       <AuditPromise />
       <CTA />
-      <Explainer />
-      <TelosMeaning />
       <Footer />
     </>
   );

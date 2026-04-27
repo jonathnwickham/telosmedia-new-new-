@@ -84,8 +84,8 @@ const Process = () => {
             The process
           </div>
           <h2 className="mx-auto mt-6 max-w-[760px] text-[clamp(32px,4.5vw,52px)] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground">
-            How we{" "}
-            <span className="gradient-text">build it.</span>
+            How do we{" "}
+            <span className="gradient-text">do it?</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[600px] text-[16px] leading-relaxed text-muted-foreground">
             A repeatable system. Four phases, no surprises, every brand we work with goes through it.

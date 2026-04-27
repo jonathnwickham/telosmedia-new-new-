@@ -23,7 +23,7 @@ type Logo = { src: string; alt: string; sizeClass?: string };
 
 // Row 1 — 10 logos
 const row1Set: Logo[] = [
-  { src: axcera, alt: "Axcera" },
+  { src: axcera, alt: "Axcera", sizeClass: "h-5 max-h-5" },
   { src: aerofunded, alt: "AeroFunded" },
   { src: playerprofit, alt: "Player Profit" },
   { src: aquafunded, alt: "AquaFunded", sizeClass: "h-5 max-h-5" },
@@ -31,8 +31,8 @@ const row1Set: Logo[] = [
   { src: gft, alt: "GFT" },
   { src: atlasfunded, alt: "Atlas Funded", sizeClass: "h-5 max-h-5" },
   { src: mystery1, alt: "Client" },
-  { src: keeps, alt: "Keeps" },
-  { src: puro, alt: "PURO" },
+  { src: keeps, alt: "Keeps", sizeClass: "h-5 max-h-5" },
+  { src: puro, alt: "PURO", sizeClass: "h-5 max-h-5" },
 ];
 
 // Row 2 — 10 logos. Aqua/Play/GF pairs split across rows; "Funded" brands spread within row.
