@@ -9,6 +9,13 @@ const fits = [
   "You're on Klaviyo or Omnisend and want an operator who lives in it daily",
 ];
 
+const afterCall = [
+  "We audit your full account — flows, campaigns, deliverability, segmentation",
+  "We show you what's working, what isn't, and what we'd change first",
+  "No copy-paste pricing or generic strategy — every plan is built for your brand",
+  "If something you've built is performing, we keep it. The rest gets rebuilt from the ground up.",
+];
+
 const CTA = () => {
   const widgetRef = useRef<HTMLDivElement>(null);
   const [calendarLoaded, setCalendarLoaded] = useState(false);
@@ -137,6 +144,44 @@ const CTA = () => {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-8 border-t border-border/60 pt-8">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
+                  What happens after the call
+                </div>
+                <h3 className="mt-3 text-[24px] font-semibold leading-[1.2] tracking-[-0.02em] text-foreground">
+                  A real look at your account. Then real advice.
+                </h3>
+                <ul className="mt-6 flex flex-col gap-3.5">
+                  {afterCall.map((f) => (
+                    <li
+                      key={f}
+                      className="flex items-start gap-3 text-[14.5px] leading-[1.5] text-foreground/85"
+                    >
+                      <span
+                        className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-white"
+                        style={{
+                          background:
+                            "linear-gradient(135deg, hsl(0 0% 12%), hsl(0 0% 0%))",
+                        }}
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-3 w-3"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </span>
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
             </div>
           </motion.div>
