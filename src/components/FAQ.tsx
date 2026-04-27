@@ -3,10 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "Will Jonathan be involved in our account?",
-    a: "Yes. Jonathan is lead strategist on every account. You won't get handed off to a junior. Every brand we work with gets direct, weekly contact with the founder.",
-  },
-  {
     q: "Do you design the emails or do we send them to you?",
     a: "We design and write everything. The only thing we need from you are brand assets (product photos, lifestyle imagery) and any brand guidelines you have. If you don't have guidelines, we'll build them with you.",
   },
