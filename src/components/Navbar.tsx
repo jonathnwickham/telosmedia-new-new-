@@ -35,11 +35,11 @@ const Navbar = () => {
   return (
     <div className="fixed inset-x-0 top-4 z-50 flex justify-center px-4">
       <div
-        className="relative"
+        className="relative w-full md:w-auto"
         style={{ maxWidth: "calc(100vw - 32px)" }}
       >
         <nav
-          className={`relative flex items-center gap-3 overflow-hidden rounded-full px-3 py-2 transition-all duration-300 ${
+          className={`relative flex items-center justify-between gap-3 overflow-hidden rounded-full px-3 py-2 transition-all duration-300 md:justify-start ${
             scrolled
               ? "grain border border-white/60 shadow-[0_20px_50px_-20px_hsl(215_60%_30%/0.25)]"
               : "border border-transparent shadow-none"
