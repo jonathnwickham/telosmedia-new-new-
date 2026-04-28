@@ -64,7 +64,7 @@ const pillars = [
     label: "SMS & WhatsApp",
     title: "Added when it actually pays.",
     description:
-      "Some brands win on SMS. Some can't run it at all without compliance headaches, and that's where WhatsApp earns its keep. We figure out which channel fits your business, then build it into the same plan as your email instead of bolting it on as a side project.",
+      "Some brands win on SMS. Some can't run it at all without compliance headaches, and that's where WhatsApp earns its place. We figure out which channel fits your business, then build it into the same plan as your email instead of bolting it on as a side project.",
     bullets: [
       "Channel fit assessed before we pitch you on it",
       "WhatsApp setup for brands where SMS isn't viable",
