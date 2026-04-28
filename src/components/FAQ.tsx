@@ -4,27 +4,27 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "Do you design the emails or do we send them to you?",
-    a: "We design and write everything. The only thing we need from you are brand assets (product photos, lifestyle imagery) and any brand guidelines you have. If you don't have guidelines, we'll build them with you.",
+    a: "We design and write everything. The only thing we need from you are brand assets, product photos and lifestyle imagery. If you don't have brand guidelines, we'll build them based on the aesthetic of your site so every email lands fully aligned with the rest of your brand.",
   },
   {
     q: "How do you measure success?",
-    a: "Revenue. Specifically: % of revenue attributed to email, return customer rate, and LTV. Open and click rates are diagnostic. Useful, but not the scoreboard.",
+    a: "Revenue first. Percentage of revenue attributed to email, retention rate, and LTV. Open rates and click rates sit underneath that as diagnostics. We also pull attribution from Triple Whale or Hyros depending on what you already use, because some ESPs aren't the most accurate. Klaviyo holds up well, Omnisend less so, which is why we cross-check.",
   },
   {
     q: "What platforms do you work with?",
-    a: "Klaviyo, Omnisend, and Brevo are our most common stacks. We're certified partners on each. If you're on a different ESP, we'll evaluate fit before committing.",
+    a: "Klaviyo, Omnisend, and Brevo are the stacks we run most often. If you're on a different ESP, we'll look at fit first. As long as the partnership makes sense, we can figure the rest out.",
   },
   {
     q: "What's the minimum engagement?",
-    a: "We work with a small number of brands at a time so we can ship like operators, not vendors. Engagements typically start at 90 days, month-to-month after that. No long lock-ins.",
+    a: "We work with a small number of brands at a time so we can ship like operators, not vendors. Engagements start at 90 days, then month-to-month after that. No long lock-ins. Three months gives us enough room to build properly, even though you'll usually see results within the first one or two.",
   },
   {
     q: "Do you do SMS or WhatsApp too?",
-    a: "Yes, but only when the channel actually fits. Some brands win with SMS. Some don't. We'll do the fit assessment first and only ship what makes you money.",
+    a: "Yes, but only when the channel actually fits. Some brands win with SMS. Some can't run it without compliance headaches. That's where WhatsApp earns its place. We'll do the fit assessment first and only ship what makes you money.",
   },
   {
     q: "How long until we see results?",
-    a: "Foundational revenue lifts (better flows, better deliverability) usually show in 30 to 60 days. Compounding lifts (segmentation, lifecycle depth, campaign cadence) compound over the first 90.",
+    a: "Foundational lifts show inside the first 30 to 60 days, especially once new flows you've never had go live. The full picture lands by the 90-day mark, once segmentation, deliverability, and campaign cadence have all stacked up.",
   },
 ];
 
