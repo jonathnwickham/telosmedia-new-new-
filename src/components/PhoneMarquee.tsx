@@ -3,8 +3,26 @@ import alert2 from "@/assets/emails/alert-2.webp";
 import alert3 from "@/assets/emails/alert-3.webp";
 import alert4 from "@/assets/emails/alert-4.webp";
 import alert5 from "@/assets/emails/alert-5.webp";
+import emailMf26 from "@/assets/emails/email-mf-26.webp";
+import emailMf27 from "@/assets/emails/email-mf-27.webp";
+import emailMf28 from "@/assets/emails/email-mf-28.webp";
+import emailMf29 from "@/assets/emails/email-mf-29.webp";
+import emailMf30 from "@/assets/emails/email-mf-30.webp";
+import emailMf31 from "@/assets/emails/email-mf-31.webp";
 
-const phoneImages = [alert1, alert2, alert3, alert4, alert5];
+const phoneImages = [
+  alert1,
+  emailMf26,
+  alert2,
+  emailMf27,
+  alert3,
+  emailMf28,
+  alert4,
+  emailMf29,
+  alert5,
+  emailMf30,
+  emailMf31,
+];
 
 const PhoneMarquee = () => {
   return (
