@@ -22,7 +22,6 @@ const caseStudies = [
       { value: "19.3%", label: "New opt-in rate" },
       { value: "Alia", label: "Pop-up platform" },
     ],
-    caseStudyUrl: "#",
   },
   {
     image: case93m,
@@ -52,7 +51,6 @@ const caseStudies = [
       { value: "98%", label: "Inbox rate" },
       { value: "3.8x", label: "CTR uplift" },
     ],
-    caseStudyUrl: "#",
   },
 ];
 
