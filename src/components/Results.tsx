@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import dashboardSummary from "@/assets/dashboard-summary.png";
+import case93m from "@/assets/case-9-3m.png";
 import popupAlia from "@/assets/popup-alia.png";
 import campaignStats from "@/assets/campaign-stats.png";
 
@@ -22,20 +22,22 @@ const caseStudies = [
       { value: "19.3%", label: "New opt-in rate" },
       { value: "Alia", label: "Pop-up platform" },
     ],
+    caseStudyUrl: "#",
   },
   {
-    image: dashboardSummary,
-    client: "DTC Wellness",
-    industry: "Subscription",
-    headline: "$1M+ generated",
-    sublabel: "326% YoY revenue growth",
+    image: case93m,
+    client: "Prop Firm",
+    industry: "Fintech",
+    headline: "$9.3M in year one",
+    sublabel: "From a standing start in February",
     description:
-      "Email was their #4 channel and stuck. We turned it into their #1 revenue driver in two quarters with a fully automated lifecycle and weekly campaign cadence.",
+      "Started working together in February. By year-end, email had driven $9.3M. They now sit at $1.6M to $1.7M every month and the curve is still climbing.",
     metrics: [
-      { value: "326%", label: "YoY growth" },
-      { value: "8% → 34%", label: "Email share of rev" },
-      { value: "$1M+", label: "Total attributed" },
+      { value: "$9.3M", label: "Year-one revenue" },
+      { value: "$1.6M+", label: "Monthly run rate" },
+      { value: "Feb start", label: "Build began" },
     ],
+    caseStudyUrl: "#",
   },
   {
     image: campaignStats,
@@ -50,6 +52,7 @@ const caseStudies = [
       { value: "98%", label: "Inbox rate" },
       { value: "3.8x", label: "CTR uplift" },
     ],
+    caseStudyUrl: "#",
   },
 ];
 
@@ -141,6 +144,24 @@ const Results = () => {
                       </div>
                     ))}
                   </div>
+
+                  {study.caseStudyUrl && (
+                    <a
+                      href={study.caseStudyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex h-10 w-fit items-center justify-center gap-1.5 rounded-full px-5 text-[13px] font-semibold text-white transition-all hover:-translate-y-0.5"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 0%) 100%)",
+                        boxShadow:
+                          "0 6px 18px -6px hsl(0 0% 0% / 0.35), inset 0 1px 0 hsl(0 0% 100% / 0.3)",
+                      }}
+                    >
+                      Read full case study
+                      <span className="transition-transform group-hover:translate-x-0.5">→</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
