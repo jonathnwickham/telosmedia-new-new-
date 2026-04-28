@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import dashboardSummary from "@/assets/dashboard-summary.png";
-import dashboardDetailed from "@/assets/dashboard-detailed.png";
+import popupAlia from "@/assets/popup-alia.png";
 import campaignStats from "@/assets/campaign-stats.png";
 
 const fadeIn = {
@@ -10,17 +10,17 @@ const fadeIn = {
 
 const caseStudies = [
   {
-    image: dashboardDetailed,
-    client: "DTC Apparel Brand",
-    industry: "E-commerce",
-    headline: "From $48K to $592K",
-    sublabel: "Monthly email revenue",
+    image: popupAlia,
+    client: "Prop Firm",
+    industry: "Fintech",
+    headline: "7.8% → 19.3% opt-in",
+    sublabel: "Pop-up rebuild on Alia",
     description:
-      "Tracking was thin and flows hadn't been touched in 18 months. We rebuilt segmentation, shipped 3 lifecycle flows, and ran a 6-week campaign sprint.",
+      "Their Klaviyo pop-up was already at 7.8%, which most agencies would call a win. We knew it could do more. We moved them to Alia, rebuilt the offer, and ran tests until opt-in hit 19.3%. More than double the captures off the same traffic.",
     metrics: [
-      { value: "12.3x", label: "Revenue lift" },
-      { value: "46%", label: "Avg. open rate" },
-      { value: "34%", label: "Email share" },
+      { value: "2.5x", label: "Opt-in lift" },
+      { value: "19.3%", label: "New opt-in rate" },
+      { value: "Alia", label: "Pop-up platform" },
     ],
   },
   {
@@ -76,11 +76,11 @@ const Results = () => {
             Case studies
           </div>
           <h2 className="mx-auto mt-6 max-w-[760px] text-[clamp(32px,4.5vw,52px)] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground">
-            Real brands.{" "}
-            <span className="gradient-text">Real revenue.</span>
+            Some of{" "}
+            <span className="gradient-text">the work.</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-[560px] text-[16px] leading-relaxed text-muted-foreground">
-            A look at what happens when lifecycle email is built like a product, not a side hustle.
+          <p className="mx-auto mt-5 max-w-[600px] text-[16px] leading-relaxed text-muted-foreground">
+            Real brands, real numbers. Each one built around their offer and their audience, not a template we already had on the shelf.
           </p>
         </motion.div>
 
