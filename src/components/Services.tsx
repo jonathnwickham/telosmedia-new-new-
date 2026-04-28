@@ -43,13 +43,13 @@ const pillars = [
   },
   {
     label: "Strategy & Setup",
-    title: "The plumbing nobody else fixes.",
+    title: "Built around your brand, not a template.",
     description:
-      "Most agencies show you a revenue number from Klaviyo and leave it at that. We check that number against your actual orders, find what's off, and fix the setup behind it. Deliverability, segmentation, attribution, ESP setup. The layer underneath the pretty emails.",
+      "Most agencies hand you copy-paste flows that have nothing to do with your business. We work through your USPs, your offer, and your customers, then build every flow and every email around that. Templates would be easier. We don't do that. We take pride in the results we get for each brand we work with.",
     bullets: [
-      "Inbox placement audits and fixes",
-      "Segmentation and tagging that holds up at scale",
-      "Attribution that ties to real orders, not dashboard guesses",
+      "Every flow shaped by your USPs and offer",
+      "Nothing copied from another client's account",
+      "Results we measure on revenue, ROAS, and retention",
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
