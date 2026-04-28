@@ -205,16 +205,16 @@
   }
 }
 
-/* Mobile: speed up marquees so they feel alive on narrow viewports */
+/* Mobile: tuned marquee speed — alive but readable */
 @media (max-width: 768px) {
   .animate-scroll-logos {
-    animation-duration: 32s;
+    animation-duration: 55s;
   }
   .animate-scroll-logos-reverse {
-    animation-duration: 36s;
+    animation-duration: 60s;
   }
   .animate-scroll-phones {
-    animation-duration: 30s;
+    animation-duration: 45s;
   }
 }
 

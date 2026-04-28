@@ -21,32 +21,32 @@ import mystery2 from "@/assets/logos/v2/mystery2.svg";
 
 type Logo = { src: string; alt: string; sizeClass?: string };
 
-// Row 1 — 10 logos
+// Row 1 — sorted by file size ASC so lightest logos render instantly, heavies decode as they scroll past
 const row1Set: Logo[] = [
-  { src: axcera, alt: "Axcera", sizeClass: "h-5 max-h-5" },
-  { src: aerofunded, alt: "AeroFunded" },
-  { src: playerprofit, alt: "Player Profit" },
-  { src: aquafunded, alt: "AquaFunded", sizeClass: "h-[19px] max-h-[19px]" },
   { src: blueguardian, alt: "Blue Guardian" },
-  { src: gft, alt: "GFT" },
-  { src: atlasfunded, alt: "Atlas Funded", sizeClass: "h-[19px] max-h-[19px]" },
   { src: mystery1, alt: "Client" },
   { src: keeps, alt: "Keeps", sizeClass: "h-[19px] max-h-[19px]" },
+  { src: playerprofit, alt: "Player Profit" },
+  { src: gft, alt: "GFT" },
   { src: puro, alt: "PURO", sizeClass: "h-[19px] max-h-[19px]" },
+  { src: aerofunded, alt: "AeroFunded" },
+  { src: aquafunded, alt: "AquaFunded", sizeClass: "h-[19px] max-h-[19px]" },
+  { src: axcera, alt: "Axcera", sizeClass: "h-5 max-h-5" },
+  { src: atlasfunded, alt: "Atlas Funded", sizeClass: "h-[19px] max-h-[19px]" },
 ];
 
-// Row 2 — 10 logos. Aqua/Play/GF pairs split across rows; "Funded" brands spread within row.
+// Row 2 — sorted by file size ASC so lightest logos render instantly, heavies decode as they scroll past
 const row2Set: Logo[] = [
-  { src: retropia, alt: "Retropia" },
+  { src: mystery2, alt: "Client" },
+  { src: ftuk, alt: "FTUK", sizeClass: "h-5 max-h-5" },
   { src: alphatrader, alt: "Alpha Trader" },
+  { src: gff, alt: "Goat Funded Futures", sizeClass: "h-[40px] max-h-[40px]" },
+  { src: flooreight, alt: "Floor Eight" },
   { src: playvo, alt: "PlayVo" },
   { src: aquafutures, alt: "AquaFutures", sizeClass: "h-[19px] max-h-[19px]" },
-  { src: flooreight, alt: "Floor Eight" },
-  { src: gff, alt: "Goat Funded Futures", sizeClass: "h-[40px] max-h-[40px]" },
-  { src: ftuk, alt: "FTUK", sizeClass: "h-5 max-h-5" },
-  { src: solanafunded, alt: "Solana Funded" },
-  { src: mystery2, alt: "Client" },
   { src: qtfunded, alt: "QT Funded", sizeClass: "h-[19px] max-h-[19px]" },
+  { src: solanafunded, alt: "Solana Funded" },
+  { src: retropia, alt: "Retropia" },
 ];
 
 // Quadruple the sets so even on narrow mobile viewports there's always content visible at any keyframe position
