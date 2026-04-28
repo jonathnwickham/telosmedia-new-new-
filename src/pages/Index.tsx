@@ -7,6 +7,7 @@ import PhoneMarquee from "@/components/PhoneMarquee";
 import Services from "@/components/Services";
 import Results from "@/components/Results";
 import Process from "@/components/Process";
+import Team from "@/components/Team";
 import Explainer from "@/components/Explainer";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
@@ -24,6 +25,7 @@ const Index = () => {
       <Partners />
       <Results />
       <Process />
+      <Team />
       <FAQ />
       <Explainer />
       <CTA />

@@ -117,7 +117,7 @@ const Hero = () => {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
           </span>
-          The email agency that doesn't act like one.
+          Email, run properly.
         </motion.div>
 
         {/* Headline */}
