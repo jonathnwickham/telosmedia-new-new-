@@ -36,7 +36,7 @@ const caseStudies = [
       { value: "$1.6M+", label: "Monthly run rate" },
       { value: "Feb start", label: "Build began" },
     ],
-    caseStudyUrl: "#",
+    caseStudyUrl: "https://canva.link/fvbbj6mkqu64j1l",
   },
   {
     image: case60day,
@@ -77,8 +77,8 @@ const Results = () => {
             Case studies
           </div>
           <h2 className="mx-auto mt-6 max-w-[760px] text-[clamp(32px,4.5vw,52px)] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground">
-            Some of{" "}
-            <span className="gradient-text">the work.</span>
+            Email, doing what it's{" "}
+            <span className="gradient-text">actually supposed to do.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-[600px] text-[16px] leading-relaxed text-muted-foreground">
             Real brands, real numbers. Each one built around their offer and their audience, not a template we already had on the shelf.
