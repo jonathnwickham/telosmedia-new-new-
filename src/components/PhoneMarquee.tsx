@@ -3,25 +3,21 @@ import alert2 from "@/assets/emails/alert-2.webp";
 import alert3 from "@/assets/emails/alert-3.webp";
 import alert4 from "@/assets/emails/alert-4.webp";
 import alert5 from "@/assets/emails/alert-5.webp";
-import emailMf26 from "@/assets/emails/email-mf-26.webp";
-import emailMf27 from "@/assets/emails/email-mf-27.webp";
-import emailMf28 from "@/assets/emails/email-mf-28.webp";
-import emailMf29 from "@/assets/emails/email-mf-29.webp";
-import emailMf30 from "@/assets/emails/email-mf-30.webp";
-import emailMf31 from "@/assets/emails/email-mf-31.webp";
+import alert6 from "@/assets/emails/alert-6.webp";
+import alert7 from "@/assets/emails/alert-7.webp";
+import alert8 from "@/assets/emails/alert-8.webp";
+import alert9 from "@/assets/emails/alert-9.webp";
+import alert10 from "@/assets/emails/alert-10.webp";
+import alert11 from "@/assets/emails/alert-11.webp";
+import alert12 from "@/assets/emails/alert-12.webp";
+import alert13 from "@/assets/emails/alert-13.webp";
+import alert14 from "@/assets/emails/alert-14.webp";
+import alert15 from "@/assets/emails/alert-15.webp";
 
 const phoneImages = [
-  alert1,
-  emailMf26,
-  alert2,
-  emailMf27,
-  alert3,
-  emailMf28,
-  alert4,
-  emailMf29,
-  alert5,
-  emailMf30,
-  emailMf31,
+  alert1, alert2, alert3, alert4, alert5,
+  alert6, alert7, alert8, alert9, alert10,
+  alert11, alert12, alert13, alert14, alert15,
 ];
 
 const PhoneMarquee = () => {
@@ -36,7 +32,7 @@ const PhoneMarquee = () => {
       </span>
 
       <div className="flex gap-5 sm:gap-7 items-center animate-scroll-phones w-max">
-        {[...phoneImages, ...phoneImages].map((src, i) => (
+        {[...phoneImages, ...phoneImages, ...phoneImages, ...phoneImages].map((src, i) => (
           <img
             key={i}
             src={src}
