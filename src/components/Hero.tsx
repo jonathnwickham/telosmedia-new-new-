@@ -124,7 +124,7 @@ const Hero = () => {
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.08, ease }}
+          transition={{ duration: 0.5, delay: 0.08, ease }}
           className="mt-8 text-[clamp(34px,9vw,76px)] font-semibold leading-[1.05] tracking-[-0.035em] text-foreground break-words"
         >
           Your email partner.
@@ -136,7 +136,7 @@ const Hero = () => {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.18, ease }}
+          transition={{ duration: 0.5, delay: 0.18, ease }}
           className="mx-auto mt-6 max-w-[620px] text-[clamp(16px,1.6vw,19px)] leading-[1.55] text-muted-foreground"
         >
           No templates. No copy paste. We get to know your customers, your offers, and your business then build the flows and campaigns that turn email into your highest margin channel.
@@ -146,7 +146,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.26, ease }}
+          transition={{ duration: 0.5, delay: 0.26, ease }}
           className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
           <a
@@ -174,7 +174,7 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5, ease }}
+        transition={{ duration: 0.55, delay: 0.5, ease }}
         className="mx-auto mt-12 max-w-[1100px]"
       >
         <img
@@ -182,6 +182,11 @@ const Hero = () => {
           alt="Client results showcase"
           className="w-full select-none"
           draggable={false}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          width={1100}
+          height={620}
         />
       </motion.div>
 
@@ -189,7 +194,7 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6, ease }}
+        transition={{ duration: 0.55, delay: 0.6, ease }}
         className="mx-auto mt-16 max-w-[960px]"
       >
         <div className="glass-card grid grid-cols-2 divide-x divide-y divide-white/40 overflow-hidden rounded-3xl md:grid-cols-4 md:divide-y-0">
