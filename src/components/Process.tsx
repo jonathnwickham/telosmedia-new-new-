@@ -148,12 +148,8 @@ const Process = () => {
                 </div>
               </motion.div>
             ))}
+            <Team />
           </div>
-        </div>
-
-        {/* The team — sits as the closer under the 4 phases */}
-        <div className="mt-12">
-          <Team />
         </div>
       </div>
     </section>
