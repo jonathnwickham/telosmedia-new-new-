@@ -101,12 +101,11 @@ const Services = () => {
             What we do
           </div>
           <h2 className="mx-auto mt-6 max-w-[760px] text-[clamp(32px,4.5vw,52px)] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground">
-            One channel.{" "}
-            <span className="gradient-text">Four moving parts.</span>
+            How we run{" "}
+            <span className="gradient-text">your email.</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-[600px] text-[16px] leading-relaxed text-muted-foreground">
-            Email isn't one job. It's a system. We ship the pieces that compound,
-            and only add SMS or WhatsApp where the math works.
+          <p className="mx-auto mt-5 max-w-[620px] text-[16px] leading-relaxed text-muted-foreground">
+            Four parts that work together: flows, campaigns, the setup underneath, and SMS or WhatsApp when it fits.
           </p>
         </motion.div>
 
