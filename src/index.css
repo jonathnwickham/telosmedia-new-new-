@@ -180,6 +180,15 @@
   }
 }
 
+/* Mobile perf: tame expensive backdrop blurs */
+@media (max-width: 768px) {
+  .hero-glass-card,
+  .glass-card {
+    backdrop-filter: blur(10px) saturate(1.1);
+    -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  }
+}
+
 .logo-mark {
   filter: grayscale(100%) brightness(0.35) contrast(1.2);
   opacity: 0.9;

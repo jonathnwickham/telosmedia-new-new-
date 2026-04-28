@@ -48,8 +48,8 @@ const Navbar = () => {
             background: scrolled
               ? "linear-gradient(135deg, hsl(0 0% 100% / 0.65) 0%, hsl(215 100% 98% / 0.5) 50%, hsl(0 0% 100% / 0.65) 100%)"
               : "transparent",
-            backdropFilter: scrolled ? "blur(28px) saturate(1.6)" : "none",
-            WebkitBackdropFilter: scrolled ? "blur(28px) saturate(1.6)" : "none",
+            backdropFilter: scrolled ? "blur(16px) saturate(1.4)" : "none",
+            WebkitBackdropFilter: scrolled ? "blur(16px) saturate(1.4)" : "none",
           }}
         >
           {/* Inner highlight — only when scrolled */}
@@ -132,8 +132,8 @@ const Navbar = () => {
           style={{
             background:
               "linear-gradient(135deg, hsl(0 0% 100% / 0.92) 0%, hsl(215 100% 98% / 0.88) 100%)",
-            backdropFilter: "blur(28px) saturate(1.6)",
-            WebkitBackdropFilter: "blur(28px) saturate(1.6)",
+            backdropFilter: "blur(16px) saturate(1.4)",
+            WebkitBackdropFilter: "blur(16px) saturate(1.4)",
           }}
         >
           <div className="flex flex-col p-3">
