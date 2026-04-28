@@ -55,44 +55,50 @@ const row2 = [...row2Set, ...row2Set];
 const LogoScroll = () => {
   return (
     <div className="relative w-full">
-      <div className="relative w-full overflow-hidden border-y border-border/60 bg-white py-14 flex flex-col gap-10">
-        {/* Edge fades — subtle */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
-
+      <div className="relative w-full border-y border-border/60 bg-white py-14">
         <p className="text-center text-[11px] font-medium uppercase tracking-[0.22em] text-muted-foreground">
           Trusted by growing brands worldwide
         </p>
-        <ul className="flex w-max shrink-0 items-center gap-20 pr-20 animate-scroll-logos">
-          {row1.map((logo, i) => (
-            <li key={`a-${i}`} className="shrink-0">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                loading="eager"
-                decoding="async"
-                fetchPriority="high"
-                draggable={false}
-                className={`logo-mark ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
-              />
-            </li>
-          ))}
-        </ul>
-        <ul className="flex w-max shrink-0 items-center gap-20 pr-20 animate-scroll-logos-reverse">
-          {row2.map((logo, i) => (
-            <li key={`c-${i}`} className="shrink-0">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                loading="eager"
-                decoding="async"
-                fetchPriority="high"
-                draggable={false}
-                className={`logo-mark ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
-              />
-            </li>
-          ))}
-        </ul>
+
+        <div className="relative mt-10 overflow-hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
+          <ul className="flex w-max shrink-0 items-center gap-20 pr-20 animate-scroll-logos">
+            {row1.map((logo, i) => (
+              <li key={`a-${i}`} className="shrink-0">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  draggable={false}
+                  className={`logo-mark ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="relative mt-10 overflow-hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
+          <ul className="flex w-max shrink-0 items-center gap-20 pr-20 animate-scroll-logos-reverse">
+            {row2.map((logo, i) => (
+              <li key={`c-${i}`} className="shrink-0">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  draggable={false}
+                  className={`logo-mark ${logo.sizeClass ?? "h-6 max-h-6"} w-auto object-contain`}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
