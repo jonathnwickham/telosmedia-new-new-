@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Team from "@/components/Team";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 28 },
@@ -148,6 +149,11 @@ const Process = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+
+        {/* The team — sits as the closer under the 4 phases */}
+        <div className="mt-12">
+          <Team />
         </div>
       </div>
     </section>
