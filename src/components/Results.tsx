@@ -96,7 +96,7 @@ const Results = () => {
             >
               <div className="relative z-10 grid gap-0 md:grid-cols-2">
                 {/* Left: image */}
-                <div className={`p-6 md:p-8 ${i % 2 === 1 ? "md:order-2" : ""}`}>
+                <div className={`flex items-center p-6 md:p-8 ${i % 2 === 1 ? "md:order-2" : ""}`}>
                   <div className="relative overflow-hidden rounded-2xl border border-white/70 bg-white/40 shadow-[0_20px_50px_-20px_hsl(215_60%_30%/0.25)]">
                     <img
                       src={study.image}
