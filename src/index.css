@@ -189,12 +189,6 @@
     background-color: hsl(0 0% 100% / 0.85);
   }
 
-  /* Force GPU compositing on motion elements so scroll doesn't repaint */
-  .grain,
-  [class*="animate-scroll"] {
-    transform: translateZ(0);
-    will-change: transform;
-  }
 }
 
 .logo-mark {
