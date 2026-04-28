@@ -180,6 +180,19 @@
   }
 }
 
+/* Mobile: speed up marquees so they feel alive on narrow viewports */
+@media (max-width: 768px) {
+  .animate-scroll-logos {
+    animation-duration: 32s;
+  }
+  .animate-scroll-logos-reverse {
+    animation-duration: 36s;
+  }
+  .animate-scroll-phones {
+    animation-duration: 25s;
+  }
+}
+
 /* Mobile perf: kill expensive backdrop blurs entirely on mobile, use solid translucent bg */
 @media (max-width: 768px) {
   .hero-glass-card,
