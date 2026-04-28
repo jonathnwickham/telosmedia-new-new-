@@ -18,7 +18,7 @@ const PhoneMarquee = () => {
       </span>
 
       <div className="flex gap-5 sm:gap-7 items-center animate-scroll-phones w-max">
-        {[...phoneImages, ...phoneImages, ...phoneImages, ...phoneImages].map((src, i) => (
+        {[...phoneImages, ...phoneImages].map((src, i) => (
           <img
             key={i}
             src={src}
