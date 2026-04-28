@@ -1,14 +1,14 @@
-import emailMf1 from "@/assets/emails/email-mf-1.jpg";
-import emailMf2 from "@/assets/emails/email-mf-2.jpg";
-import emailMf3 from "@/assets/emails/email-mf-3.jpg";
-import emailMf4 from "@/assets/emails/email-mf-4.jpg";
-import emailMf5 from "@/assets/emails/email-mf-5.png";
-import emailMf26 from "@/assets/emails/email-mf-26.png";
-import emailMf27 from "@/assets/emails/email-mf-27.png";
-import emailMf28 from "@/assets/emails/email-mf-28.png";
-import emailMf29 from "@/assets/emails/email-mf-29.png";
-import emailMf30 from "@/assets/emails/email-mf-30.png";
-import emailMf31 from "@/assets/emails/email-mf-31.png";
+import emailMf1 from "@/assets/emails/email-mf-1.webp";
+import emailMf2 from "@/assets/emails/email-mf-2.webp";
+import emailMf3 from "@/assets/emails/email-mf-3.webp";
+import emailMf4 from "@/assets/emails/email-mf-4.webp";
+import emailMf5 from "@/assets/emails/email-mf-5.webp";
+import emailMf26 from "@/assets/emails/email-mf-26.webp";
+import emailMf27 from "@/assets/emails/email-mf-27.webp";
+import emailMf28 from "@/assets/emails/email-mf-28.webp";
+import emailMf29 from "@/assets/emails/email-mf-29.webp";
+import emailMf30 from "@/assets/emails/email-mf-30.webp";
+import emailMf31 from "@/assets/emails/email-mf-31.webp";
 
 const phoneImages = [
   emailMf1,
