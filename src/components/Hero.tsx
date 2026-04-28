@@ -127,9 +127,9 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.08, ease }}
           className="mt-8 text-[clamp(34px,9vw,76px)] font-semibold leading-[1.05] tracking-[-0.035em] text-foreground break-words"
         >
-          Make the right call
+          Your email partner.
           <br />
-          on <span className="gradient-text">email</span>.
+          In it for the <span className="gradient-text">long run</span>.
         </motion.h1>
 
         {/* Subhead */}
