@@ -205,24 +205,28 @@
   }
 }
 
-/* Mobile: kill all transitions + non-marquee animations (smooth scroll, no glitches),
-   then explicitly restore the marquees so they keep flowing */
+/* Mobile: kill jittery transitions + ambient animations, keep marquees alive */
 @media (max-width: 768px) {
-  *,
-  *::before,
-  *::after {
-    transition-duration: 0ms !important;
-    animation-duration: 0ms !important;
-    animation-iteration-count: 1 !important;
+  /* Kill all transitions/transforms on hover-or-scroll-touched elements */
+  [class*="transition-"]:not([class*="animate-scroll"]),
+  [class*="hover:"] {
+    transition: none !important;
   }
+  /* Kill ambient ping/pulse/bounce — they re-paint on every scroll frame */
+  [class*="animate-ping"],
+  [class*="animate-pulse"],
+  [class*="animate-bounce"] {
+    animation: none !important;
+  }
+  /* Tuned mobile marquee speeds */
   .animate-scroll-logos {
-    animation: scroll-logos 55s linear infinite !important;
+    animation-duration: 55s !important;
   }
   .animate-scroll-logos-reverse {
-    animation: scroll-logos-reverse 60s linear infinite !important;
+    animation-duration: 60s !important;
   }
   .animate-scroll-phones {
-    animation: scroll-phones 45s linear infinite !important;
+    animation-duration: 45s !important;
   }
 }
 
