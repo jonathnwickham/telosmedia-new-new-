@@ -169,7 +169,7 @@
 }
 
 .animate-scroll-phones {
-  animation: scroll-phones 60s linear infinite;
+  animation: scroll-phones 72s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -214,7 +214,7 @@
     animation-duration: 36s;
   }
   .animate-scroll-phones {
-    animation-duration: 25s;
+    animation-duration: 30s;
   }
 }
 
