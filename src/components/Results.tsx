@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import case93m from "@/assets/case-9-3m.png";
 import popupAlia from "@/assets/popup-alia.png";
-import campaignStats from "@/assets/campaign-stats.png";
+import case60day from "@/assets/case-60day.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 28 },
@@ -39,17 +39,17 @@ const caseStudies = [
     caseStudyUrl: "#",
   },
   {
-    image: campaignStats,
-    client: "Prop Trading",
+    image: case60day,
+    client: "Prop Firm",
     industry: "Fintech",
-    headline: "12% → 46% open rate",
-    sublabel: "Deliverability turnaround",
+    headline: "$1.17M+ in 60 days",
+    sublabel: "Full account refresh",
     description:
-      "Inbox placement was below 60% and reputation was tanking. We fixed authentication, cleaned the list, and rebuilt warm-up sends from scratch.",
+      "We came in, revamped the existing flows, added new ones, and reworked campaigns with sharper segmentation. Inside 60 days, attributed revenue lifted 33% and email started driving 58% of total store revenue.",
     metrics: [
-      { value: "46%", label: "Avg. open" },
-      { value: "98%", label: "Inbox rate" },
-      { value: "3.8x", label: "CTR uplift" },
+      { value: "$1.17M+", label: "Attributed revenue" },
+      { value: "+33%", label: "Lift in 60 days" },
+      { value: "58%", label: "Of store revenue" },
     ],
   },
 ];
