@@ -58,17 +58,17 @@ const Hero = () => {
         aria-hidden
         className="blue-aurora pointer-events-none absolute inset-0 -z-10"
       />
-      {/* Animated gradient orbs */}
+      {/* Animated gradient orbs — desktop only, expensive on mobile */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -top-32 left-1/4 -z-10 h-[520px] w-[520px] rounded-full opacity-60 blur-3xl"
+        className="pointer-events-none absolute -top-32 left-1/4 -z-10 hidden h-[520px] w-[520px] rounded-full opacity-60 blur-3xl md:block"
         style={{ background: "radial-gradient(circle, hsl(215 95% 60% / 0.35), transparent 60%)" }}
         animate={{ x: [0, 40, 0], y: [0, 30, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -top-20 right-1/4 -z-10 h-[480px] w-[480px] rounded-full opacity-50 blur-3xl"
+        className="pointer-events-none absolute -top-20 right-1/4 -z-10 hidden h-[480px] w-[480px] rounded-full opacity-50 blur-3xl md:block"
         style={{ background: "radial-gradient(circle, hsl(200 95% 65% / 0.32), transparent 60%)" }}
         animate={{ x: [0, -30, 0], y: [0, 40, 0] }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
@@ -117,7 +117,7 @@ const Hero = () => {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
           </span>
-          Email, run properly.
+          The email agency that doesn't act like one.
         </motion.div>
 
         {/* Headline */}
