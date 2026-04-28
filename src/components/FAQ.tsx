@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "Do you design the emails or do we send them to you?",
-    a: "We design and write everything. The only thing we need from you are brand assets, product photos and lifestyle imagery. If you don't have brand guidelines, we'll build them based on the aesthetic of your site so every email lands fully aligned with the rest of your brand.",
+    a: "We design and write everything. The only thing we need from you are brand assets, product photos and lifestyle imagery. If you don't have brand guidelines, we'll build every email around the aesthetic of your site so the work stays fully aligned with the rest of your brand.",
   },
   {
     q: "How do you measure success?",
-    a: "Revenue first. Percentage of revenue attributed to email, retention rate, and LTV. Open rates and click rates sit underneath that as diagnostics. We also pull attribution from Triple Whale or Hyros depending on what you already use, because some ESPs aren't the most accurate. Klaviyo holds up well, Omnisend less so, which is why we cross-check.",
+    a: "Revenue first. Percentage of revenue attributed to email, retention rate, and LTV. Open rates and click rates sit underneath that as diagnostics. We also pull attribution from Triple Whale or Hyros depending on what you already use, and we cross-check the numbers wherever we can because we know the industries you work in and need to make sure every result is real.",
   },
   {
     q: "What platforms do you work with?",
