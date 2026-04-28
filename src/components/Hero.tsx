@@ -114,7 +114,7 @@ const Hero = () => {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
           </span>
-          Email, run properly.
+          Working with brands doing $1M+ per year
         </motion.div>
 
         {/* Headline */}
@@ -136,7 +136,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.18, ease }}
           className="mx-auto mt-6 max-w-[620px] text-[clamp(16px,1.6vw,19px)] leading-[1.55] text-muted-foreground"
         >
-          No templates. No copy paste. We get to know your customers, your offers, and your business then build the flows and campaigns that turn email into your highest margin channel.
+          Most brands leave 30 to 50% of their email revenue on the table. We audit what's broken, then rebuild the flows, campaigns, and segmentation around your actual offer.
         </motion.p>
 
         {/* CTAs */}
