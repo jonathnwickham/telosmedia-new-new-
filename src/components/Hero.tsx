@@ -85,7 +85,7 @@ const Hero = () => {
           filter:
             "drop-shadow(0 0 18px hsl(200 95% 65% / 0.35)) drop-shadow(0 0 40px hsl(215 95% 60% / 0.25))",
         }}
-        className="pointer-events-none absolute right-[6%] top-24 -z-10 hidden w-[180px] select-none md:block lg:right-[10%] lg:top-28 lg:w-[230px]"
+        className="pointer-events-none absolute right-[6%] top-24 z-0 hidden w-[180px] select-none md:block lg:right-[10%] lg:top-28 lg:w-[230px]"
       />
       {/* Faint grid */}
       <div
