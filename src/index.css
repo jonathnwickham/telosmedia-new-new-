@@ -189,12 +189,6 @@
     background-color: hsl(0 0% 100% / 0.85);
   }
 
-  /* Skip rendering offscreen sections until close — big scroll-jank win */
-  section {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 800px;
-  }
-
   /* Force GPU compositing on motion elements so scroll doesn't repaint */
   .grain,
   [class*="animate-scroll"] {
