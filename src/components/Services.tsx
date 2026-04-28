@@ -8,14 +8,14 @@ const fadeIn = {
 
 const pillars = [
   {
-    label: "Lifecycle Flows",
-    title: "Automated revenue, on autopilot.",
+    label: "Flows",
+    title: "Revenue while you sleep.",
     description:
-      "Welcome, abandoned cart, post-purchase, win-back, browse. Built once, optimized forever.",
+      "Welcome, abandoned checkout, failed challenge, post-purchase, win-back, browse. The flows that quietly print money between your campaign sends. Built once, then sharpened every quarter.",
     bullets: [
-      "Personalized by segment + behavior",
-      "A/B tested for revenue, not opens",
-      "Quarterly creative refreshes included",
+      "Segmented by behavior, not just signup date",
+      "Tested against revenue, not open rates",
+      "Refreshed quarterly so they never go stale",
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
@@ -26,13 +26,13 @@ const pillars = [
   },
   {
     label: "Campaigns",
-    title: "Sends that drive the week.",
+    title: "The sends that drive your week.",
     description:
-      "Strategy-led calendar, designed creative, copy that converts. Weekly cadence, monthly reviews.",
+      "A live calendar mapped to your launches, promos, and content beats. Strategy, design, copy, scheduling. You approve, we ship.",
     bullets: [
-      "Strategy + creative + copy + send",
-      "Promo plans, launches, content sends",
-      "Reported against revenue, not vanity",
+      "Weekly cadence built around your offer calendar",
+      "Designed to match your brand, not a template",
+      "Reported against revenue, not opens or clicks",
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
@@ -42,14 +42,14 @@ const pillars = [
     ),
   },
   {
-    label: "Strategy & Infra",
-    title: "The system underneath.",
+    label: "Strategy & Setup",
+    title: "The plumbing nobody else fixes.",
     description:
-      "Deliverability, segmentation, attribution, ESP architecture. The work nobody sees but everybody benefits from.",
+      "Most agencies hand you a number from Klaviyo and call it a day. We cross-check ESP data against your actual checkout, flag what's broken, and rebuild the parts that lie to you. Deliverability, segmentation, attribution, ESP architecture. The layer underneath the pretty emails.",
     bullets: [
-      "Inbox placement audits + fixes",
-      "Segmentation + tagging architecture",
-      "Reporting that ties to real revenue",
+      "Inbox placement audits and fixes",
+      "Segmentation and tagging that holds up at scale",
+      "Attribution that ties to real orders, not dashboard guesses",
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
@@ -62,13 +62,13 @@ const pillars = [
   },
   {
     label: "SMS & WhatsApp",
-    title: "When the channel fits.",
+    title: "Added when it actually pays.",
     description:
-      "Some brands win with SMS. Others lean WhatsApp. Some shouldn't run either. We figure out the right mix and only ship what makes you money.",
+      "Some brands win on SMS. Some can't run it at all without compliance headaches, and that's where WhatsApp earns its keep. We figure out which channel fits your business, then build it into the same plan as your email instead of bolting it on as a side project.",
     bullets: [
-      "Channel fit assessment first, not last",
-      "Compliant flows + campaign sends",
-      "Built into the same lifecycle plan",
+      "Channel fit assessed before we pitch you on it",
+      "WhatsApp setup for brands where SMS isn't viable",
+      "Built into the same plan as your flows and campaigns",
     ],
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
@@ -106,7 +106,7 @@ const Services = () => {
           </h2>
           <p className="mx-auto mt-5 max-w-[600px] text-[16px] leading-relaxed text-muted-foreground">
             Email isn't one job. It's a system. We ship the pieces that compound,
-            and only add SMS or WhatsApp where it actually pays back.
+            and only add SMS or WhatsApp where the math works.
           </p>
         </motion.div>
 
