@@ -73,17 +73,14 @@ const Hero = () => {
         animate={{ x: [0, -30, 0], y: [0, 40, 0] }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
       />
-      {/* Background rocket illustration */}
+      {/* Background rocket illustration — desktop only, hover bounce removed (mobile jitter) */}
       <motion.img
         src={heroRocket}
         alt=""
         aria-hidden
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.65, y: [0, -10, 0] }}
-        transition={{
-          opacity: { duration: 1.4, delay: 0.3, ease },
-          y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-        }}
+        animate={{ opacity: 0.65 }}
+        transition={{ opacity: { duration: 1.4, delay: 0.3, ease } }}
         style={{
           filter:
             "drop-shadow(0 0 18px hsl(200 95% 65% / 0.35)) drop-shadow(0 0 40px hsl(215 95% 60% / 0.25))",

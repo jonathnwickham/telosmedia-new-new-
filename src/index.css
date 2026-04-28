@@ -180,6 +180,14 @@
   }
 }
 
+/* Touch devices: kill hover translates that trigger weirdly on tap-during-scroll and cause vibration */
+@media (hover: none) {
+  [class*="hover\\:-translate-y"]:hover,
+  [class*="hover\\:-translate-y"]:active {
+    transform: none !important;
+  }
+}
+
 /* Mobile: speed up marquees so they feel alive on narrow viewports */
 @media (max-width: 768px) {
   .animate-scroll-logos {
