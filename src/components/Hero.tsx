@@ -139,8 +139,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.18, ease }}
           className="mx-auto mt-6 max-w-[620px] text-[clamp(16px,1.6vw,19px)] leading-[1.55] text-muted-foreground"
         >
-          We listen first. Then we build a complete system, strategy, flows, and
-          campaigns, that turns your list into your highest-margin revenue channel.
+          Most businesses leave 30 to 50% of their revenue on the table with email. We come in, audit what's broken, and rebuild the flows, campaigns, and segmentation around your actual USPs.
         </motion.p>
 
         {/* CTAs */}
