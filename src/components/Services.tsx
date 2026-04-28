@@ -45,7 +45,7 @@ const pillars = [
     label: "Strategy & Setup",
     title: "The plumbing nobody else fixes.",
     description:
-      "Most agencies hand you a number from Klaviyo and call it a day. We cross-check ESP data against your actual checkout, flag what's broken, and rebuild the parts that lie to you. Deliverability, segmentation, attribution, ESP architecture. The layer underneath the pretty emails.",
+      "Most agencies show you a revenue number from Klaviyo and leave it at that. We check that number against your actual orders, find what's off, and fix the setup behind it. Deliverability, segmentation, attribution, ESP setup. The layer underneath the pretty emails.",
     bullets: [
       "Inbox placement audits and fixes",
       "Segmentation and tagging that holds up at scale",
