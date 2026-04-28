@@ -136,7 +136,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.18, ease }}
           className="mx-auto mt-6 max-w-[620px] text-[clamp(16px,1.6vw,19px)] leading-[1.55] text-muted-foreground"
         >
-          Most brands leave 30 to 50% of their email revenue on the table. We audit what's broken, then rebuild the flows, campaigns, and segmentation around your actual offer.
+          No templates. No copy paste. We get to know your customers, your offers, and your business then build the flows and campaigns that turn email into your highest margin channel.
         </motion.p>
 
         {/* CTAs */}
