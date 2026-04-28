@@ -101,11 +101,11 @@ const Services = () => {
             What we do
           </div>
           <h2 className="mx-auto mt-6 max-w-[760px] text-[clamp(32px,4.5vw,52px)] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground">
-            How we run{" "}
-            <span className="gradient-text">your email.</span>
+            Pretty emails are{" "}
+            <span className="gradient-text">the easy part.</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-[620px] text-[16px] leading-relaxed text-muted-foreground">
-            Four parts that work together: flows, campaigns, the setup underneath, and SMS or WhatsApp when it fits.
+          <p className="mx-auto mt-5 max-w-[640px] text-[16px] leading-relaxed text-muted-foreground">
+            What actually moves revenue is what's underneath them. Flows, campaigns, segmentation, deliverability, attribution. Plus SMS or WhatsApp when it fits your business.
           </p>
         </motion.div>
 
