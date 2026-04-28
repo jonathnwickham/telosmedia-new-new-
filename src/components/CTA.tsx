@@ -92,9 +92,8 @@ const CTA = () => {
             Let's see if we're{" "}
             <span className="gradient-text">a fit.</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-[620px] text-[16px] leading-relaxed text-muted-foreground">
-            No pitch. We'll look at where your email channel is today, where it
-            could be in 90 days, and whether we're the team to get you there. If it makes sense, we'll go and do a full audit after the call.
+          <p className="mx-auto mt-5 max-w-[640px] text-[16px] leading-relaxed text-muted-foreground">
+            No pitch. We'll look at where your email channel is today, where it could be in 90 days, and whether we're the right team to get you there. If the fit makes sense, we run the full audit after.
           </p>
         </motion.div>
 
