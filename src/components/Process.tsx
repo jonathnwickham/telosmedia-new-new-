@@ -37,7 +37,7 @@ const steps = [
     num: "03",
     title: "Launch",
     time: "Ongoing",
-    desc: "With an actual plan in place, we write the copy first, then build the designs around it, and make sure you're happy with both before anything ships. Once emails start sending, we keep everything running its best, with A/B tests across the account, especially on the pop-up, so the most people and the right people end up on your list.",
+    desc: "With an actual plan in place, we write the copy first, then build the designs around it, and make sure you're happy with both before anything ships. Once emails start sending, we keep everything running its best, with A/B tests across the account, especially on the pop-up, so more of the right people land on your list.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
         <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
