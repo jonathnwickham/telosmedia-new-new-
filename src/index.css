@@ -180,6 +180,23 @@
   }
 }
 
+/* Navbar pill — desktop has glassmorphism, mobile uses solid translucent bg to avoid scroll vibration */
+.navbar-pill {
+  background: transparent;
+}
+.navbar-pill[data-scrolled="true"] {
+  background: linear-gradient(135deg, hsl(0 0% 100% / 0.65) 0%, hsl(215 100% 98% / 0.5) 50%, hsl(0 0% 100% / 0.65) 100%);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+}
+@media (max-width: 768px) {
+  .navbar-pill[data-scrolled="true"] {
+    background: hsl(0 0% 100% / 0.94);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
 /* Touch devices: kill hover translates that trigger weirdly on tap-during-scroll and cause vibration */
 @media (hover: none) {
   [class*="hover\\:-translate-y"]:hover,
