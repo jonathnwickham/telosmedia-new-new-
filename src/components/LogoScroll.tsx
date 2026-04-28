@@ -49,8 +49,9 @@ const row2Set: Logo[] = [
   { src: qtfunded, alt: "QT Funded", sizeClass: "h-[19px] max-h-[19px]" },
 ];
 
-const row1 = [...row1Set, ...row1Set];
-const row2 = [...row2Set, ...row2Set];
+// Quadruple the sets so even on narrow mobile viewports there's always content visible at any keyframe position
+const row1 = [...row1Set, ...row1Set, ...row1Set, ...row1Set];
+const row2 = [...row2Set, ...row2Set, ...row2Set, ...row2Set];
 
 const LogoScroll = () => {
   return (
@@ -65,7 +66,7 @@ const LogoScroll = () => {
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
           <ul className="flex w-max shrink-0 items-center gap-20 pr-20 animate-scroll-logos">
             {row1.map((logo, i) => (
-              <li key={`a-${i}`} className="shrink-0">
+              <li key={`a-${i}`} className="flex h-6 min-w-[100px] shrink-0 items-center justify-center">
                 <img
                   src={logo.src}
                   alt={logo.alt}
@@ -85,7 +86,7 @@ const LogoScroll = () => {
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
           <ul className="flex w-max shrink-0 items-center gap-20 pr-20 animate-scroll-logos-reverse">
             {row2.map((logo, i) => (
-              <li key={`c-${i}`} className="shrink-0">
+              <li key={`c-${i}`} className="flex h-6 min-w-[100px] shrink-0 items-center justify-center">
                 <img
                   src={logo.src}
                   alt={logo.alt}
