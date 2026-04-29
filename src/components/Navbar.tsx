@@ -39,7 +39,7 @@ const Navbar = () => {
         style={{ maxWidth: "calc(100vw - 32px)" }}
       >
         <nav
-          className={`navbar-pill relative flex items-center justify-between gap-3 overflow-hidden rounded-full px-3 py-2 transition-all duration-300 md:justify-start ${
+          className={`navbar-pill relative flex items-center justify-between gap-3 overflow-hidden rounded-full px-3 py-[9px] transition-all duration-300 md:justify-start ${
             scrolled
               ? "grain border border-white/60 shadow-[0_20px_50px_-20px_hsl(215_60%_30%/0.25)]"
               : "border border-transparent shadow-none"
@@ -59,7 +59,7 @@ const Navbar = () => {
           )}
 
           <a href="#" className="relative z-10 flex items-center pl-3">
-            <img src={telosLogo} alt="Telos Media" className="h-7" />
+            <img src={telosLogo} alt="Telos Media" className="h-[31px]" />
           </a>
 
           {/* Desktop links */}
@@ -78,7 +78,7 @@ const Navbar = () => {
           {/* Desktop CTA */}
           <a
             href="#cta"
-            className="relative z-10 hidden h-9 items-center justify-center rounded-full px-5 text-[13px] font-semibold text-white transition-all hover:-translate-y-px md:inline-flex"
+            className="relative z-10 hidden h-10 items-center justify-center rounded-full px-5 text-[13px] font-semibold text-white transition-all hover:-translate-y-px md:inline-flex"
             style={{ background: ctaGradient, boxShadow: scrolled ? ctaShadowGlow : ctaShadowFlat }}
           >
             Book a call
@@ -90,7 +90,7 @@ const Navbar = () => {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="relative z-10 inline-flex h-9 w-9 items-center justify-center rounded-full text-foreground/80 transition-colors hover:bg-white/60 md:hidden"
+            className="relative z-10 inline-flex h-10 w-10 items-center justify-center rounded-full text-foreground/80 transition-colors hover:bg-white/60 md:hidden"
           >
             <svg
               viewBox="0 0 24 24"
