@@ -56,19 +56,19 @@ const Hero = () => {
       {/* Blue aurora backdrop */}
       <div
         aria-hidden
-        className="blue-aurora pointer-events-none absolute inset-0 -z-10"
+        className="blue-aurora pointer-events-none absolute inset-0 z-0"
       />
       {/* Animated gradient orbs — desktop only, expensive on mobile */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -top-32 left-1/4 -z-10 hidden h-[520px] w-[520px] rounded-full opacity-60 blur-3xl md:block"
+        className="pointer-events-none absolute -top-32 left-1/4 z-0 hidden h-[520px] w-[520px] rounded-full opacity-60 blur-3xl md:block"
         style={{ background: "radial-gradient(circle, hsl(215 95% 60% / 0.35), transparent 60%)" }}
         animate={{ x: [0, 40, 0], y: [0, 30, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -top-20 right-1/4 -z-10 hidden h-[480px] w-[480px] rounded-full opacity-50 blur-3xl md:block"
+        className="pointer-events-none absolute -top-20 right-1/4 z-0 hidden h-[480px] w-[480px] rounded-full opacity-50 blur-3xl md:block"
         style={{ background: "radial-gradient(circle, hsl(200 95% 65% / 0.32), transparent 60%)" }}
         animate={{ x: [0, -30, 0], y: [0, 40, 0] }}
         transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
@@ -90,7 +90,7 @@ const Hero = () => {
       {/* Faint grid */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.25]"
+        className="pointer-events-none absolute inset-0 z-0 opacity-[0.25]"
         style={{
           backgroundImage:
             "linear-gradient(hsl(215 60% 50% / 0.08) 1px, transparent 1px), linear-gradient(90deg, hsl(215 60% 50% / 0.08) 1px, transparent 1px)",
@@ -102,7 +102,7 @@ const Hero = () => {
         }}
       />
 
-      <div className="mx-auto max-w-[920px] text-center">
+      <div className="relative z-10 mx-auto max-w-[920px] text-center">
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -172,7 +172,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.5, ease }}
-        className="mx-auto mt-12 max-w-[1100px]"
+        className="relative z-10 mx-auto mt-12 max-w-[1100px]"
       >
         <img
           src={heroShowcase}
@@ -192,7 +192,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.6, ease }}
-        className="mx-auto mt-16 max-w-[960px]"
+        className="relative z-10 mx-auto mt-16 max-w-[960px]"
       >
         <div className="glass-card grid grid-cols-2 divide-x divide-y divide-white/40 overflow-hidden rounded-3xl md:grid-cols-4 md:divide-y-0">
           {stats.map((stat) => (
