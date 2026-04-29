@@ -4,7 +4,7 @@ import heroRocket from "@/assets/hero-rocket.png";
 import heroShowcase from "@/assets/hero-showcase.webp";
 
 const stats = [
-  { target: 37, prefix: "$", suffix: "M+", label: "Rev. generated", duration: 2200 },
+  { target: 39, prefix: "$", suffix: "M+", label: "Rev. generated", duration: 2200 },
   { target: 40, prefix: "", suffix: "+", label: "Brands served", duration: 1800 },
   { target: 41, prefix: "", suffix: "%", label: "Avg. open rate", duration: 2000 },
   { target: 6.5, prefix: "", suffix: "M+", label: "Emails sent / mo", duration: 1600 },
