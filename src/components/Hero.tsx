@@ -23,7 +23,7 @@ const AnimatedCounter = ({ target, prefix, suffix, duration }: { target: number;
         if (entries[0].isIntersecting && !started.current) {
           started.current = true;
           const start = performance.now();
-          const ease = (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
+          const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
           const tick = (now: number) => {
             const progress = Math.min((now - start) / duration, 1);
             const current = ease(progress) * target;
