@@ -6,7 +6,8 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const DELAY_MS = 10000; // delay before the popup auto-opens
+const DELAY_MS = 10000; // fallback: auto-open after this long even if they don't scroll
+const SCROLL_TRIGGER = 0.67; // open once they scroll 67% of the page
 const SESSION_KEY = "telos_email_popup_seen"; // per-session: don't auto-pop again this session
 const SUBSCRIBED_KEY = "telos_email_subscribed"; // permanent: signed up → never show again
 const TEASER_KEY = "telos_teaser_dismissed"; // per-session: hid the corner teaser
@@ -50,12 +51,34 @@ const EmailCapturePopup = () => {
   useEffect(() => {
     if (subscribed) return; // already signed up → never auto-open
     if (sessionStorage.getItem(SESSION_KEY)) return;
-    const t = window.setTimeout(() => {
+
+    let fired = false;
+    let timer: number;
+
+    function reveal() {
+      if (fired) return;
+      fired = true;
       setOpen(true);
       sessionStorage.setItem(SESSION_KEY, "1");
       track("Popup Shown"); // opt-in rate denominator
-    }, DELAY_MS);
-    return () => window.clearTimeout(t);
+      window.clearTimeout(timer);
+      window.removeEventListener("scroll", onScroll);
+    }
+
+    function onScroll() {
+      const pct =
+        (window.scrollY + window.innerHeight) /
+        document.documentElement.scrollHeight;
+      if (pct >= SCROLL_TRIGGER) reveal();
+    }
+
+    // Opens on whichever comes first: 67% scroll, or the 10s fallback.
+    timer = window.setTimeout(reveal, DELAY_MS);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, [subscribed]);
 
   const openFromTeaser = () => {
@@ -187,6 +210,8 @@ const EmailCapturePopup = () => {
               <form onSubmit={handleSubmit} className="mx-auto mt-6 flex max-w-[360px] flex-col gap-3">
                 <input
                   type="email"
+                  name="email"
+                  autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@yourfirm.com"
