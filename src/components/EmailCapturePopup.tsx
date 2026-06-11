@@ -184,7 +184,7 @@ const EmailCapturePopup = () => {
       )}
 
       <Dialog open={open} onOpenChange={handleOpenChange}>
-        <DialogContent className="top-[8%] max-h-[90dvh] w-[calc(100vw-2rem)] max-w-md translate-y-0 overflow-y-auto rounded-3xl border-border/60 bg-white p-6 shadow-2xl sm:top-[50%] sm:-translate-y-1/2 sm:p-8">
+        <DialogContent className="left-4 right-4 top-[5%] mx-auto w-auto max-h-[90dvh] max-w-md translate-x-0 translate-y-0 overflow-y-auto rounded-3xl border-border/60 bg-white p-6 shadow-2xl sm:left-[50%] sm:right-auto sm:top-[50%] sm:w-full sm:translate-x-[-50%] sm:-translate-y-1/2 sm:p-8">
           {!submitted ? (
             <div className="relative z-10 text-center">
               <div className="mx-auto inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
