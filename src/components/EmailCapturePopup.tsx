@@ -108,7 +108,7 @@ const EmailCapturePopup = () => {
       {/* Corner teaser — shows when the popup is closed, not yet subscribed,
           and not dismissed. Click body = open popup. Click X = hide teaser. */}
       {!subscribed && !teaserDismissed && !open && (
-        <div className="fixed bottom-5 right-5 z-40">
+        <div className="fixed bottom-5 left-5 z-40">
           <button
             onClick={openFromTeaser}
             className="flex items-center gap-2.5 rounded-full bg-primary py-3 pl-5 pr-5 text-[14px] font-semibold text-primary-foreground shadow-xl shadow-primary/25 transition-transform hover:scale-[1.03]"
@@ -122,7 +122,7 @@ const EmailCapturePopup = () => {
           <button
             onClick={dismissTeaser}
             aria-label="Dismiss"
-            className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-foreground text-white shadow-md transition-opacity hover:opacity-80"
+            className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full border border-border bg-white text-foreground shadow-md transition-opacity hover:opacity-80"
           >
             <svg
               viewBox="0 0 24 24"
