@@ -8,7 +8,8 @@ import {
 
 // ~18s after landing, once per browser session.
 const DELAY_MS = 3000;
-const SESSION_KEY = "telos_email_popup_seen";
+const SESSION_KEY = "telos_email_popup_seen"; // per-session: don't nag on every page nav
+const SUBSCRIBED_KEY = "telos_email_subscribed"; // permanent: signed up → never show again
 
 const EmailCapturePopup = () => {
   const [open, setOpen] = useState(false);
@@ -17,6 +18,12 @@ const EmailCapturePopup = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    // already signed up on this browser → never show again
+    try {
+      if (localStorage.getItem(SUBSCRIBED_KEY)) return;
+    } catch {
+      /* storage blocked — fall through */
+    }
     if (sessionStorage.getItem(SESSION_KEY)) return;
     const t = window.setTimeout(() => {
       setOpen(true);
@@ -45,6 +52,13 @@ const EmailCapturePopup = () => {
     // email a notification — no third-party keys needed. The hidden static
     // form named "email-capture" in index.html is what Netlify detects.
     setSubmitted(true);
+
+    // permanent: signed up → never show this popup again on this browser
+    try {
+      localStorage.setItem(SUBSCRIBED_KEY, "1");
+    } catch {
+      /* storage blocked — ignore */
+    }
 
     // opt-in rate: count the conversion in Pirsch (numerator)
     try {
