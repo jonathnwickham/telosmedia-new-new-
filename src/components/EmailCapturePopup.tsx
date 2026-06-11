@@ -149,15 +149,20 @@ const EmailCapturePopup = () => {
               </div>
 
               <DialogTitle className="mt-5 text-[26px] font-semibold leading-[1.1] tracking-[-0.02em] text-foreground">
-                See what your email's leaving{" "}
-                <span className="gradient-text">on the table.</span>
+                Your email could be doing{" "}
+                <span className="gradient-text">$1M+ a month.</span>
               </DialogTitle>
 
               <DialogDescription className="mt-3 text-[14.5px] leading-relaxed text-muted-foreground">
-                We run email for prop firms doing $40M+ in attributed revenue.
-                Drop your email and we'll send a free teardown of what your
-                flows, campaigns and deliverability are missing. No strings.
+                We took one prop firm from zero to $9.7M in email revenue in
+                year one. They now do $1M to $1.7M every month from email alone.
               </DialogDescription>
+
+              <p className="mt-3 text-[14.5px] leading-relaxed text-muted-foreground">
+                Drop your email and we'll send a free teardown of your flows,
+                campaigns, and deliverability. What you're missing, what to fix
+                first, what it's worth. No strings.
+              </p>
 
               <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-3">
                 <input
@@ -185,7 +190,7 @@ const EmailCapturePopup = () => {
                   onClick={() => setOpen(false)}
                   className="font-medium text-primary hover:underline"
                 >
-                  Book a 30-min call
+                  Book a 30 min call
                 </a>
               </p>
             </div>
