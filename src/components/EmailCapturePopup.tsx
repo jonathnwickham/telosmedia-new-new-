@@ -142,35 +142,34 @@ const EmailCapturePopup = () => {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-md overflow-hidden rounded-3xl border-border/60 bg-white p-8 shadow-2xl">
           {!submitted ? (
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+            <div className="relative z-10 text-center">
+              <div className="mx-auto inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Free email audit
+                Free case study
               </div>
 
               <DialogTitle className="mt-5 text-[26px] font-semibold leading-[1.1] tracking-[-0.02em] text-foreground">
-                Your email could be doing{" "}
-                <span className="gradient-text">$1M+ a month.</span>
+                You could be doing{" "}
+                <span className="gradient-text">$1M+ a month</span> with email.
               </DialogTitle>
 
-              <DialogDescription className="mt-3 text-[14.5px] leading-relaxed text-muted-foreground">
-                We took one prop firm from zero to $9.7M in email revenue in
-                year one. They now do $1M to $1.7M every month from email alone.
+              <DialogDescription className="mx-auto mt-3 max-w-[340px] text-[14.5px] leading-relaxed text-muted-foreground">
+                We took a prop firm from $200k a month to $9.7M in year one. Now
+                they do $1M to $1.7M every month from email alone.
               </DialogDescription>
 
-              <p className="mt-3 text-[14.5px] leading-relaxed text-muted-foreground">
-                Drop your email and we'll send a free teardown of your flows,
-                campaigns, and deliverability. What you're missing, what to fix
-                first, what it's worth. No strings.
+              <p className="mx-auto mt-3 max-w-[340px] text-[14.5px] leading-relaxed text-muted-foreground">
+                Drop your email, get the case study, and see exactly what we do.
+                Free audit included.
               </p>
 
-              <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-3">
+              <form onSubmit={handleSubmit} className="mx-auto mt-6 flex max-w-[360px] flex-col gap-3">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@yourfirm.com"
-                  className="w-full rounded-xl border border-border bg-white/80 px-4 py-3 text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
+                  className="w-full rounded-xl border border-border bg-white/80 px-4 py-3 text-center text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
                 />
                 {error && (
                   <span className="text-[13px] text-red-500">{error}</span>
@@ -179,7 +178,7 @@ const EmailCapturePopup = () => {
                   type="submit"
                   className="w-full rounded-xl bg-primary px-4 py-3 text-[15px] font-semibold text-primary-foreground transition-opacity hover:opacity-90"
                 >
-                  Send me the audit
+                  Send me the case study
                 </button>
               </form>
 
@@ -210,11 +209,10 @@ const EmailCapturePopup = () => {
                 </svg>
               </div>
               <DialogTitle className="mt-5 text-[22px] font-semibold tracking-[-0.02em] text-foreground">
-                You're in.
+                Check your inbox.
               </DialogTitle>
               <DialogDescription className="mt-2 text-[14.5px] leading-relaxed text-muted-foreground">
-                We'll be in touch shortly with your free audit. Want to skip the
-                wait?{" "}
+                Your case study is on its way. Want to skip ahead and talk?{" "}
                 <a
                   href="#cta"
                   onClick={() => setOpen(false)}
