@@ -21,9 +21,11 @@ export const handler = async (event) => {
   }
 
   const apiKey = process.env.BEEHIIV_API_KEY;
-  const pubId = process.env.BEEHIIV_PUBLICATION_ID;
-  if (!apiKey || !pubId) {
-    return { statusCode: 500, body: JSON.stringify({ error: "Beehiiv env vars not set" }) };
+  // Defaults to Jonathan's existing publication; override via env var if needed.
+  const pubId =
+    process.env.BEEHIIV_PUBLICATION_ID || "pub_45394cf1-13c1-4b4c-b64b-5c66d3ff4038";
+  if (!apiKey) {
+    return { statusCode: 500, body: JSON.stringify({ error: "BEEHIIV_API_KEY not set" }) };
   }
 
   try {

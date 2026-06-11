@@ -21,6 +21,12 @@ const EmailCapturePopup = () => {
     const t = window.setTimeout(() => {
       setOpen(true);
       sessionStorage.setItem(SESSION_KEY, "1");
+      // opt-in rate: count the impression in Pirsch (denominator)
+      try {
+        (window as unknown as { pirsch?: (n: string) => Promise<void> }).pirsch?.("Popup Shown");
+      } catch {
+        /* analytics optional */
+      }
     }, DELAY_MS);
     return () => window.clearTimeout(t);
   }, []);
@@ -39,6 +45,15 @@ const EmailCapturePopup = () => {
     // email a notification — no third-party keys needed. The hidden static
     // form named "email-capture" in index.html is what Netlify detects.
     setSubmitted(true);
+
+    // opt-in rate: count the conversion in Pirsch (numerator)
+    try {
+      (window as unknown as { pirsch?: (n: string) => Promise<void> }).pirsch?.("Popup Signup");
+    } catch {
+      /* analytics optional */
+    }
+
+    // Capture to Netlify Forms (always works, no keys needed).
     const body = new URLSearchParams({
       "form-name": "email-capture",
       email,
@@ -47,9 +62,14 @@ const EmailCapturePopup = () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body,
-    }).catch(() => {
-      /* swallow — user already saw confirmation */
-    });
+    }).catch(() => {});
+
+    // Also push into Beehiiv (activates once BEEHIIV_API_KEY is set in Netlify).
+    fetch("/.netlify/functions/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    }).catch(() => {});
   };
 
   return (
