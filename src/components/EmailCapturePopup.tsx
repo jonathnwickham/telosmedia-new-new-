@@ -6,10 +6,11 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 
-const DELAY_MS = 3000; // delay before the popup auto-opens
+const DELAY_MS = 10000; // delay before the popup auto-opens
 const SESSION_KEY = "telos_email_popup_seen"; // per-session: don't auto-pop again this session
 const SUBSCRIBED_KEY = "telos_email_subscribed"; // permanent: signed up → never show again
 const TEASER_KEY = "telos_teaser_dismissed"; // per-session: hid the corner teaser
+const TEASER_ELIGIBLE_KEY = "telos_teaser_eligible"; // teaser only appears AFTER popup closed once
 
 const track = (name: string) => {
   try {
@@ -38,6 +39,13 @@ const EmailCapturePopup = () => {
       return false;
     }
   });
+  const [teaserEligible, setTeaserEligible] = useState(() => {
+    try {
+      return !!sessionStorage.getItem(TEASER_ELIGIBLE_KEY);
+    } catch {
+      return false;
+    }
+  });
 
   useEffect(() => {
     if (subscribed) return; // already signed up → never auto-open
@@ -61,6 +69,19 @@ const EmailCapturePopup = () => {
       sessionStorage.setItem(TEASER_KEY, "1");
     } catch {
       /* ignore */
+    }
+  };
+
+  const handleOpenChange = (next: boolean) => {
+    setOpen(next);
+    if (!next) {
+      // popup closed → the corner teaser is now allowed to appear
+      setTeaserEligible(true);
+      try {
+        sessionStorage.setItem(TEASER_ELIGIBLE_KEY, "1");
+      } catch {
+        /* ignore */
+      }
     }
   };
 
@@ -107,7 +128,7 @@ const EmailCapturePopup = () => {
     <>
       {/* Corner teaser — shows when the popup is closed, not yet subscribed,
           and not dismissed. Click body = open popup. Click X = hide teaser. */}
-      {!subscribed && !teaserDismissed && !open && (
+      {teaserEligible && !subscribed && !teaserDismissed && !open && (
         <div className="fixed bottom-5 left-5 z-40">
           <button
             onClick={openFromTeaser}
@@ -139,7 +160,7 @@ const EmailCapturePopup = () => {
         </div>
       )}
 
-      <Dialog open={open} onOpenChange={setOpen}>
+      <Dialog open={open} onOpenChange={handleOpenChange}>
         <DialogContent className="max-w-md overflow-hidden rounded-3xl border-border/60 bg-white p-8 shadow-2xl">
           {!submitted ? (
             <div className="relative z-10 text-center">
