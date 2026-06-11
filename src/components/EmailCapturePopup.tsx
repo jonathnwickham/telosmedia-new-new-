@@ -154,13 +154,13 @@ const EmailCapturePopup = () => {
               </DialogTitle>
 
               <DialogDescription className="mx-auto mt-3 max-w-[340px] text-[14.5px] leading-relaxed text-muted-foreground">
-                We took a prop firm from $200k a month to $9.7M in year one. Now
-                they do $1M to $1.7M every month from email alone.
+                We took a prop firm from $200k to $1.7M a month in 16 months.
+                All from email.
               </DialogDescription>
 
               <p className="mx-auto mt-3 max-w-[340px] text-[14.5px] leading-relaxed text-muted-foreground">
-                Drop your email, get the case study, and see exactly what we do.
-                Free audit included.
+                Drop your email for the case study, and we can organise a free
+                audit for your firm.
               </p>
 
               <form onSubmit={handleSubmit} className="mx-auto mt-6 flex max-w-[360px] flex-col gap-3">
