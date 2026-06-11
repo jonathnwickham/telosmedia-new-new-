@@ -214,7 +214,7 @@ const EmailCapturePopup = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@yourfirm.com"
-                  className="w-full rounded-xl border border-border bg-white/80 px-4 py-3 text-center text-[16px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
+                  className="w-full rounded-xl border border-border bg-white/80 px-4 py-3 text-left text-[16px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
                 />
                 {error && (
                   <span className="text-[13px] text-red-500">{error}</span>
