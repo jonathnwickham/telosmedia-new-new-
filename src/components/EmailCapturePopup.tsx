@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dialog";
 
 // ~18s after landing, once per browser session.
-const DELAY_MS = 18000;
+const DELAY_MS = 3000;
 const SESSION_KEY = "telos_email_popup_seen";
 
 const EmailCapturePopup = () => {
