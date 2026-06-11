@@ -14,6 +14,7 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import TelosMeaning from "@/components/TelosMeaning";
 import Footer from "@/components/Footer";
+import EmailCapturePopup from "@/components/EmailCapturePopup";
 
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -44,6 +45,7 @@ const Index = () => {
       <CTA />
       <TelosMeaning />
       <Footer />
+      <EmailCapturePopup />
     </MotionConfig>
   );
 };
