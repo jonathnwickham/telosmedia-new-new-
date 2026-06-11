@@ -184,7 +184,7 @@ const EmailCapturePopup = () => {
       )}
 
       <Dialog open={open} onOpenChange={handleOpenChange}>
-        <DialogContent className="max-w-md overflow-hidden rounded-3xl border-border/60 bg-white p-8 shadow-2xl">
+        <DialogContent className="top-[8%] max-h-[90dvh] w-[calc(100vw-2rem)] max-w-md translate-y-0 overflow-y-auto rounded-3xl border-border/60 bg-white p-6 shadow-2xl sm:top-[50%] sm:-translate-y-1/2 sm:p-8">
           {!submitted ? (
             <div className="relative z-10 text-center">
               <div className="mx-auto inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
@@ -192,30 +192,29 @@ const EmailCapturePopup = () => {
                 Free case study
               </div>
 
-              <DialogTitle className="mt-5 text-[26px] font-semibold leading-[1.1] tracking-[-0.02em] text-foreground">
+              <DialogTitle className="mt-4 text-[22px] font-semibold leading-[1.1] tracking-[-0.02em] text-foreground sm:mt-5 sm:text-[26px]">
                 You could be doing{" "}
                 <span className="gradient-text">$1M+ a month</span> with email.
               </DialogTitle>
 
-              <DialogDescription className="mx-auto mt-3 max-w-[340px] text-[14.5px] leading-relaxed text-muted-foreground">
-                We took a prop firm from $200k to $1.7M a month in 16 months.
-                All from email.
+              <DialogDescription className="mx-auto mt-3 max-w-[340px] text-[14px] leading-relaxed text-muted-foreground sm:text-[14.5px]">
+                We took a prop firm from $200k to $1.7M a month in 16 months. All from email.
               </DialogDescription>
 
-              <p className="mx-auto mt-3 max-w-[340px] text-[14.5px] leading-relaxed text-muted-foreground">
-                Drop your email for the case study, and we can organise a free
-                audit for your firm.
+              <p className="mx-auto mt-2 max-w-[340px] text-[14px] leading-relaxed text-muted-foreground sm:mt-3 sm:text-[14.5px]">
+                Drop your email for the case study, and we'll line up a free audit for your firm.
               </p>
 
-              <form onSubmit={handleSubmit} className="mx-auto mt-6 flex max-w-[360px] flex-col gap-3">
+              <form onSubmit={handleSubmit} className="mx-auto mt-5 flex max-w-[360px] flex-col gap-3 sm:mt-6">
                 <input
                   type="email"
                   name="email"
                   autoComplete="email"
+                  inputMode="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@yourfirm.com"
-                  className="w-full rounded-xl border border-border bg-white/80 px-4 py-3 text-center text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
+                  className="w-full rounded-xl border border-border bg-white/80 px-4 py-3 text-center text-[16px] text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
                 />
                 {error && (
                   <span className="text-[13px] text-red-500">{error}</span>
@@ -228,7 +227,7 @@ const EmailCapturePopup = () => {
                 </button>
               </form>
 
-              <p className="mt-4 text-center text-[12px] text-muted-foreground/70">
+              <p className="mt-3 text-center text-[12px] text-muted-foreground/70 sm:mt-4">
                 Prefer to talk?{" "}
                 <a
                   href="#cta"
