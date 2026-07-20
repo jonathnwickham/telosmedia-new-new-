@@ -12,7 +12,30 @@ const clarity = () =>
 const pirsch = () =>
   (window as unknown as { pirsch?: PirschFn }).pirsch;
 
-/** Fire a named event to both Pirsch and Clarity (Clarity "smart event"). */
+/**
+ * Fire-and-forget beacon to our own first-party counter (Netlify function).
+ * This is what powers the /admin opt-in dashboard, independent of Pirsch/Clarity.
+ */
+function beacon(name: string) {
+  try {
+    const body = JSON.stringify({ event: name });
+    const url = "/.netlify/functions/metric";
+    if (typeof navigator !== "undefined" && navigator.sendBeacon) {
+      navigator.sendBeacon(url, new Blob([body], { type: "application/json" }));
+    } else {
+      fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body,
+        keepalive: true,
+      }).catch(() => {});
+    }
+  } catch {
+    /* analytics optional */
+  }
+}
+
+/** Fire a named event to Pirsch, Clarity, and our own /admin counter. */
 export function track(name: string) {
   try {
     pirsch()?.(name);
@@ -24,6 +47,7 @@ export function track(name: string) {
   } catch {
     /* analytics optional */
   }
+  beacon(name);
 }
 
 /**
