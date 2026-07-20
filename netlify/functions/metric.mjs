@@ -22,9 +22,9 @@ export default async (req) => {
     return new Response("Method not allowed", { status: 405 });
   }
 
-  let event;
+  let event, channel;
   try {
-    ({ event } = await req.json());
+    ({ event, channel } = await req.json());
   } catch {
     return new Response("Bad request", { status: 400 });
   }
@@ -40,6 +40,15 @@ export default async (req) => {
     const current = (await store.get(day, { type: "json" })) || {};
     current[event] = (current[event] || 0) + 1;
     await store.setJSON(day, current);
+
+    // Per-channel attribution — kept in a separate "sources" doc so the daily
+    // buckets stay clean. Shape: { "<event>": { "<channel>": count } }.
+    const chan =
+      typeof channel === "string" && channel ? channel.slice(0, 60) : "direct";
+    const sources = (await store.get("sources", { type: "json" })) || {};
+    sources[event] = sources[event] || {};
+    sources[event][chan] = (sources[event][chan] || 0) + 1;
+    await store.setJSON("sources", sources);
   } catch {
     // Never let a metrics hiccup surface to the visitor.
     return new Response(null, { status: 204 });

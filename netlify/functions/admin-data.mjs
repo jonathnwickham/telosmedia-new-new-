@@ -46,17 +46,45 @@ export default async (req) => {
 
   // --- Funnel counts from first-party Blobs (one JSON doc per day) ---
   const daily = [];
+  let sources = {};
   try {
     const store = getStore("popup-metrics");
     const { blobs } = await store.list();
     for (const b of blobs) {
+      if (b.key === "sources") continue; // attribution doc, not a daily bucket
       const data = (await store.get(b.key, { type: "json" })) || {};
       daily.push({ date: b.key, ...data });
     }
     daily.sort((a, b) => a.date.localeCompare(b.date));
+    sources = (await store.get("sources", { type: "json" })) || {};
   } catch {
     /* store may be empty on a brand-new site — that's fine */
   }
+
+  // Per-channel breakdown: views, signups, and opt-in rate for each source.
+  const viewsBy = sources["Popup Shown"] || {};
+  const signupsBy = sources["Popup Signup"] || {};
+  const bookedBy = sources["Call Booked"] || {};
+  const channels = [
+    ...new Set([
+      ...Object.keys(viewsBy),
+      ...Object.keys(signupsBy),
+      ...Object.keys(bookedBy),
+    ]),
+  ];
+  const byChannel = channels
+    .map((c) => {
+      const v = viewsBy[c] || 0;
+      const s = signupsBy[c] || 0;
+      return {
+        channel: c,
+        views: v,
+        signups: s,
+        booked: bookedBy[c] || 0,
+        optInRate: v > 0 ? s / v : null,
+      };
+    })
+    .sort((a, b) => b.views - a.views || b.signups - a.signups);
 
   const sum = (key) => daily.reduce((n, d) => n + (d[key] || 0), 0);
   const views = sum("Popup Shown");
@@ -104,6 +132,7 @@ export default async (req) => {
       bookedRate: bookClicks > 0 ? booked / bookClicks : null,
     },
     daily,
+    byChannel,
     optIns,
     beehiivCount: optIns.length,
   });

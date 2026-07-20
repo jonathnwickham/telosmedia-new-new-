@@ -12,13 +12,78 @@ const clarity = () =>
 const pirsch = () =>
   (window as unknown as { pirsch?: PirschFn }).pirsch;
 
+// --- First-touch attribution -------------------------------------------------
+// Captured the first time a visitor lands and remembered (localStorage) so it
+// still describes them when they convert minutes later on a UTM-less URL.
+const SOURCE_KEY = "telos_first_touch";
+
+type Source = { channel: string; source: string; landing: string };
+
+function deriveSource(): Source {
+  const params = new URLSearchParams(window.location.search);
+  const p = (k: string) => (params.get(k) || "").trim();
+  const utmSource = p("utm_source");
+  const utmMedium = p("utm_medium");
+  const utmCampaign = p("utm_campaign");
+  const gclid = p("gclid");
+  const fbclid = p("fbclid");
+  const ref = document.referrer;
+
+  let channel = "direct";
+  if (utmSource) channel = utmSource.toLowerCase();
+  else if (fbclid) channel = "meta";
+  else if (gclid) channel = "google";
+  else if (ref) {
+    try {
+      const host = new URL(ref).hostname.replace(/^www\./, "");
+      if (host && host !== window.location.hostname) {
+        if (host.includes("linkedin")) channel = "linkedin";
+        else if (host.includes("google")) channel = "google";
+        else if (host.includes("t.co") || host.includes("twitter") || host.includes("x.com"))
+          channel = "twitter";
+        else if (host.includes("facebook") || host.includes("instagram")) channel = "meta";
+        else channel = host;
+      }
+    } catch {
+      /* malformed referrer — leave as direct */
+    }
+  }
+
+  // Flag paid clicks so ad-sourced traffic is separable from organic.
+  const paid = !!(gclid || fbclid || /cpc|ppc|paid/i.test(utmMedium));
+  if (paid && !/paid/i.test(channel)) channel = `${channel} (paid)`;
+
+  const source =
+    [utmSource || channel, utmMedium, utmCampaign].filter(Boolean).join(" / ") ||
+    channel;
+  return { channel: channel.slice(0, 60), source, landing: window.location.pathname };
+}
+
+let cachedSource: Source | null = null;
+function getSource(): Source {
+  if (cachedSource) return cachedSource;
+  try {
+    const stored = localStorage.getItem(SOURCE_KEY);
+    if (stored) {
+      cachedSource = JSON.parse(stored) as Source;
+      return cachedSource;
+    }
+    const s = deriveSource();
+    localStorage.setItem(SOURCE_KEY, JSON.stringify(s)); // first touch wins
+    cachedSource = s;
+    return s;
+  } catch {
+    return deriveSource();
+  }
+}
+
 /**
  * Fire-and-forget beacon to our own first-party counter (Netlify function).
  * This is what powers the /admin opt-in dashboard, independent of Pirsch/Clarity.
  */
 function beacon(name: string) {
   try {
-    const body = JSON.stringify({ event: name });
+    const body = JSON.stringify({ event: name, channel: getSource().channel });
     const url = "/.netlify/functions/metric";
     if (typeof navigator !== "undefined" && navigator.sendBeacon) {
       navigator.sendBeacon(url, new Blob([body], { type: "application/json" }));

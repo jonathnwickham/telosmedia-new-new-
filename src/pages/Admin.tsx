@@ -21,9 +21,17 @@ type Totals = {
 };
 type DayRow = { date: string } & Record<string, number | string>;
 type OptIn = { email: string; status: string; date: string | null };
+type Channel = {
+  channel: string;
+  views: number;
+  signups: number;
+  booked: number;
+  optInRate: number | null;
+};
 type Data = {
   totals: Totals;
   daily: DayRow[];
+  byChannel: Channel[];
   optIns: OptIn[];
   beehiivCount: number;
 };
@@ -152,7 +160,7 @@ const Admin = () => {
     );
   }
 
-  const { totals, daily, optIns } = data;
+  const { totals, daily, optIns, byChannel } = data;
   const chartData = daily.map((d) => ({
     date: fmtDate(d.date as string),
     Views: Number(d["Popup Shown"] || 0),
@@ -266,6 +274,57 @@ const Admin = () => {
                   />
                 </AreaChart>
               </ResponsiveContainer>
+            </div>
+          )}
+        </div>
+
+        {/* By traffic source */}
+        <div className="mt-6 rounded-xl border border-slate-200 bg-white p-5">
+          <h2 className="text-sm font-semibold text-slate-900">
+            By traffic source
+          </h2>
+          <p className="mt-0.5 text-xs text-slate-400">
+            First-touch attribution. Opt-in rate is what converts, not just what
+            sends traffic.
+          </p>
+          {!byChannel || byChannel.length === 0 ? (
+            <p className="py-8 text-center text-sm text-slate-400">
+              No attributed traffic yet.
+            </p>
+          ) : (
+            <div className="mt-4 overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-slate-100 text-left text-[11px] uppercase tracking-wide text-slate-400">
+                    <th className="pb-2 font-medium">Source</th>
+                    <th className="pb-2 text-right font-medium">Views</th>
+                    <th className="pb-2 text-right font-medium">Signups</th>
+                    <th className="pb-2 text-right font-medium">Opt-in</th>
+                    <th className="pb-2 text-right font-medium">Booked</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-50">
+                  {byChannel.map((c) => (
+                    <tr key={c.channel}>
+                      <td className="py-2.5 font-medium text-slate-800">
+                        {c.channel}
+                      </td>
+                      <td className="py-2.5 text-right tabular-nums text-slate-600">
+                        {c.views.toLocaleString()}
+                      </td>
+                      <td className="py-2.5 text-right tabular-nums text-slate-600">
+                        {c.signups.toLocaleString()}
+                      </td>
+                      <td className="py-2.5 text-right tabular-nums font-semibold text-slate-900">
+                        {pct(c.optInRate)}
+                      </td>
+                      <td className="py-2.5 text-right tabular-nums text-slate-600">
+                        {c.booked.toLocaleString()}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </div>
