@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { track, tag, upgrade } from "@/lib/analytics";
 
 const fits = [
   "You're doing $1M+ and you know your email channel can do more",
@@ -64,6 +65,37 @@ const CTA = () => {
       observer.disconnect();
       window.clearInterval(interval);
       window.clearTimeout(fallback);
+    };
+  }, []);
+
+  // Analytics: tag "Book a call" intent (any #cta link, anywhere on the page)
+  // and the actual booking (Calendly fires a message when a call is scheduled).
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const el = (e.target as HTMLElement | null)?.closest?.('a[href="#cta"]');
+      if (el) {
+        track("Book A Call Click");
+        tag("book_a_call_click", "true");
+      }
+    };
+
+    const onMessage = (e: MessageEvent) => {
+      if (
+        typeof e.origin === "string" &&
+        e.origin.includes("calendly.com") &&
+        (e.data as { event?: string } | null)?.event === "calendly.event_scheduled"
+      ) {
+        track("Call Booked");
+        tag("booked_call", "true");
+        upgrade("call_booked"); // prioritise this replay for recording
+      }
+    };
+
+    document.addEventListener("click", onClick);
+    window.addEventListener("message", onMessage);
+    return () => {
+      document.removeEventListener("click", onClick);
+      window.removeEventListener("message", onMessage);
     };
   }, []);
 

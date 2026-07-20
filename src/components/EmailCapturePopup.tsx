@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { track, identify, tag } from "@/lib/analytics";
 
 const DELAY_MS = 10000; // fallback: auto-open after this long even if they don't scroll
 const SCROLL_TRIGGER = 0.67; // open once they scroll 67% of the page
@@ -6,14 +7,6 @@ const SESSION_KEY = "telos_email_popup_seen"; // per-session: don't auto-pop aga
 const SUBSCRIBED_KEY = "telos_email_subscribed"; // permanent: signed up → never show again
 const TEASER_KEY = "telos_teaser_dismissed"; // per-session: hid the corner teaser
 const TEASER_ELIGIBLE_KEY = "telos_teaser_eligible"; // teaser only appears AFTER popup closed once
-
-const track = (name: string) => {
-  try {
-    (window as unknown as { pirsch?: (n: string) => Promise<void> }).pirsch?.(name);
-  } catch {
-    /* analytics optional */
-  }
-};
 
 const EmailCapturePopup = () => {
   const [open, setOpen] = useState(false);
@@ -121,6 +114,8 @@ const EmailCapturePopup = () => {
     }
 
     track("Popup Signup"); // opt-in rate numerator
+    identify(email); // tie this email to its Clarity session replay
+    tag("popup_signup", "true"); // filter recordings by converters
 
     // Capture to Netlify Forms (always works, no keys needed).
     const body = new URLSearchParams({
