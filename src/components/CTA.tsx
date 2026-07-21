@@ -39,32 +39,86 @@ const CTA = () => {
       }
     };
 
-    init();
+    let cleanup = () => {};
 
-    const observer = new MutationObserver(() => {
-      if (node.querySelector("iframe")) {
-        setCalendarLoaded(true);
-        observer.disconnect();
-      }
-    });
-    observer.observe(node, { childList: true, subtree: true });
-
-    let retries = 0;
-    const interval = window.setInterval(() => {
-      retries += 1;
-      if (node.querySelector("iframe")) {
-        window.clearInterval(interval);
-        return;
+    // Load the Calendly widget script on demand, then initialise. Keeps the
+    // ~2s third-party payload off first paint until someone nears the section.
+    const start = () => {
+      const SRC = "https://assets.calendly.com/assets/external/widget.js";
+      const hasCalendly = () =>
+        !!(window as unknown as { Calendly?: unknown }).Calendly;
+      if (!hasCalendly()) {
+        let script = document.querySelector<HTMLScriptElement>(
+          'script[data-calendly="1"]',
+        );
+        if (!script) {
+          script = document.createElement("script");
+          script.src = SRC;
+          script.async = true;
+          script.dataset.calendly = "1";
+          document.body.appendChild(script);
+        }
+        script.addEventListener("load", init);
       }
       init();
-      if (retries > 20) window.clearInterval(interval);
-    }, 300);
 
-    const fallback = window.setTimeout(() => setCalendarLoaded(true), 8000);
+      const observer = new MutationObserver(() => {
+        if (node.querySelector("iframe")) {
+          setCalendarLoaded(true);
+          observer.disconnect();
+        }
+      });
+      observer.observe(node, { childList: true, subtree: true });
+
+      let retries = 0;
+      const interval = window.setInterval(() => {
+        retries += 1;
+        if (node.querySelector("iframe")) {
+          window.clearInterval(interval);
+          return;
+        }
+        init();
+        if (retries > 30) window.clearInterval(interval);
+      }, 300);
+
+      const fallback = window.setTimeout(() => setCalendarLoaded(true), 8000);
+      cleanup = () => {
+        observer.disconnect();
+        window.clearInterval(interval);
+        window.clearTimeout(fallback);
+      };
+    };
+
+    // Defer the widget off first paint, but load it on whichever happens
+    // first: the section nears the viewport, the visitor's first scroll, or a
+    // short fallback timer. Belt-and-suspenders so it always loads in time.
+    let started = false;
+    let stopTriggers = () => {};
+    const trigger = () => {
+      if (started) return;
+      started = true;
+      stopTriggers();
+      start();
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) trigger();
+      },
+      { rootMargin: "800px" },
+    );
+    io.observe(node);
+    window.addEventListener("scroll", trigger, { passive: true, once: true });
+    const idle = window.setTimeout(trigger, 5000);
+    stopTriggers = () => {
+      io.disconnect();
+      window.removeEventListener("scroll", trigger);
+      window.clearTimeout(idle);
+    };
+
     return () => {
-      observer.disconnect();
-      window.clearInterval(interval);
-      window.clearTimeout(fallback);
+      stopTriggers();
+      cleanup();
     };
   }, []);
 

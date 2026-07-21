@@ -106,13 +106,13 @@
     }
     </script>
 
-  <!-- Calendly performance hints -->
+  <!-- Calendly connection warm-up only. The widget script itself is loaded
+       lazily in CTA.tsx when the booking section nears the viewport, so it no
+       longer weighs down first paint. -->
   <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
   <link rel="preconnect" href="https://calendly.com" crossorigin>
   <link rel="dns-prefetch" href="https://assets.calendly.com">
   <link rel="dns-prefetch" href="https://calendly.com">
-  <link rel="preload" as="script" href="https://assets.calendly.com/assets/external/widget.js">
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
   <!-- Render hint: prevent flash of unstyled content -->
   <style>
