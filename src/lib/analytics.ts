@@ -1,16 +1,37 @@
-// Unified client-side event tracking. Every call fans out to both analytics
-// tools already on the site: Pirsch (privacy-light traffic + events) and
-// Microsoft Clarity (session replays + heatmaps). Both are loaded via <script>
-// tags in index.html and expose globals; all calls are best-effort and never
-// throw, so a blocked/aborted tracker can't break the UI.
+// Unified client-side event tracking. Every call fans out to the analytics
+// tools already on the site: Pirsch (privacy-light traffic + events),
+// Microsoft Clarity (session replays + heatmaps), and the Meta Pixel (only for
+// the conversion events listed in META_EVENTS below). All are loaded via
+// <script> tags in index.html and expose globals; all calls are best-effort and
+// never throw, so a blocked/aborted tracker can't break the UI.
 
 type ClarityFn = (...args: unknown[]) => void;
 type PirschFn = (name: string) => Promise<void> | void;
+type FbqFn = (...args: unknown[]) => void;
 
 const clarity = () =>
   (window as unknown as { clarity?: ClarityFn }).clarity;
 const pirsch = () =>
   (window as unknown as { pirsch?: PirschFn }).pirsch;
+const fbq = () => (window as unknown as { fbq?: FbqFn }).fbq;
+
+// Internal event name -> Meta standard event. Only these reach the pixel, so
+// ad delivery optimises on real conversions instead of every UI interaction.
+// Anything absent here stays internal-only (Pirsch / Clarity / our counter).
+const META_EVENTS: Record<string, string> = {
+  "Popup Signup": "Lead",
+  "Call Booked": "Schedule",
+};
+
+function meta(name: string) {
+  const standardEvent = META_EVENTS[name];
+  if (!standardEvent) return;
+  try {
+    fbq()?.("track", standardEvent);
+  } catch {
+    /* analytics optional */
+  }
+}
 
 // --- First-touch attribution -------------------------------------------------
 // Captured the first time a visitor lands and remembered (localStorage) so it
@@ -100,7 +121,10 @@ function beacon(name: string) {
   }
 }
 
-/** Fire a named event to Pirsch, Clarity, and our own /admin counter. */
+/**
+ * Fire a named event to Pirsch, Clarity, our own /admin counter, and — for
+ * conversion events only — the Meta Pixel.
+ */
 export function track(name: string) {
   try {
     pirsch()?.(name);
@@ -112,6 +136,7 @@ export function track(name: string) {
   } catch {
     /* analytics optional */
   }
+  meta(name);
   beacon(name);
 }
 
